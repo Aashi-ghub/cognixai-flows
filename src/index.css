@@ -17,8 +17,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 20 8% 15%;
 
-    /* Terracotta/burnt orange primary like Sarvam */
-    --primary: 15 75% 45%;
+    /* Teal primary color */
+    --primary: 187 28% 56%;
     --primary-foreground: 0 0% 100%;
 
     /* Light beige secondary */
@@ -36,18 +36,18 @@
 
     --border: 30 10% 88%;
     --input: 30 10% 88%;
-    --ring: 15 75% 45%;
+    --ring: 187 28% 56%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 15 75% 45%;
+    --sidebar-primary: 187 28% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 30 20% 94%;
     --sidebar-accent-foreground: 20 8% 15%;
     --sidebar-border: 30 10% 88%;
-    --sidebar-ring: 15 75% 45%;
+    --sidebar-ring: 187 28% 56%;
   }
 
   .dark {
@@ -57,7 +57,7 @@
     --card-foreground: 30 15% 95%;
     --popover: 20 15% 10%;
     --popover-foreground: 30 15% 95%;
-    --primary: 15 75% 50%;
+    --primary: 187 28% 60%;
     --primary-foreground: 0 0% 100%;
     --secondary: 20 10% 15%;
     --secondary-foreground: 30 15% 90%;
@@ -69,15 +69,15 @@
     --destructive-foreground: 0 0% 100%;
     --border: 20 10% 18%;
     --input: 20 10% 18%;
-    --ring: 15 75% 50%;
+    --ring: 187 28% 60%;
     --sidebar-background: 20 15% 8%;
     --sidebar-foreground: 30 15% 95%;
-    --sidebar-primary: 15 75% 50%;
+    --sidebar-primary: 187 28% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 20 10% 15%;
     --sidebar-accent-foreground: 30 15% 95%;
     --sidebar-border: 20 10% 18%;
-    --sidebar-ring: 15 75% 50%;
+    --sidebar-ring: 187 28% 60%;
   }
 }
 
@@ -136,7 +136,7 @@
   /* Rounded announcement banner like Sarvam */
   .banner-sarvam {
     @apply rounded-full mx-4 lg:mx-8;
-    background: hsl(15 75% 45%);
+    background: hsl(var(--primary));
   }
 
   /* Button styles matching Sarvam */
