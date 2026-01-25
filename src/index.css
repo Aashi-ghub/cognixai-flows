@@ -107,6 +107,32 @@
 }
 
 @layer components {
+  /* Animated gradient background like Runway */
+  .gradient-animated {
+    background: linear-gradient(
+      -45deg,
+      hsl(45 40% 55%),
+      hsl(30 35% 50%),
+      hsl(120 15% 45%),
+      hsl(180 20% 50%),
+      hsl(45 40% 55%)
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   /* Rounded announcement banner like Sarvam */
   .banner-sarvam {
     @apply rounded-full mx-4 lg:mx-8;
