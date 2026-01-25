@@ -175,9 +175,8 @@
     }
   }
 
-  /* Rounded announcement banner like Sarvam */
+  /* Announcement banner - no rounding, parent handles it */
   .banner-sarvam {
-    @apply rounded-full mx-4 lg:mx-8;
     background: hsl(var(--primary));
   }
 
@@ -203,10 +202,37 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background - warm olive tone matching reference */
+  /* Foundational section background with smoky gradient */
   .foundational-section-bg {
     position: relative;
-    background: #7d7a5b;
+    background: hsl(35 30% 88%);
+    overflow: hidden;
+  }
+
+  .foundational-section-bg::before,
+  .foundational-section-bg::after {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    pointer-events: none;
+  }
+
+  .foundational-section-bg::before {
+    background: 
+      radial-gradient(circle at 20% 30%, hsl(30 35% 80% / 0.8) 0%, transparent 50%),
+      radial-gradient(circle at 80% 40%, hsl(25 40% 75% / 0.7) 0%, transparent 45%),
+      radial-gradient(circle at 60% 80%, hsl(35 30% 82% / 0.6) 0%, transparent 40%);
+    filter: blur(80px);
+    animation: smoke-move-1 12s ease-in-out infinite;
+  }
+
+  .foundational-section-bg::after {
+    background: 
+      radial-gradient(circle at 70% 20%, hsl(40 25% 78% / 0.7) 0%, transparent 45%),
+      radial-gradient(circle at 30% 70%, hsl(28 35% 76% / 0.6) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(32 30% 80% / 0.5) 0%, transparent 40%);
+    filter: blur(100px);
+    animation: smoke-move-2 15s ease-in-out infinite;
   }
 
   /* Foundational card with vertical dotted decoration like Sarvam */
@@ -267,31 +293,29 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - flows into foundational section */
+  /* Section gradient separator - warm beige gradient blur */
   .section-gradient-separator {
     position: relative;
-    height: 200px;
-    margin-bottom: -1px;
+    height: 180px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      #c4c2a8 30%,
-      #a09d7c 60%,
-      #7d7a5b 100%
+      hsl(35 25% 96%) 25%,
+      hsl(35 30% 92%) 50%,
+      hsl(35 30% 90%) 75%,
+      hsl(35 30% 88%) 100%
     );
+    overflow: hidden;
   }
 
-  /* Section gradient separator - flows out of foundational section */
-  .section-gradient-separator-bottom {
-    position: relative;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      #7d7a5b 0%,
-      #a09d7c 40%,
-      #c4c2a8 70%,
-      hsl(0 0% 100%) 100%
-    );
+  .section-gradient-separator::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(30 35% 82% / 0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(35 30% 80% / 0.4) 0%, transparent 60%);
+    filter: blur(40px);
   }
 
   /* Horizontal scrolling marquee */
