@@ -216,8 +216,8 @@
   /* Foundational card with vertical dotted decoration like Sarvam */
   .foundational-card {
     @apply relative rounded-2xl p-8 lg:p-10;
-    background: hsl(114 15% 96%);
-    border: 1px solid hsl(114 12% 90%);
+    background: #c9d4c8;
+    border: 1px solid hsl(114 12% 78%);
     min-height: 320px;
   }
 
