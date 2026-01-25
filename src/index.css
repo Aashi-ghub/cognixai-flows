@@ -206,7 +206,7 @@
   /* Foundational section background - warm olive tone */
   .foundational-section-bg {
     position: relative;
-    background: #7a7656;
+    background: #9a9776;
   }
 
   .foundational-section-bg::after {
@@ -288,9 +288,9 @@
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(50 12% 75%) 30%,
-      hsl(50 12% 60%) 70%,
-      #7a7656 100%
+      hsl(50 12% 82%) 30%,
+      hsl(50 12% 70%) 70%,
+      #9a9776 100%
     );
     overflow: hidden;
   }
@@ -300,8 +300,8 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(50 15% 45% / 0.4) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(45 12% 50% / 0.3) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(50 15% 55% / 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(45 12% 60% / 0.3) 0%, transparent 60%);
     filter: blur(40px);
   }
 
@@ -311,9 +311,9 @@
     height: 200px;
     background: linear-gradient(
       to bottom,
-      #7a7656 0%,
-      hsl(50 12% 60%) 30%,
-      hsl(50 12% 75%) 70%,
+      #9a9776 0%,
+      hsl(50 12% 70%) 30%,
+      hsl(50 12% 82%) 70%,
       hsl(0 0% 100%) 100%
     );
     overflow: hidden;
@@ -324,8 +324,8 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 50% at 20% 0%, hsl(50 15% 45% / 0.4) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 20%, hsl(45 12% 50% / 0.3) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 50% at 20% 0%, hsl(50 15% 55% / 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, hsl(45 12% 60% / 0.3) 0%, transparent 60%);
     filter: blur(40px);
   }
 
