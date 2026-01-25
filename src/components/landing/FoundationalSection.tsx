@@ -31,7 +31,7 @@ export const FoundationalSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-muted-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground">
             Foundational Voice AI that India can rely on
           </h2>
         </motion.div>
