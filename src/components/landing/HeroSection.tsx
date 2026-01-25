@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 
-// Customer logos - text placeholder style like Sarvam
-const customers = [
-  "Urban Company",
-  "TATA Technologies",
-  "TATA Capital",
-  "neowise",
-  "Razorpay",
+// AI agents, services, and products for scrolling marquee
+const aiServices = [
+  "Voice Agent",
+  "Call Orchestrator",
+  "Speech Analytics",
+  "Intent Detection",
+  "Sentiment Analysis",
+  "Real-time Transcription",
+  "Multilingual Support",
+  "CRM Integration",
+  "Smart Routing",
+  "Conversation AI",
+  "Call Insights",
+  "Agent Assist",
 ];
 
 export const HeroSection = () => {
@@ -55,22 +62,36 @@ export const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Customer Logos Strip */}
+        {/* AI Services Scrolling Marquee */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 pt-12 border-t border-border"
+          className="mt-20 pt-12 border-t border-border overflow-hidden"
         >
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-            {customers.map((customer) => (
-              <span
-                key={customer}
-                className="text-sm font-medium text-muted-foreground/60 tracking-wide"
-              >
-                {customer}
-              </span>
-            ))}
+          <div className="marquee-container">
+            <div className="marquee-content">
+              {[...aiServices, ...aiServices].map((service, index) => (
+                <span
+                  key={`${service}-${index}`}
+                  className="inline-flex items-center gap-3 text-sm font-medium text-muted-foreground/70 tracking-wide whitespace-nowrap"
+                >
+                  <span className="text-primary">✦</span>
+                  {service}
+                </span>
+              ))}
+            </div>
+            <div className="marquee-content" aria-hidden="true">
+              {[...aiServices, ...aiServices].map((service, index) => (
+                <span
+                  key={`${service}-dup-${index}`}
+                  className="inline-flex items-center gap-3 text-sm font-medium text-muted-foreground/70 tracking-wide whitespace-nowrap"
+                >
+                  <span className="text-primary">✦</span>
+                  {service}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
