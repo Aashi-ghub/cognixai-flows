@@ -297,9 +297,6 @@
   .section-gradient-separator {
     position: relative;
     height: 120px;
-    /* overlap adjacent sections by 1px to avoid visible seams */
-    margin-top: -1px;
-    margin-bottom: -1px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
@@ -317,9 +314,6 @@
   .section-gradient-separator-bottom {
     position: relative;
     height: 120px;
-    /* overlap adjacent sections by 1px to avoid visible seams */
-    margin-top: -1px;
-    margin-bottom: -1px;
     background: linear-gradient(
       to bottom,
       hsl(35 30% 88%) 0%,
