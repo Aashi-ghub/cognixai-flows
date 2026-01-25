@@ -1,17 +1,21 @@
 import { motion } from "framer-motion";
-import geometricDark from "@/assets/geometric-dark.jpg";
-import geometricLight from "@/assets/geometric-light.jpg";
+import { Globe, Shield, Cpu } from "lucide-react";
 
 const features = [
   {
-    category: "DISCOVERY",
-    title: "Uncovering insights that guide the rest of the process",
-    variant: "dark" as const,
+    icon: Globe,
+    title: "Sovereign by Design",
+    description: "Voice AI infrastructure developed, deployed, and governed entirely in India. Complete data control, zero compromises.",
   },
   {
-    category: "PRODUCTION",
-    title: "This is where structure and design begin to take shape",
-    variant: "light" as const,
+    icon: Shield,
+    title: "Secure & Safe",
+    description: "AI that works on-prem, in the cloud, or at the edge. Available wherever you need it with enterprise-grade security.",
+  },
+  {
+    icon: Cpu,
+    title: "State-of-the-art AI",
+    description: "Advanced and affordable AI models and tools so enterprises can build voice agents with confidence.",
   },
 ];
 
@@ -20,7 +24,7 @@ export const FoundationalSection = () => {
     <section className="section-padding foundational-section-bg">
       <div className="container mx-auto px-8 lg:px-16 xl:px-24">
         {/* White container box for heading and cards */}
-        <div className="bg-white rounded-3xl px-8 py-12 lg:px-16 lg:py-16 relative z-10">
+        <div className="bg-background rounded-3xl px-8 py-12 lg:px-16 lg:py-16">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -34,55 +38,34 @@ export const FoundationalSection = () => {
             </h2>
           </motion.div>
 
-          {/* Features Grid - 2 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <motion.div
-                key={feature.category}
+                key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative rounded-2xl p-8 lg:p-10 min-h-[400px] flex flex-col ${
-                  feature.variant === "dark"
-                    ? "bg-foreground text-background"
-                    : "bg-[#f0f2ef] text-foreground"
-                }`}
-                style={{ border: feature.variant === "dark" ? '3px solid hsl(var(--foreground))' : 'none' }}
+                className="foundational-card"
               >
                 {/* Vertical dotted decoration */}
-                <div 
-                  className="absolute top-5 right-5 w-6 h-[calc(100%-40px)]"
-                  style={{
-                    backgroundImage: `radial-gradient(circle, ${feature.variant === "dark" ? 'rgba(255,255,255,0.3)' : 'hsl(114, 10%, 72%)'} 2px, transparent 2px)`,
-                    backgroundSize: '12px 12px',
-                    backgroundRepeat: 'repeat-y',
-                    backgroundPosition: 'center',
-                  }}
-                />
-
-                {/* Category Label */}
-                <span className={`text-xs font-medium tracking-widest mb-4 ${
-                  feature.variant === "dark" ? "text-background/70" : "text-muted-foreground"
-                }`}>
-                  {feature.category}
-                </span>
+                <div className="card-dots" />
+                
+                {/* Icon */}
+                <div className="icon-sarvam mb-8">
+                  <feature.icon className="w-6 h-6 text-foreground/60" strokeWidth={1.5} />
+                </div>
 
                 {/* Title */}
-                <h3 className={`text-2xl lg:text-3xl leading-snug max-w-[280px] ${
-                  feature.variant === "dark" ? "text-background" : "text-foreground"
-                }`}>
+                <h3 className="text-xl lg:text-2xl text-foreground mb-4">
                   {feature.title}
                 </h3>
 
-                {/* Geometric illustration */}
-                <div className="mt-auto pt-8 flex justify-center">
-                  <img 
-                    src={feature.variant === "dark" ? geometricDark : geometricLight} 
-                    alt="Geometric illustration"
-                    className="w-48 h-32 object-cover rounded-lg opacity-80"
-                  />
-                </div>
+                {/* Description */}
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>

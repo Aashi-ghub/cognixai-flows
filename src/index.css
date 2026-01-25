@@ -202,44 +202,39 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background with smoky gradient */
+  /* Foundational section background with gradient separators */
   .foundational-section-bg {
     position: relative;
-    background: hsl(35 30% 88%);
-    overflow: hidden;
+    background: linear-gradient(
+      to bottom,
+      hsl(114 15% 92%) 0%,
+      hsl(114 12% 70%) 5%,
+      #768675 15%,
+      #768675 85%,
+      hsl(114 12% 70%) 95%,
+      hsl(114 15% 92%) 100%
+    );
   }
 
-  .foundational-section-bg::before,
   .foundational-section-bg::after {
     content: '';
     position: absolute;
-    inset: -50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: 
+      radial-gradient(ellipse 80% 100% at 30% 100%, hsl(114 15% 60% / 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 70% 100%, hsl(114 12% 65% / 0.3) 0%, transparent 50%);
+    filter: blur(40px);
     pointer-events: none;
-  }
-
-  .foundational-section-bg::before {
-    background: 
-      radial-gradient(circle at 20% 30%, hsl(30 30% 85% / 0.6) 0%, transparent 50%),
-      radial-gradient(circle at 80% 40%, hsl(35 28% 82% / 0.5) 0%, transparent 45%),
-      radial-gradient(circle at 60% 80%, hsl(35 30% 85% / 0.4) 0%, transparent 40%);
-    filter: blur(80px);
-    animation: smoke-move-1 12s ease-in-out infinite;
-  }
-
-  .foundational-section-bg::after {
-    background: 
-      radial-gradient(circle at 70% 20%, hsl(40 25% 84% / 0.5) 0%, transparent 45%),
-      radial-gradient(circle at 30% 70%, hsl(30 30% 83% / 0.4) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(35 28% 86% / 0.3) 0%, transparent 40%);
-    filter: blur(100px);
-    animation: smoke-move-2 15s ease-in-out infinite;
   }
 
   /* Foundational card with vertical dotted decoration like Sarvam */
   .foundational-card {
     @apply relative rounded-2xl p-8 lg:p-10;
     background: #f0f2ef;
-    border: 3px solid hsl(var(--foreground));
+    border: 3px solid #c5cac3;
     min-height: 320px;
   }
 
@@ -293,34 +288,29 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - from white to warm beige */
+  /* Section gradient separator - green gradient blur like theme */
   .section-gradient-separator {
     position: relative;
-    height: 120px;
+    height: 200px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(35 25% 95%) 40%,
-      hsl(35 30% 88%) 100%
+      hsl(114 20% 95%) 20%,
+      hsl(114 15% 92%) 50%,
+      hsl(114 12% 93%) 80%,
+      hsl(114 15% 92%) 100%
     );
     overflow: hidden;
   }
 
   .section-gradient-separator::before {
-    display: none;
-  }
-
-  /* Section gradient separator - from warm beige back to white */
-  .section-gradient-separator-bottom {
-    position: relative;
-    height: 120px;
-    background: linear-gradient(
-      to bottom,
-      hsl(35 30% 88%) 0%,
-      hsl(35 25% 95%) 60%,
-      hsl(0 0% 100%) 100%
-    );
-    overflow: hidden;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(114 20% 82% / 0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(114 15% 85% / 0.5) 0%, transparent 60%);
+    filter: blur(40px);
   }
 
   /* Horizontal scrolling marquee */

@@ -63,7 +63,7 @@ export const Navbar = () => {
                 >
                   API PLATFORM
                 </a>
-                <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-medium tracking-wide bg-foreground text-background hover:bg-foreground/90 transition-colors">
+                <a href="#" className="btn-primary text-xs tracking-wide">
                   REQUEST A DEMO
                   <span>✦</span>
                 </a>
@@ -99,7 +99,7 @@ export const Navbar = () => {
                     </a>
                   ))}
                   <div className="pt-4 border-t border-border">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors">
+                    <a href="#" className="btn-primary text-xs">
                       REQUEST A DEMO ✦
                     </a>
                   </div>
