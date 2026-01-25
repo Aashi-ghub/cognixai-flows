@@ -33,7 +33,7 @@ export const Navbar = () => {
         </div>
 
         {/* Main Navbar - bottom layer */}
-        <nav className="bg-background border-t-0">
+        <nav className={`border-t-0 transition-colors duration-300 ${isScrolled ? "bg-transparent" : "bg-background"}`}>
           <div className="px-6">
             <div className="flex items-center justify-between h-14">
               {/* Logo - simple text like Sarvam */}
