@@ -293,17 +293,17 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - green gradient blur like theme */
+  /* Section gradient separator - warm beige/peach gradient blur */
   .section-gradient-separator {
     position: relative;
     height: 200px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(114 20% 95%) 20%,
-      hsl(114 15% 92%) 50%,
-      hsl(114 12% 93%) 80%,
-      hsl(114 15% 92%) 100%
+      hsl(30 30% 96%) 20%,
+      hsl(25 35% 93%) 50%,
+      hsl(35 25% 92%) 80%,
+      hsl(40 20% 90%) 100%
     );
     overflow: hidden;
   }
@@ -313,8 +313,8 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(114 20% 82% / 0.6) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(114 15% 85% / 0.5) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(30 40% 85% / 0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(25 45% 82% / 0.5) 0%, transparent 60%);
     filter: blur(40px);
   }
 
