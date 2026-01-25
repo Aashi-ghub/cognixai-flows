@@ -205,26 +205,27 @@
 
   /* Feature card with dotted corner decoration like Sarvam */
   .sarvam-card {
-    @apply relative bg-card rounded-2xl p-8 lg:p-10;
-    position: relative;
+    @apply relative rounded-2xl p-8 lg:p-10;
+    background: hsl(35 25% 93%);
+    border: 1px solid hsl(35 15% 88%);
   }
 
   .sarvam-card::before {
     content: '';
     position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 60px;
-    height: 120px;
-    background-image: radial-gradient(circle, hsl(var(--border)) 2px, transparent 2px);
-    background-size: 12px 12px;
-    opacity: 0.6;
+    top: 16px;
+    right: 16px;
+    width: 50px;
+    height: 100px;
+    background-image: radial-gradient(circle, hsl(35 15% 78%) 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+    opacity: 0.7;
   }
 
-  /* Icon container - beige/taupe like Sarvam */
+  /* Icon container - warm beige/taupe like Sarvam */
   .icon-sarvam {
-    @apply w-14 h-14 rounded-full flex items-center justify-center;
-    background: hsl(30 15% 85%);
+    @apply w-16 h-16 rounded-full flex items-center justify-center;
+    background: hsl(35 20% 82%);
   }
 
   /* Section spacing */
