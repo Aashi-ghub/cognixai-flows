@@ -107,15 +107,15 @@
 }
 
 @layer components {
-  /* Animated gradient background like Runway */
+  /* Animated gradient background - green and orange shades */
   .gradient-animated {
     background: linear-gradient(
       -45deg,
-      hsl(45 40% 55%),
-      hsl(30 35% 50%),
-      hsl(120 15% 45%),
-      hsl(180 20% 50%),
-      hsl(45 40% 55%)
+      hsl(62 28% 25%),
+      hsl(30 45% 45%),
+      hsl(80 25% 30%),
+      hsl(25 50% 50%),
+      hsl(62 28% 25%)
     );
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
