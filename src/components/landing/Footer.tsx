@@ -8,7 +8,7 @@ const footerLinks = {
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0a0a0a] rounded-t-[2.5rem] mt-0">
+    <footer className="bg-foreground rounded-t-[2.5rem] mt-0">
       <div className="container mx-auto py-16 lg:py-20">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
