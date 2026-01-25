@@ -15,16 +15,16 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-4">
       {/* Floating container with banner + navbar */}
-      <div className="container mx-auto overflow-hidden rounded-xl shadow-lg">
-        {/* Announcement Banner */}
-        <div className="banner-sarvam py-2.5 px-6 text-center">
+      <div className="container mx-auto overflow-hidden rounded-2xl shadow-lg border border-border/50">
+        {/* Announcement Banner - top layer */}
+        <div className="banner-sarvam py-3 px-6 text-center">
           <p className="text-sm font-medium text-primary-foreground">
             ✦✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦✦
           </p>
         </div>
 
-        {/* Main Navbar */}
-        <nav className="bg-background">
+        {/* Main Navbar - bottom layer */}
+        <nav className="bg-background border-t-0">
           <div className="px-6">
             <div className="flex items-center justify-between h-14">
               {/* Logo - simple text like Sarvam */}
