@@ -33,12 +33,11 @@ export const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">Building the Foundation for 
-Business Automation</p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">Building the Foundation for  Business Automation</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a href="#" className="btn-primary">A unified platform for voice automation, workflow intelligence, and system integrations, designed for enterprises. Enabling them to scale revenue, reduce costs, and operate autonomously.<span>✦</span>
+            <a href="#" className="btn-primary">Explore ✦<span>✦</span>
             </a>
             <a href="#" className="btn-outline">
               REQUEST A DEMO
