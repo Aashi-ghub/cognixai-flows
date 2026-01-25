@@ -207,6 +207,26 @@
     position: relative;
     background: hsl(62 20% 32%);
     overflow: hidden;
+    padding-top: 3rem;
+  }
+
+  /* Top gradient blur separator */
+  .foundational-section-bg .gradient-top-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(
+      to bottom,
+      hsl(0 0% 100%) 0%,
+      hsl(60 15% 92% / 0.8) 30%,
+      hsl(62 20% 70% / 0.4) 60%,
+      transparent 100%
+    );
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: 5;
   }
 
   .foundational-section-bg::before,
