@@ -202,10 +202,17 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background with smoky gradient */
+  /* Foundational section background with warm smoky gradient */
   .foundational-section-bg {
     position: relative;
-    background: hsl(62 20% 32%);
+    background: linear-gradient(
+      to bottom,
+      hsl(40 20% 90%) 0%,
+      hsl(35 25% 85%) 15%,
+      hsl(45 30% 75%) 50%,
+      hsl(35 25% 85%) 85%,
+      hsl(40 20% 90%) 100%
+    );
     overflow: hidden;
   }
 
@@ -219,18 +226,18 @@
 
   .foundational-section-bg::before {
     background: 
-      radial-gradient(circle at 20% 30%, hsl(45 40% 45% / 0.7) 0%, transparent 50%),
-      radial-gradient(circle at 80% 40%, hsl(35 50% 50% / 0.6) 0%, transparent 45%),
-      radial-gradient(circle at 60% 80%, hsl(30 45% 48% / 0.5) 0%, transparent 40%);
+      radial-gradient(circle at 20% 30%, hsl(30 45% 70% / 0.7) 0%, transparent 50%),
+      radial-gradient(circle at 80% 40%, hsl(25 50% 65% / 0.6) 0%, transparent 45%),
+      radial-gradient(circle at 60% 80%, hsl(35 40% 68% / 0.5) 0%, transparent 40%);
     filter: blur(80px);
     animation: smoke-move-1 12s ease-in-out infinite;
   }
 
   .foundational-section-bg::after {
     background: 
-      radial-gradient(circle at 70% 20%, hsl(62 25% 38% / 0.6) 0%, transparent 45%),
-      radial-gradient(circle at 30% 70%, hsl(80 20% 35% / 0.5) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(50 35% 42% / 0.4) 0%, transparent 40%);
+      radial-gradient(circle at 70% 20%, hsl(40 35% 72% / 0.6) 0%, transparent 45%),
+      radial-gradient(circle at 30% 70%, hsl(28 40% 65% / 0.5) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(32 45% 70% / 0.4) 0%, transparent 40%);
     filter: blur(100px);
     animation: smoke-move-2 15s ease-in-out infinite;
   }
