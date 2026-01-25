@@ -238,4 +238,31 @@
     @apply text-muted-foreground/30 text-2xl select-none;
     font-family: serif;
   }
+
+  /* Horizontal scrolling marquee */
+  .marquee-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+    animation: marquee-scroll 25s linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
 }
