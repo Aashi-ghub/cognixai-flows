@@ -207,10 +207,12 @@
   .foundational-section-bg {
     background: linear-gradient(
       to bottom,
-      hsl(0 0% 100%) 0%,
-      #d0d3cd 6%,
-      #d0d3cd 94%,
-      hsl(0 0% 100%) 100%
+      hsl(114 15% 92%) 0%,
+      hsl(114 12% 88%) 5%,
+      #d0d3cd 15%,
+      #d0d3cd 85%,
+      hsl(114 12% 88%) 95%,
+      hsl(114 15% 92%) 100%
     );
   }
 
