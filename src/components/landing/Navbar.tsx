@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -11,104 +11,92 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-8 pt-4">
-      {/* Floating container with banner + navbar */}
-      <div className={`max-w-7xl mx-auto overflow-hidden rounded-2xl transition-all duration-300 ${isScrolled ? "backdrop-blur-2xl backdrop-saturate-150 bg-white/20 border border-white/40" : "bg-background border border-border/50"}`}>
-        {/* Announcement Banner - 20% of container */}
-        <div className="banner-sarvam py-1.5 px-6 text-center">
-          <p className="text-xs font-medium text-primary-foreground">
-            ✦✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦✦
-          </p>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Full-width Announcement Banner - attached to navbar */}
+      <div className="banner-sarvam py-2.5 px-6 text-center">
+        <p className="text-sm font-medium text-primary-foreground">
+          ✦✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦✦
+        </p>
+      </div>
+
+      {/* Main Navbar */}
+      <nav className="bg-background border-b border-border">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo - simple text like Sarvam */}
+            <a href="/" className="text-xl font-medium text-foreground tracking-tight">
+              cognixai
+            </a>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors"
+                >
+                  {link.label}
+                  {link.hasDropdown && <ChevronDown className="w-3 h-3" />}
+                </a>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-3">
+              <a 
+                href="#" 
+                className="px-5 py-2 text-xs font-medium tracking-wide border border-border rounded-md hover:bg-secondary transition-colors"
+              >
+                API PLATFORM
+              </a>
+              <a href="#" className="btn-primary text-xs tracking-wide">
+                REQUEST A DEMO
+                <span>✦</span>
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 text-foreground"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
-        {/* Main Navbar - bottom layer */}
-        <nav className={`border-t-0 transition-colors duration-300 ${isScrolled ? "bg-transparent" : "bg-background"}`}>
-          <div className="px-6">
-            <div className="flex items-center justify-between h-14">
-              {/* Logo - simple text like Sarvam */}
-              <a href="/" className="text-xl font-medium text-foreground tracking-tight">
-                cognixai
-              </a>
-
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center gap-8">
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-background border-b border-border"
+            >
+              <div className="container mx-auto py-4 space-y-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors"
+                    className="block text-sm font-medium text-foreground"
                   >
                     {link.label}
-                    {link.hasDropdown && <ChevronDown className="w-3 h-3" />}
                   </a>
                 ))}
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="hidden lg:flex items-center gap-3">
-                <a 
-                  href="#" 
-                  className="px-5 py-2 text-xs font-medium tracking-wide border border-border rounded-md hover:bg-secondary transition-colors"
-                >
-                  API PLATFORM
-                </a>
-                <a href="#" className="btn-primary text-xs tracking-wide">
-                  REQUEST A DEMO
-                  <span>✦</span>
-                </a>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 text-foreground"
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="lg:hidden bg-background"
-              >
-                <div className="px-6 py-4 space-y-4">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="block text-sm font-medium text-foreground"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                  <div className="pt-4 border-t border-border">
-                    <a href="#" className="btn-primary text-xs">
-                      REQUEST A DEMO ✦
-                    </a>
-                  </div>
+                <div className="pt-4 border-t border-border">
+                  <a href="#" className="btn-primary text-xs">
+                    REQUEST A DEMO ✦
+                  </a>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </nav>
-      </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </header>
   );
 };
