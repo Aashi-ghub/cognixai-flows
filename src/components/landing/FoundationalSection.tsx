@@ -21,9 +21,7 @@ const features = [
 
 export const FoundationalSection = () => {
   return (
-    <section className="py-12 lg:py-16 foundational-section-bg">
-      {/* Top gradient blur separator */}
-      <div className="gradient-top-blur" />
+    <section className="section-padding foundational-section-bg">
       <div className="container mx-auto px-8 lg:px-16 xl:px-24">
         {/* White container box for heading and cards */}
         <div className="bg-white rounded-3xl px-8 py-12 lg:px-16 lg:py-16 relative z-10">
