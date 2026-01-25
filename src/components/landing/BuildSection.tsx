@@ -40,47 +40,13 @@ export const BuildSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Column - Code Mockup with Floating Icons */}
+          {/* Right Column - Code Mockup */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative"
           >
-            {/* Floating Icons */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 right-12 w-14 h-14 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-xl font-bold shadow-lg z-10"
-            >
-              C
-            </motion.div>
-            
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute top-1/3 -left-6 w-12 h-12 rounded-full bg-secondary flex items-center justify-center shadow-md z-10"
-            >
-              <span className="text-xl">🤖</span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-1/4 right-0 w-10 h-10 rounded-full bg-muted flex items-center justify-center shadow-md z-10"
-            >
-              <span className="text-lg">🔊</span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
-              className="absolute -bottom-4 left-1/4 w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-md z-10"
-            >
-              <span className="text-lg">📞</span>
-            </motion.div>
-
             {/* Code Window */}
             <div className="relative bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
               {/* Window Header */}
