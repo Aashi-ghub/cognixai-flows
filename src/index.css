@@ -293,16 +293,15 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - from hero green to warm beige */
+  /* Section gradient separator - from white to warm beige */
   .section-gradient-separator {
     position: relative;
     height: 120px;
     background: linear-gradient(
       to bottom,
-      hsl(62 20% 22%) 0%,
-      hsl(50 20% 40%) 30%,
-      hsl(40 25% 60%) 50%,
-      hsl(35 30% 80%) 75%,
+      hsl(0 0% 100%) 0%,
+      hsl(35 20% 96%) 30%,
+      hsl(35 28% 92%) 60%,
       hsl(35 30% 88%) 100%
     );
     overflow: hidden;
@@ -313,9 +312,9 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 60% at 30% 40%, hsl(30 40% 55% / 0.4) 0%, transparent 60%),
-      radial-gradient(ellipse 70% 50% at 70% 60%, hsl(40 30% 50% / 0.3) 0%, transparent 50%);
-    filter: blur(60px);
+      radial-gradient(ellipse 80% 60% at 30% 70%, hsl(30 30% 85% / 0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 70% 80%, hsl(35 25% 82% / 0.4) 0%, transparent 50%);
+    filter: blur(50px);
   }
 
   /* Horizontal scrolling marquee */
