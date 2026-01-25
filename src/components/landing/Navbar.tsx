@@ -13,9 +13,9 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-4">
-      {/* Rounded Announcement Banner */}
-      <div className="banner-sarvam py-2.5 px-6 text-center mb-4">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Full-width Announcement Banner - attached to navbar */}
+      <div className="banner-sarvam py-2.5 px-6 text-center">
         <p className="text-sm font-medium text-primary-foreground">
           ✦✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦✦
         </p>
