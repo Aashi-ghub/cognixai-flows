@@ -24,7 +24,7 @@ export const FoundationalSection = () => {
     <section className="section-padding foundational-section-bg">
       <div className="container mx-auto px-8 lg:px-16 xl:px-24">
         {/* White container box for heading and cards */}
-        <div className="bg-background rounded-3xl px-8 py-12 lg:px-16 lg:py-16">
+        <div className="bg-white rounded-3xl px-8 py-12 lg:px-16 lg:py-16 relative z-10">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
