@@ -36,36 +36,39 @@ export const FoundationalSection = () => {
           </h2>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="foundational-card"
-            >
-              {/* Vertical dotted decoration */}
-              <div className="card-dots" />
-              
-              {/* Icon */}
-              <div className="icon-sarvam mb-8">
-                <feature.icon className="w-6 h-6 text-foreground/60" strokeWidth={1.5} />
-              </div>
+        {/* White container box for cards */}
+        <div className="bg-white rounded-3xl p-6 lg:p-10">
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="foundational-card"
+              >
+                {/* Vertical dotted decoration */}
+                <div className="card-dots" />
+                
+                {/* Icon */}
+                <div className="icon-sarvam mb-8">
+                  <feature.icon className="w-6 h-6 text-foreground/60" strokeWidth={1.5} />
+                </div>
 
-              {/* Title */}
-              <h3 className="text-xl lg:text-2xl text-foreground mb-4">
-                {feature.title}
-              </h3>
+                {/* Title */}
+                <h3 className="text-xl lg:text-2xl text-foreground mb-4">
+                  {feature.title}
+                </h3>
 
-              {/* Description */}
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+                {/* Description */}
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
