@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
+import abstractDark from "@/assets/abstract-dark.jpg";
+import abstractLight from "@/assets/abstract-light.jpg";
 
 const features = [
   {
     category: "DISCOVERY",
     title: "Uncovering insights that guide the rest of the process",
     variant: "dark" as const,
+    image: abstractDark,
   },
   {
     category: "PRODUCTION",
     title: "This is where structure and design begin to take shape",
     variant: "light" as const,
+    image: abstractLight,
   },
 ];
 
@@ -46,7 +50,9 @@ export const FoundationalSection = () => {
                     ? "bg-foreground text-background"
                     : "bg-[#f0f2ef] text-foreground"
                 }`}
-                style={{ border: '3px solid hsl(var(--foreground))' }}
+                style={{ 
+                  border: feature.variant === "dark" ? '3px solid hsl(var(--foreground))' : 'none'
+                }}
               >
                 {/* Vertical dotted decoration */}
                 <div 
@@ -73,40 +79,15 @@ export const FoundationalSection = () => {
                   {feature.title}
                 </h3>
 
-                {/* Illustration area - placeholder with technical drawing style */}
+                {/* Abstract geometric image */}
                 <div className="mt-auto pt-8 flex justify-center">
-                  {feature.variant === "dark" ? (
-                    <svg viewBox="0 0 200 140" className="w-48 h-32 opacity-80">
-                      {/* Technical illustration - magnifying glass and card */}
-                      <ellipse cx="120" cy="50" rx="40" ry="20" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      <line x1="85" y1="65" x2="60" y2="100" stroke="currentColor" strokeWidth="1.5" />
-                      <rect x="50" y="95" width="60" height="35" rx="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      <line x1="58" y1="105" x2="100" y2="105" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-                      <line x1="58" y1="115" x2="85" y2="115" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-                      {/* Grid lines */}
-                      <line x1="0" y1="140" x2="200" y2="140" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                      <line x1="40" y1="130" x2="40" y2="140" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                      <line x1="80" y1="130" x2="80" y2="140" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                      <line x1="120" y1="130" x2="120" y2="140" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                      <line x1="160" y1="130" x2="160" y2="140" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 200 140" className="w-48 h-32 opacity-70">
-                      {/* Isometric illustration - shapes and grid */}
-                      {/* 3D Box */}
-                      <polygon points="130,40 160,55 130,70 100,55" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      <polygon points="130,70 160,55 160,80 130,95" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      <polygon points="130,70 100,55 100,80 130,95" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      {/* Cylinder */}
-                      <ellipse cx="70" cy="85" rx="25" ry="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      <ellipse cx="70" cy="85" rx="25" ry="10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 2" />
-                      {/* Small elements */}
-                      <rect x="140" y="100" width="30" height="20" rx="2" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="3 2" />
-                      <rect x="40" y="110" width="25" height="15" rx="2" fill="none" stroke="currentColor" strokeWidth="1" />
-                      {/* Dotted circle */}
-                      <circle cx="100" cy="110" r="15" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 3" />
-                    </svg>
-                  )}
+                  <img 
+                    src={feature.image} 
+                    alt="Abstract geometric design"
+                    className={`w-48 h-32 object-cover rounded-lg ${
+                      feature.variant === "dark" ? "opacity-60" : "opacity-70"
+                    }`}
+                  />
                 </div>
               </motion.div>
             ))}
