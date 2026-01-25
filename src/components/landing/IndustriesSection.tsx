@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const industries = ["BFSI", "E-commerce", "Logistics", "SaaS"];
+const industries = ["BFSI", "E-commerce", "Logistics", "Healthcare", "SaaS"];
 
 export const IndustriesSection = () => {
   return (
@@ -12,7 +12,7 @@ export const IndustriesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-10">
             Transforming business calls across industries
           </h2>
 
@@ -29,8 +29,8 @@ export const IndustriesSection = () => {
           </div>
 
           {/* Tagline */}
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Automate 60–80% of routine calls while keeping humans for edge cases.
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            Automate 60–80% of routine calls while keeping humans for edge cases
           </p>
         </motion.div>
       </div>

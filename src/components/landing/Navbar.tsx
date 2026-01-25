@@ -1,36 +1,33 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { label: "Product", href: "#product" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Customers", href: "#customers" },
-  { label: "Resources", href: "#resources" },
-  { label: "Company", href: "#company" },
+  { label: "PRODUCTS", href: "#products", hasDropdown: true },
+  { label: "COMPANY", href: "#company", hasDropdown: true },
+  { label: "BLOG", href: "#blog" },
+  { label: "CAREERS", href: "#careers" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Announcement Banner */}
-      <div className="banner-gradient py-2 px-4 text-center">
+    <header className="fixed top-0 left-0 right-0 z-50 pt-4">
+      {/* Rounded Announcement Banner */}
+      <div className="banner-sarvam py-2.5 px-6 text-center mb-4">
         <p className="text-sm font-medium text-primary-foreground">
           ✦✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦✦
         </p>
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-background/95 backdrop-blur-sm border-b border-border">
+      <nav className="bg-background border-b border-border">
         <div className="container mx-auto">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <a href="/" className="flex items-center gap-2">
-              <span className="text-xl font-bold text-foreground tracking-tight">
-                CognixAI Labs
-              </span>
+            {/* Logo - simple text like Sarvam */}
+            <a href="/" className="text-xl font-medium text-foreground tracking-tight">
+              cognixai
             </a>
 
             {/* Desktop Navigation */}
@@ -39,21 +36,24 @@ export const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors"
                 >
                   {link.label}
-                  <ChevronDown className="w-3.5 h-3.5" />
+                  {link.hasDropdown && <ChevronDown className="w-3 h-3" />}
                 </a>
               ))}
             </div>
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
-                API Platform
+              <a 
+                href="#" 
+                className="px-5 py-2 text-xs font-medium tracking-wide border border-border rounded-md hover:bg-secondary transition-colors"
+              >
+                API PLATFORM
               </a>
-              <a href="#" className="pill-button-primary flex items-center gap-2">
-                Talk to Sales
+              <a href="#" className="btn-primary text-xs tracking-wide">
+                REQUEST A DEMO
                 <span>✦</span>
               </a>
             </div>
@@ -82,14 +82,14 @@ export const Navbar = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="block text-sm font-medium text-muted-foreground hover:text-foreground"
+                    className="block text-sm font-medium text-foreground"
                   >
                     {link.label}
                   </a>
                 ))}
                 <div className="pt-4 border-t border-border">
-                  <a href="#" className="pill-button-primary inline-flex items-center gap-2">
-                    Talk to Sales ✦
+                  <a href="#" className="btn-primary text-xs">
+                    REQUEST A DEMO ✦
                   </a>
                 </div>
               </div>

@@ -1,65 +1,78 @@
 import { motion } from "framer-motion";
-import voiceAgentUI from "@/assets/voice-agent-ui.png";
+
+// Customer logos - text placeholder style like Sarvam
+const customers = [
+  "Urban Company",
+  "TATA Technologies",
+  "TATA Capital",
+  "neowise",
+  "Razorpay",
+];
 
 export const HeroSection = () => {
   return (
-    <section className="pt-36 pb-20 lg:pt-44 lg:pb-28 bg-background">
+    <section className="pt-44 pb-16 bg-background relative">
+      {/* Decorative asterisks on sides */}
+      <div className="absolute left-8 lg:left-16 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-4">
+        <span className="decorative-asterisk">✳</span>
+        <span className="decorative-asterisk">✳</span>
+      </div>
+      <div className="absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-4">
+        <span className="decorative-asterisk">✳</span>
+        <span className="decorative-asterisk">✳</span>
+      </div>
+
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column - Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Eyebrow */}
-            <p className="text-sm font-medium text-muted-foreground mb-4">
-              Enterprise Voice AI Agents for India & beyond
-            </p>
+        {/* Centered Hero Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          {/* Main Headline - Serif font like Sarvam */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
+            Building the voice AI layer
+            <br />
+            for enterprise calls
+          </h1>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6 text-balance">
-              Building the voice AI layer for enterprise calls
-            </h1>
+          {/* Subheadline */}
+          <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
+            A full-stack Voice AI platform that empowers enterprises 
+            to automate support, collections, and sales calls across India
+          </p>
 
-            {/* Description */}
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              CognixAI Labs powers sovereign voice agents for support, collections, 
-              and sales – deeply integrated with your CRM, ERP, and Indian business stack.
-            </p>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a href="#" className="btn-primary">
+              BUILD WITH COGNIXAI
+              <span>✦</span>
+            </a>
+            <a href="#" className="btn-outline">
+              REQUEST A DEMO
+            </a>
+          </div>
+        </motion.div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
-              <a href="#" className="pill-button-primary text-base">
-                Book a Live Demo ✦
-              </a>
-              <a href="#" className="pill-button-outline text-base">
-                Listen to Sample Call
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Right Column - Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              {/* Main Image */}
-              <img
-                src={voiceAgentUI}
-                alt="AI Voice Agent Interface"
-                className="w-full max-w-md rounded-3xl shadow-2xl shadow-primary/10"
-              />
-              
-              {/* Decorative dots */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 dots-pattern opacity-30 rounded-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 dots-pattern opacity-30 rounded-2xl" />
-            </div>
-          </motion.div>
-        </div>
+        {/* Customer Logos Strip */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20 pt-12 border-t border-border"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
+            {customers.map((customer) => (
+              <span
+                key={customer}
+                className="text-sm font-medium text-muted-foreground/60 tracking-wide"
+              >
+                {customer}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

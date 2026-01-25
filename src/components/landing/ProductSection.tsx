@@ -5,26 +5,26 @@ const products = [
   {
     icon: Phone,
     name: "Cognix Voice Agent",
-    description: "Handles real inbound and outbound calls for support, collections, and sales.",
-    link: "#",
+    description: "Handles real inbound and outbound calls for support, collections, and sales with human-like conversations.",
+    tag: "VOICE",
   },
   {
     icon: Workflow,
     name: "Cognix Orchestrator",
-    description: "Connects your voice agent to CRM, ERP, ticketing, and payment systems.",
-    link: "#",
+    description: "Connects your voice agent to CRM, ERP, ticketing, and payment systems seamlessly.",
+    tag: "PLATFORM",
   },
   {
     icon: BarChart3,
     name: "Cognix Insights",
     description: "Searchable transcripts, QA scoring, and call analytics at your fingertips.",
-    link: "#",
+    tag: "ANALYTICS",
   },
 ];
 
 export const ProductSection = () => {
   return (
-    <section id="product" className="section-padding bg-background">
+    <section id="products" className="section-padding bg-background">
       <div className="container mx-auto">
         {/* Section Header */}
         <motion.div
@@ -32,11 +32,11 @@ export const ProductSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="text-center mb-16"
         >
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground">
             CognixAI Product Suite
-          </p>
+          </h2>
         </motion.div>
 
         {/* Product Cards */}
@@ -44,32 +44,37 @@ export const ProductSection = () => {
           {products.map((product, index) => (
             <motion.a
               key={product.name}
-              href={product.link}
+              href="#"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group feature-card hover:border-primary/30 transition-all duration-300"
+              className="group sarvam-card hover:shadow-lg transition-shadow"
             >
+              {/* Tag */}
+              <span className="text-xs font-medium tracking-wider text-muted-foreground mb-6 block">
+                {product.tag}
+              </span>
+
               {/* Icon */}
-              <div className="icon-circle mb-6">
-                <product.icon className="w-6 h-6 text-primary" />
+              <div className="icon-sarvam mb-6">
+                <product.icon className="w-6 h-6 text-foreground/70" strokeWidth={1.5} />
               </div>
 
               {/* Name */}
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl lg:text-2xl text-foreground mb-4 group-hover:text-primary transition-colors">
                 {product.name}
               </h3>
 
               {/* Description */}
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 {product.description}
               </p>
 
               {/* Link */}
-              <span className="inline-flex items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="inline-flex items-center text-sm font-medium text-primary">
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
             </motion.a>
           ))}
