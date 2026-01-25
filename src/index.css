@@ -203,21 +203,21 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background - warm gradient */
+  /* Foundational section background - green gradient */
   .foundational-section-bg {
     background: linear-gradient(
       to bottom,
-      hsl(35 25% 93%) 0%,
-      hsl(35 30% 94%) 50%,
-      hsl(35 25% 95%) 100%
+      hsl(114 15% 92%) 0%,
+      hsl(114 12% 93%) 50%,
+      hsl(114 10% 94%) 100%
     );
   }
 
   /* Foundational card with vertical dotted decoration like Sarvam */
   .foundational-card {
     @apply relative rounded-2xl p-8 lg:p-10;
-    background: hsl(35 30% 92%);
-    border: 1px solid hsl(35 20% 88%);
+    background: hsl(114 12% 91%);
+    border: 1px solid hsl(114 10% 86%);
     min-height: 320px;
   }
 
@@ -228,7 +228,7 @@
     right: 20px;
     width: 24px;
     height: calc(100% - 40px);
-    background-image: radial-gradient(circle, hsl(35 15% 75%) 2px, transparent 2px);
+    background-image: radial-gradient(circle, hsl(114 10% 72%) 2px, transparent 2px);
     background-size: 12px 12px;
     background-repeat: repeat-y;
     background-position: center;
@@ -238,8 +238,8 @@
   /* Feature card with dotted corner decoration like Sarvam */
   .sarvam-card {
     @apply relative rounded-2xl p-8 lg:p-10;
-    background: hsl(35 25% 93%);
-    border: 1px solid hsl(35 15% 88%);
+    background: hsl(114 12% 92%);
+    border: 1px solid hsl(114 10% 86%);
   }
 
   .sarvam-card::before {
@@ -249,15 +249,15 @@
     right: 16px;
     width: 50px;
     height: 100px;
-    background-image: radial-gradient(circle, hsl(35 15% 78%) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, hsl(114 10% 75%) 1.5px, transparent 1.5px);
     background-size: 10px 10px;
     opacity: 0.7;
   }
 
-  /* Icon container - warm beige/taupe like Sarvam */
+  /* Icon container - green-tinted like theme */
   .icon-sarvam {
     @apply w-16 h-16 rounded-full flex items-center justify-center;
-    background: hsl(35 15% 78%);
+    background: hsl(114 12% 78%);
   }
 
   /* Section spacing */
@@ -271,17 +271,17 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - warm gradient blur like Sarvam */
+  /* Section gradient separator - green gradient blur like theme */
   .section-gradient-separator {
     position: relative;
     height: 200px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(35 60% 96%) 20%,
-      hsl(30 50% 92%) 50%,
-      hsl(35 40% 94%) 80%,
-      hsl(35 25% 93%) 100%
+      hsl(114 20% 95%) 20%,
+      hsl(114 15% 92%) 50%,
+      hsl(114 12% 93%) 80%,
+      hsl(114 15% 92%) 100%
     );
     overflow: hidden;
   }
@@ -291,8 +291,8 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(25 45% 85% / 0.6) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(35 50% 88% / 0.5) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(114 20% 82% / 0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(114 15% 85% / 0.5) 0%, transparent 60%);
     filter: blur(40px);
   }
 
