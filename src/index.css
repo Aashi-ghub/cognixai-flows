@@ -310,6 +310,19 @@
     display: none;
   }
 
+  /* Section gradient separator - from warm beige back to white */
+  .section-gradient-separator-bottom {
+    position: relative;
+    height: 120px;
+    background: linear-gradient(
+      to bottom,
+      hsl(35 30% 88%) 0%,
+      hsl(35 25% 95%) 60%,
+      hsl(0 0% 100%) 100%
+    );
+    overflow: hidden;
+  }
+
   /* Horizontal scrolling marquee */
   .marquee-container {
     display: flex;
