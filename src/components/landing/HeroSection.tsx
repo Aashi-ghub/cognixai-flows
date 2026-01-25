@@ -74,9 +74,8 @@ export const HeroSection = () => {
               {[...aiServices, ...aiServices].map((service, index) => (
                 <span
                   key={`${service}-${index}`}
-                  className="inline-flex items-center gap-3 text-sm font-medium text-muted-foreground/70 tracking-wide whitespace-nowrap"
+                  className="text-sm italic text-muted-foreground/70 tracking-wide whitespace-nowrap"
                 >
-                  <span className="text-primary">✦</span>
                   {service}
                 </span>
               ))}
@@ -85,9 +84,8 @@ export const HeroSection = () => {
               {[...aiServices, ...aiServices].map((service, index) => (
                 <span
                   key={`${service}-dup-${index}`}
-                  className="inline-flex items-center gap-3 text-sm font-medium text-muted-foreground/70 tracking-wide whitespace-nowrap"
+                  className="text-sm italic text-muted-foreground/70 tracking-wide whitespace-nowrap"
                 >
-                  <span className="text-primary">✦</span>
                   {service}
                 </span>
               ))}

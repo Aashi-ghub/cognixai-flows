@@ -248,9 +248,9 @@
 
   .marquee-content {
     display: flex;
-    gap: 2.5rem;
-    padding-right: 2.5rem;
-    animation: marquee-scroll 25s linear infinite;
+    gap: 5rem;
+    padding-right: 5rem;
+    animation: marquee-scroll 60s linear infinite;
   }
 
   @keyframes marquee-scroll {
