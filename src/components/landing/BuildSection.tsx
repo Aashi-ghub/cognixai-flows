@@ -15,7 +15,7 @@ const channels = [
 
 export const BuildSection = () => {
   return (
-    <section className="section-padding bg-card">
+    <section className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Text */}
