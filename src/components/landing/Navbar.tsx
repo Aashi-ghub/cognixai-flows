@@ -1,10 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { label: "PRODUCTS", href: "#products", hasDropdown: true },
-  { label: "COMPANY", href: "#company", hasDropdown: true },
+  { 
+    label: "PRODUCTS", 
+    href: "#products", 
+    hasDropdown: true,
+    dropdownItems: [
+      { label: "Voice Agent", href: "#voice-agent" },
+      { label: "Orchestrator", href: "#orchestrator" },
+      { label: "Insights", href: "#insights" },
+    ]
+  },
+  { 
+    label: "COMPANY", 
+    href: "#company", 
+    hasDropdown: true,
+    dropdownItems: [
+      { label: "About Us", href: "#about" },
+      { label: "Team", href: "#team" },
+      { label: "Contact", href: "#contact" },
+    ]
+  },
   { label: "BLOG", href: "#blog" },
   { label: "CAREERS", href: "#careers" },
 ];
@@ -12,6 +30,8 @@ const navLinks = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +39,16 @@ export const Navbar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -42,16 +72,54 @@ export const Navbar = () => {
               </a>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center gap-8">
+              <div className="hidden lg:flex items-center gap-8" ref={dropdownRef}>
                 {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors"
-                  >
-                    {link.label}
-                    {link.hasDropdown && <ChevronDown className="w-3 h-3" />}
-                  </a>
+                  <div key={link.label} className="relative">
+                    {link.hasDropdown ? (
+                      <>
+                        <button
+                          onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                          className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors"
+                        >
+                          {link.label}
+                          <ChevronDown className={`w-3 h-3 transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                        </button>
+                        
+                        {/* Glassmorphism Dropdown */}
+                        <AnimatePresence>
+                          {activeDropdown === link.label && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: 10 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 mt-3 min-w-[180px] z-50 rounded-xl overflow-hidden backdrop-blur-2xl backdrop-saturate-150 bg-white/70 border border-white/50 shadow-xl"
+                            >
+                              <div className="py-2">
+                                {link.dropdownItems?.map((item) => (
+                                  <a
+                                    key={item.label}
+                                    href={item.href}
+                                    className="block px-4 py-2.5 text-xs font-medium tracking-wide text-foreground hover:bg-white/50 transition-colors"
+                                    onClick={() => setActiveDropdown(null)}
+                                  >
+                                    {item.label}
+                                  </a>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    )}
+                  </div>
                 ))}
               </div>
 
@@ -86,7 +154,7 @@ export const Navbar = () => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="lg:hidden bg-background"
+                className="lg:hidden backdrop-blur-2xl bg-white/70"
               >
                 <div className="px-6 py-4 space-y-4">
                   {navLinks.map((link) => (
