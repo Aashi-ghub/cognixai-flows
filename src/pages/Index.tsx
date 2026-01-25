@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
-import { ProductCards } from "@/components/landing/ProductCards";
-import { WhySection } from "@/components/landing/WhySection";
-import { UseCasesSection } from "@/components/landing/UseCasesSection";
-import { ResearchSection } from "@/components/landing/ResearchSection";
+import { FoundationalSection } from "@/components/landing/FoundationalSection";
+import { ProductSection } from "@/components/landing/ProductSection";
+import { BuildSection } from "@/components/landing/BuildSection";
+import { IndustriesSection } from "@/components/landing/IndustriesSection";
+import { InsightsSection } from "@/components/landing/InsightsSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
 
@@ -13,10 +14,11 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <ProductCards />
-        <WhySection />
-        <UseCasesSection />
-        <ResearchSection />
+        <FoundationalSection />
+        <ProductSection />
+        <BuildSection />
+        <IndustriesSection />
+        <InsightsSection />
         <CTASection />
       </main>
       <Footer />
