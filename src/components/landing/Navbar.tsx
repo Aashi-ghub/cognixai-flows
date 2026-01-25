@@ -5,23 +5,18 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const navLinks = [
   { 
     label: "PRODUCTS", 
-    href: "#products", 
+    href: "/products", 
     hasDropdown: true,
     dropdownItems: [
-      { label: "Voice Agent", href: "#voice-agent" },
-      { label: "Orchestrator", href: "#orchestrator" },
-      { label: "Insights", href: "#insights" },
+      { label: "Voice Agent", href: "/products#voice-agent" },
+      { label: "Orchestrator", href: "/products#orchestrator" },
+      { label: "Insights", href: "/products#insights" },
     ]
   },
   { 
-    label: "COMPANY", 
-    href: "#company", 
-    hasDropdown: true,
-    dropdownItems: [
-      { label: "About Us", href: "#about" },
-      { label: "Team", href: "#team" },
-      { label: "Contact", href: "#contact" },
-    ]
+    label: "SERVICES", 
+    href: "/services", 
+    hasDropdown: false,
   },
   { label: "BLOG", href: "#blog" },
   { label: "CAREERS", href: "#careers" },
