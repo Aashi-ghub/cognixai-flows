@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    /* Pure white background like Sarvam */
-    --background: 0 0% 100%;
+    /* Warm off-white background #edefea */
+    --background: 80 16% 93%;
     --foreground: 20 8% 15%;
 
     /* Slightly warm off-white for cards */
     --card: 30 20% 97%;
     --card-foreground: 20 8% 15%;
 
-    --popover: 0 0% 100%;
+    --popover: 80 16% 93%;
     --popover-foreground: 20 8% 15%;
 
     /* Muted forest green primary color */
@@ -293,13 +293,13 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - from white to warm beige */
+  /* Section gradient separator - from off-white to warm beige */
   .section-gradient-separator {
     position: relative;
     height: 120px;
     background: linear-gradient(
       to bottom,
-      hsl(0 0% 100%) 0%,
+      hsl(80 16% 93%) 0%,
       hsl(35 25% 95%) 40%,
       hsl(35 30% 88%) 100%
     );
@@ -310,7 +310,7 @@
     display: none;
   }
 
-  /* Section gradient separator - from warm beige back to white */
+  /* Section gradient separator - from warm beige back to off-white */
   .section-gradient-separator-bottom {
     position: relative;
     height: 120px;
@@ -318,7 +318,7 @@
       to bottom,
       hsl(35 30% 88%) 0%,
       hsl(35 25% 95%) 60%,
-      hsl(0 0% 100%) 100%
+      hsl(80 16% 93%) 100%
     );
     overflow: hidden;
   }
