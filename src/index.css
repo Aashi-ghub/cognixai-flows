@@ -271,6 +271,7 @@
   .section-gradient-separator {
     position: relative;
     height: 200px;
+    margin-bottom: -1px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
