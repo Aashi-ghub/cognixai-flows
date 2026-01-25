@@ -255,10 +255,10 @@
     opacity: 0.7;
   }
 
-  /* Icon container - green-tinted like theme */
+  /* Icon container - vibrant green like theme */
   .icon-sarvam {
     @apply w-16 h-16 rounded-full flex items-center justify-center;
-    background: hsl(114 12% 78%);
+    background: hsl(114 25% 55%);
   }
 
   /* Section spacing */
