@@ -58,7 +58,7 @@ export const Navbar = () => {
         {/* Announcement Banner - 20% of container */}
         <div className="banner-sarvam py-1.5 px-6 text-center">
           <p className="text-xs font-medium text-primary-foreground">
-            ✦✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦✦
+            ✦ Introducing CognixAI Voice Agents – Enterprise Calls Reimagined ✦
           </p>
         </div>
 
