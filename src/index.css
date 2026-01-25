@@ -208,8 +208,8 @@
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      #e1e4e0 8%,
-      #e1e4e0 92%,
+      #d0d3cd 6%,
+      #d0d3cd 94%,
       hsl(0 0% 100%) 100%
     );
   }
