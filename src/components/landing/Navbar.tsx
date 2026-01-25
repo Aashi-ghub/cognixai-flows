@@ -14,8 +14,8 @@ export const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-8 pt-4">
-      {/* Floating container with glassmorphism effect */}
-      <div className="max-w-7xl mx-auto overflow-hidden rounded-2xl shadow-lg border border-border/30 backdrop-blur-md bg-background/80">
+      {/* Floating container with banner + navbar */}
+      <div className="max-w-7xl mx-auto overflow-hidden rounded-2xl shadow-lg border border-border/50">
         {/* Announcement Banner - 20% of container */}
         <div className="banner-sarvam py-1.5 px-6 text-center">
           <p className="text-xs font-medium text-primary-foreground">
