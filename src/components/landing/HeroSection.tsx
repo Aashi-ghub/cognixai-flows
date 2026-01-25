@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-// Customer logos - text placeholder style like Sarvam
-const customers = ["Urban Company", "TATA Technologies", "TATA Capital", "neowise", "Razorpay"];
+// AI services marquee items
+const services = ["Voice Agent", "Call Orchestrator", "Workflow Automation", "Smart Analytics", "Intent Recognition", "Speech Synthesis", "Conversation AI", "Process Intelligence"];
 export const HeroSection = () => {
   return <section className="pt-44 pb-16 bg-background relative">
       {/* Decorative asterisks on sides */}
@@ -45,7 +45,7 @@ export const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Customer Logos Strip */}
+        {/* AI Services Marquee */}
         <motion.div initial={{
         opacity: 0
       }} animate={{
@@ -54,10 +54,21 @@ export const HeroSection = () => {
         duration: 0.6,
         delay: 0.4
       }} className="mt-20 pt-12 border-t border-border">
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-            {customers.map(customer => <span key={customer} className="text-sm font-medium text-muted-foreground/60 tracking-wide">
-                {customer}
-              </span>)}
+          <div className="marquee-container">
+            <div className="marquee-content">
+              {services.map((service, index) => (
+                <span key={index} className="text-lg italic text-muted-foreground/50 font-serif whitespace-nowrap">
+                  {service}
+                </span>
+              ))}
+            </div>
+            <div className="marquee-content" aria-hidden="true">
+              {services.map((service, index) => (
+                <span key={`dup-${index}`} className="text-lg italic text-muted-foreground/50 font-serif whitespace-nowrap">
+                  {service}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
