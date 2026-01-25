@@ -239,7 +239,7 @@
   .foundational-card {
     @apply relative rounded-2xl p-8 lg:p-10;
     background: #f0f2ef;
-    border: 3px solid #c5cac3;
+    border: 3px solid hsl(var(--foreground));
     min-height: 320px;
   }
 
