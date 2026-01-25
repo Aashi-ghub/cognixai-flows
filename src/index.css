@@ -17,8 +17,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 20 8% 15%;
 
-    /* Sage green primary color */
-    --primary: 116 7% 37%;
+    /* Muted forest green primary color */
+    --primary: 114 13% 43%;
     --primary-foreground: 0 0% 100%;
 
     /* Light beige secondary */
@@ -36,18 +36,18 @@
 
     --border: 30 10% 88%;
     --input: 30 10% 88%;
-    --ring: 116 7% 37%;
+    --ring: 114 13% 43%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 116 7% 37%;
+    --sidebar-primary: 114 13% 43%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 30 20% 94%;
     --sidebar-accent-foreground: 20 8% 15%;
     --sidebar-border: 30 10% 88%;
-    --sidebar-ring: 116 7% 37%;
+    --sidebar-ring: 114 13% 43%;
   }
 
   .dark {
@@ -57,7 +57,7 @@
     --card-foreground: 30 15% 95%;
     --popover: 20 15% 10%;
     --popover-foreground: 30 15% 95%;
-    --primary: 116 7% 45%;
+    --primary: 114 13% 50%;
     --primary-foreground: 0 0% 100%;
     --secondary: 20 10% 15%;
     --secondary-foreground: 30 15% 90%;
@@ -69,15 +69,15 @@
     --destructive-foreground: 0 0% 100%;
     --border: 20 10% 18%;
     --input: 20 10% 18%;
-    --ring: 116 7% 45%;
+    --ring: 114 13% 50%;
     --sidebar-background: 20 15% 8%;
     --sidebar-foreground: 30 15% 95%;
-    --sidebar-primary: 116 7% 45%;
+    --sidebar-primary: 114 13% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 20 10% 15%;
     --sidebar-accent-foreground: 30 15% 95%;
     --sidebar-border: 20 10% 18%;
-    --sidebar-ring: 116 7% 45%;
+    --sidebar-ring: 114 13% 50%;
   }
 }
 
