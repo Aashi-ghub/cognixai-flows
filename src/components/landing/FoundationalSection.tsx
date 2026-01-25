@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
-import geometricDark from "@/assets/geometric-dark.jpg";
-import geometricLight from "@/assets/geometric-light.jpg";
+import abstractDark from "@/assets/abstract-dark.jpg";
+import abstractLight from "@/assets/abstract-light.jpg";
 
 const features = [
   {
     category: "DISCOVERY",
     title: "Uncovering insights that guide the rest of the process",
     variant: "dark" as const,
+    image: abstractDark,
   },
   {
     category: "PRODUCTION",
     title: "This is where structure and design begin to take shape",
     variant: "light" as const,
+    image: abstractLight,
   },
 ];
 
@@ -48,7 +50,9 @@ export const FoundationalSection = () => {
                     ? "bg-foreground text-background"
                     : "bg-[#f0f2ef] text-foreground"
                 }`}
-                style={{ border: feature.variant === "dark" ? '3px solid hsl(var(--foreground))' : 'none' }}
+                style={{ 
+                  border: feature.variant === "dark" ? '3px solid hsl(var(--foreground))' : 'none'
+                }}
               >
                 {/* Vertical dotted decoration */}
                 <div 
@@ -75,12 +79,14 @@ export const FoundationalSection = () => {
                   {feature.title}
                 </h3>
 
-                {/* Geometric illustration */}
+                {/* Abstract geometric image */}
                 <div className="mt-auto pt-8 flex justify-center">
                   <img 
-                    src={feature.variant === "dark" ? geometricDark : geometricLight} 
-                    alt="Geometric illustration"
-                    className="w-48 h-32 object-cover rounded-lg opacity-80"
+                    src={feature.image} 
+                    alt="Abstract geometric design"
+                    className={`w-48 h-32 object-cover rounded-lg ${
+                      feature.variant === "dark" ? "opacity-60" : "opacity-70"
+                    }`}
                   />
                 </div>
               </motion.div>
