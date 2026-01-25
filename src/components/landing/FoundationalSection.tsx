@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 const features = [
   {
     category: "DISCOVERY",
-    title: "Uncovering insights that guide the rest of the process",
+    title: "What's slowing your business down",
+    description: "Manual processes, delays, and operational friction.",
     variant: "dark" as const,
   },
   {
-    category: "PRODUCTION",
-    title: "This is where structure and design begin to take shape",
+    category: "EXECUTION",
+    title: "AI that runs your workflows",
+    description: "Automations that work 24/7 without hiring.",
     variant: "light" as const,
   },
 ];
@@ -72,6 +74,13 @@ export const FoundationalSection = () => {
                 }`}>
                   {feature.title}
                 </h3>
+
+                {/* Description */}
+                <p className={`text-base mt-4 max-w-[260px] ${
+                  feature.variant === "dark" ? "text-background/70" : "text-muted-foreground"
+                }`}>
+                  {feature.description}
+                </p>
 
                 {/* Illustration area - placeholder with technical drawing style */}
                 <div className="mt-auto pt-8 flex justify-center">
