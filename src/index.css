@@ -202,32 +202,37 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background with gradient separators */
+  /* Foundational section background with smoky gradient */
   .foundational-section-bg {
     position: relative;
-    background: linear-gradient(
-      to bottom,
-      hsl(114 15% 92%) 0%,
-      hsl(114 12% 70%) 5%,
-      #768675 15%,
-      #768675 85%,
-      hsl(114 12% 70%) 95%,
-      hsl(114 15% 92%) 100%
-    );
+    background: hsl(62 20% 32%);
+    overflow: hidden;
   }
 
+  .foundational-section-bg::before,
   .foundational-section-bg::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
-    background: 
-      radial-gradient(ellipse 80% 100% at 30% 100%, hsl(114 15% 60% / 0.4) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 80% at 70% 100%, hsl(114 12% 65% / 0.3) 0%, transparent 50%);
-    filter: blur(40px);
+    inset: -50%;
     pointer-events: none;
+  }
+
+  .foundational-section-bg::before {
+    background: 
+      radial-gradient(circle at 20% 30%, hsl(45 40% 45% / 0.7) 0%, transparent 50%),
+      radial-gradient(circle at 80% 40%, hsl(35 50% 50% / 0.6) 0%, transparent 45%),
+      radial-gradient(circle at 60% 80%, hsl(30 45% 48% / 0.5) 0%, transparent 40%);
+    filter: blur(80px);
+    animation: smoke-move-1 12s ease-in-out infinite;
+  }
+
+  .foundational-section-bg::after {
+    background: 
+      radial-gradient(circle at 70% 20%, hsl(62 25% 38% / 0.6) 0%, transparent 45%),
+      radial-gradient(circle at 30% 70%, hsl(80 20% 35% / 0.5) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(50 35% 42% / 0.4) 0%, transparent 40%);
+    filter: blur(100px);
+    animation: smoke-move-2 15s ease-in-out infinite;
   }
 
   /* Foundational card with vertical dotted decoration like Sarvam */
