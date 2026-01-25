@@ -37,7 +37,7 @@ export const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a href="#" className="btn-primary">Explore ✦<span>✦</span>
+            <a href="#" className="btn-primary">Explore ✦
             </a>
             <a href="#" className="btn-outline">
               REQUEST A DEMO
