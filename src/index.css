@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    /* Sarvam-style warm light theme */
-    --background: 30 25% 97%;
-    --foreground: 20 10% 15%;
+    /* Pure white background like Sarvam */
+    --background: 0 0% 100%;
+    --foreground: 20 8% 15%;
 
-    --card: 30 20% 95%;
-    --card-foreground: 20 10% 15%;
+    /* Slightly warm off-white for cards */
+    --card: 30 20% 97%;
+    --card-foreground: 20 8% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 15%;
+    --popover-foreground: 20 8% 15%;
 
-    /* Terracotta/Orange primary - Sarvam style */
-    --primary: 18 85% 52%;
+    /* Terracotta/burnt orange primary like Sarvam */
+    --primary: 15 75% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Light gray secondary */
-    --secondary: 30 15% 92%;
-    --secondary-foreground: 20 10% 25%;
+    /* Light beige secondary */
+    --secondary: 30 20% 94%;
+    --secondary-foreground: 20 8% 25%;
 
-    --muted: 30 10% 90%;
-    --muted-foreground: 20 8% 45%;
+    --muted: 30 10% 92%;
+    --muted-foreground: 20 5% 50%;
 
-    /* Soft accent */
-    --accent: 30 20% 94%;
-    --accent-foreground: 20 10% 15%;
+    --accent: 30 15% 96%;
+    --accent-foreground: 20 8% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 88%;
-    --input: 30 15% 88%;
-    --ring: 18 85% 52%;
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 15 75% 45%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 18 85% 52%;
+    --sidebar-primary: 15 75% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 30 20% 94%;
-    --sidebar-accent-foreground: 20 10% 15%;
-    --sidebar-border: 30 15% 88%;
-    --sidebar-ring: 18 85% 52%;
+    --sidebar-accent-foreground: 20 8% 15%;
+    --sidebar-border: 30 10% 88%;
+    --sidebar-ring: 15 75% 45%;
   }
 
   .dark {
@@ -57,7 +57,7 @@
     --card-foreground: 30 15% 95%;
     --popover: 20 15% 10%;
     --popover-foreground: 30 15% 95%;
-    --primary: 18 85% 55%;
+    --primary: 15 75% 50%;
     --primary-foreground: 0 0% 100%;
     --secondary: 20 10% 15%;
     --secondary-foreground: 30 15% 90%;
@@ -69,15 +69,15 @@
     --destructive-foreground: 0 0% 100%;
     --border: 20 10% 18%;
     --input: 20 10% 18%;
-    --ring: 18 85% 55%;
+    --ring: 15 75% 50%;
     --sidebar-background: 20 15% 8%;
     --sidebar-foreground: 30 15% 95%;
-    --sidebar-primary: 18 85% 55%;
+    --sidebar-primary: 15 75% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 20 10% 15%;
     --sidebar-accent-foreground: 30 15% 95%;
     --sidebar-border: 20 10% 18%;
-    --sidebar-ring: 18 85% 55%;
+    --sidebar-ring: 15 75% 50%;
   }
 }
 
@@ -92,46 +92,71 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'DM Sans', sans-serif;
-    @apply tracking-tight;
+  /* Serif for headlines - Sarvam style */
+  h1, h2, h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    @apply font-normal;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer components {
-  /* Announcement banner - Sarvam orange */
-  .banner-gradient {
-    background: linear-gradient(
-      90deg,
-      hsl(18 85% 52%) 0%,
-      hsl(24 80% 48%) 100%
-    );
+  /* Rounded announcement banner like Sarvam */
+  .banner-sarvam {
+    @apply rounded-full mx-4 lg:mx-8;
+    background: hsl(15 75% 45%);
   }
 
-  /* Pill button style */
-  .pill-button {
-    @apply px-5 py-2.5 rounded-full font-medium transition-all duration-200;
+  /* Button styles matching Sarvam */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-medium transition-all;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 
-  .pill-button-primary {
-    @apply pill-button bg-primary text-primary-foreground hover:opacity-90;
+  .btn-primary:hover {
+    opacity: 0.9;
   }
 
-  .pill-button-outline {
-    @apply pill-button border border-border bg-transparent text-foreground hover:bg-secondary;
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-medium transition-all;
+    background: transparent;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
   }
 
-  /* Feature card */
-  .feature-card {
-    @apply bg-card rounded-2xl p-8 border border-border/50;
+  .btn-outline:hover {
+    background: hsl(var(--secondary));
   }
 
-  /* Icon container */
-  .icon-circle {
-    @apply w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center;
+  /* Feature card with dotted corner decoration like Sarvam */
+  .sarvam-card {
+    @apply relative bg-card rounded-2xl p-8 lg:p-10;
+    position: relative;
+  }
+
+  .sarvam-card::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 60px;
+    height: 120px;
+    background-image: radial-gradient(circle, hsl(var(--border)) 2px, transparent 2px);
+    background-size: 12px 12px;
+    opacity: 0.6;
+  }
+
+  /* Icon container - beige/taupe like Sarvam */
+  .icon-sarvam {
+    @apply w-14 h-14 rounded-full flex items-center justify-center;
+    background: hsl(30 15% 85%);
   }
 
   /* Section spacing */
@@ -139,15 +164,9 @@
     @apply py-20 lg:py-28;
   }
 
-  /* Subtle decorative dots pattern */
-  .dots-pattern {
-    background-image: radial-gradient(hsl(var(--border)) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Decorative asterisk style */
+  .decorative-asterisk {
+    @apply text-muted-foreground/30 text-2xl select-none;
+    font-family: serif;
   }
 }

@@ -1,19 +1,19 @@
 const footerLinks = {
   Product: ["Voice Agent", "Orchestrator", "Insights", "API Docs"],
-  Solutions: ["BFSI", "E-commerce", "Logistics", "SaaS"],
+  Solutions: ["BFSI", "E-commerce", "Logistics", "Healthcare"],
   Resources: ["Blog", "Case Studies", "Documentation", "Changelog"],
   Company: ["About", "Careers", "Contact", "Press"],
 };
 
 export const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-background border-t border-border">
       <div className="container mx-auto py-12 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-lg font-bold text-foreground">
-              CognixAI Labs
+            <span className="text-lg font-medium text-foreground">
+              cognixai
             </span>
             <p className="text-sm text-muted-foreground mt-3">
               Made in India · Serving global enterprises
@@ -23,7 +23,7 @@ export const Footer = () => {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-sm font-semibold text-foreground mb-4">
+              <h4 className="text-xs font-medium tracking-wider text-muted-foreground mb-4 uppercase">
                 {category}
               </h4>
               <ul className="space-y-2.5">
@@ -31,7 +31,7 @@ export const Footer = () => {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-foreground hover:text-primary transition-colors"
                     >
                       {link}
                     </a>
