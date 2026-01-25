@@ -14,6 +14,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <div className="section-gradient-separator" />
         <FoundationalSection />
         <ProductSection />
         <BuildSection />
