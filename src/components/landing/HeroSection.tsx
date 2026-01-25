@@ -27,9 +27,9 @@ export const HeroSection = () => {
       }} className="max-w-4xl mx-auto text-center">
           {/* Main Headline - Serif font like Sarvam */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
-            Building the voice AI layer
+            Building the foundation for
             <br />
-            for enterprise calls
+            AI-driven business automation
           </h1>
 
           {/* Subheadline */}
