@@ -219,18 +219,18 @@
 
   .foundational-section-bg::before {
     background: 
-      radial-gradient(circle at 20% 30%, hsl(30 35% 80% / 0.8) 0%, transparent 50%),
-      radial-gradient(circle at 80% 40%, hsl(25 40% 75% / 0.7) 0%, transparent 45%),
-      radial-gradient(circle at 60% 80%, hsl(35 30% 82% / 0.6) 0%, transparent 40%);
+      radial-gradient(circle at 20% 30%, hsl(30 30% 85% / 0.6) 0%, transparent 50%),
+      radial-gradient(circle at 80% 40%, hsl(35 28% 82% / 0.5) 0%, transparent 45%),
+      radial-gradient(circle at 60% 80%, hsl(35 30% 85% / 0.4) 0%, transparent 40%);
     filter: blur(80px);
     animation: smoke-move-1 12s ease-in-out infinite;
   }
 
   .foundational-section-bg::after {
     background: 
-      radial-gradient(circle at 70% 20%, hsl(40 25% 78% / 0.7) 0%, transparent 45%),
-      radial-gradient(circle at 30% 70%, hsl(28 35% 76% / 0.6) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(32 30% 80% / 0.5) 0%, transparent 40%);
+      radial-gradient(circle at 70% 20%, hsl(40 25% 84% / 0.5) 0%, transparent 45%),
+      radial-gradient(circle at 30% 70%, hsl(30 30% 83% / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(35 28% 86% / 0.3) 0%, transparent 40%);
     filter: blur(100px);
     animation: smoke-move-2 15s ease-in-out infinite;
   }
@@ -300,21 +300,14 @@
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(35 20% 96%) 30%,
-      hsl(35 28% 92%) 60%,
+      hsl(35 25% 95%) 40%,
       hsl(35 30% 88%) 100%
     );
     overflow: hidden;
   }
 
   .section-gradient-separator::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse 80% 60% at 30% 70%, hsl(30 30% 85% / 0.5) 0%, transparent 60%),
-      radial-gradient(ellipse 70% 50% at 70% 80%, hsl(35 25% 82% / 0.4) 0%, transparent 50%);
-    filter: blur(50px);
+    display: none;
   }
 
   /* Horizontal scrolling marquee */
