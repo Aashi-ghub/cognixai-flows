@@ -203,24 +203,10 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background - warm olive tone */
+  /* Foundational section background - warm olive tone matching reference */
   .foundational-section-bg {
     position: relative;
-    background: #7a7656;
-  }
-
-  .foundational-section-bg::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
-    background: 
-      radial-gradient(ellipse 80% 100% at 30% 100%, hsl(50 15% 40% / 0.4) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 80% at 70% 100%, hsl(45 12% 45% / 0.3) 0%, transparent 50%);
-    filter: blur(40px);
-    pointer-events: none;
+    background: #7d7a5b;
   }
 
   /* Foundational card with vertical dotted decoration like Sarvam */
@@ -288,21 +274,10 @@
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(50 12% 75%) 30%,
-      hsl(50 12% 60%) 70%,
-      #7a7656 100%
+      #c4c2a8 30%,
+      #a09d7c 60%,
+      #7d7a5b 100%
     );
-    overflow: hidden;
-  }
-
-  .section-gradient-separator::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(50 15% 45% / 0.4) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(45 12% 50% / 0.3) 0%, transparent 60%);
-    filter: blur(40px);
   }
 
   /* Section gradient separator - flows out of foundational section */
@@ -311,22 +286,11 @@
     height: 200px;
     background: linear-gradient(
       to bottom,
-      #7a7656 0%,
-      hsl(50 12% 60%) 30%,
-      hsl(50 12% 75%) 70%,
+      #7d7a5b 0%,
+      #a09d7c 40%,
+      #c4c2a8 70%,
       hsl(0 0% 100%) 100%
     );
-    overflow: hidden;
-  }
-
-  .section-gradient-separator-bottom::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse 80% 50% at 20% 0%, hsl(50 15% 45% / 0.4) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 20%, hsl(45 12% 50% / 0.3) 0%, transparent 60%);
-    filter: blur(40px);
   }
 
   /* Horizontal scrolling marquee */
