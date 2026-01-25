@@ -203,13 +203,14 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background - green gradient */
+  /* Foundational section background with gradient separators */
   .foundational-section-bg {
     background: linear-gradient(
       to bottom,
-      hsl(114 15% 92%) 0%,
-      hsl(114 12% 93%) 50%,
-      hsl(114 10% 94%) 100%
+      hsl(0 0% 100%) 0%,
+      #e1e4e0 8%,
+      #e1e4e0 92%,
+      hsl(0 0% 100%) 100%
     );
   }
 
