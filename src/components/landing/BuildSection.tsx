@@ -48,19 +48,19 @@ export const BuildSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {/* Code Window */}
-            <div className="relative bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
+            <div className="relative bg-card rounded-xl border border-border shadow-lg overflow-hidden max-w-md ml-auto">
               {/* Window Header */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/50">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
+              <div className="flex items-center gap-2 px-3 py-2 border-b border-border bg-muted/50">
+                <div className="flex items-center gap-1">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                 </div>
                 <span className="text-xs text-muted-foreground ml-2">cognix.js</span>
               </div>
               
               {/* Code Content */}
-              <div className="p-6 font-mono text-sm">
+              <div className="p-4 font-mono text-xs">
                 <div className="text-muted-foreground">
                   <span className="text-primary">import</span>{" "}
                   <span className="text-foreground">{"{ CognixAI }"}</span>{" "}
