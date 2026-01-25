@@ -203,18 +203,10 @@
     background: hsl(var(--secondary));
   }
 
-  /* Foundational section background with gradient separators */
+  /* Foundational section background - solid color, separators handle transitions */
   .foundational-section-bg {
     position: relative;
-    background: linear-gradient(
-      to bottom,
-      hsl(114 15% 92%) 0%,
-      hsl(114 12% 70%) 5%,
-      #768675 15%,
-      #768675 85%,
-      hsl(114 12% 70%) 95%,
-      hsl(114 15% 92%) 100%
-    );
+    background: #768675;
   }
 
   .foundational-section-bg::after {
@@ -289,17 +281,16 @@
     font-family: serif;
   }
 
-  /* Section gradient separator - green gradient blur like theme */
+  /* Section gradient separator - flows into foundational section */
   .section-gradient-separator {
     position: relative;
     height: 200px;
     background: linear-gradient(
       to bottom,
       hsl(0 0% 100%) 0%,
-      hsl(114 20% 95%) 20%,
-      hsl(114 15% 92%) 50%,
-      hsl(114 12% 93%) 80%,
-      hsl(114 15% 92%) 100%
+      hsl(114 12% 85%) 30%,
+      hsl(114 12% 70%) 70%,
+      #768675 100%
     );
     overflow: hidden;
   }
@@ -309,8 +300,32 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(114 20% 82% / 0.6) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(114 15% 85% / 0.5) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(114 12% 55% / 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(114 10% 60% / 0.3) 0%, transparent 60%);
+    filter: blur(40px);
+  }
+
+  /* Section gradient separator - flows out of foundational section */
+  .section-gradient-separator-bottom {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(
+      to bottom,
+      #768675 0%,
+      hsl(114 12% 70%) 30%,
+      hsl(114 12% 85%) 70%,
+      hsl(0 0% 100%) 100%
+    );
+    overflow: hidden;
+  }
+
+  .section-gradient-separator-bottom::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 50% at 20% 0%, hsl(114 12% 55% / 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, hsl(114 10% 60% / 0.3) 0%, transparent 60%);
     filter: blur(40px);
   }
 
