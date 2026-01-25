@@ -107,18 +107,60 @@
 }
 
 @layer components {
-  /* Animated gradient background - green and orange shades */
+  /* Animated smoke/blob gradient - green and orange shades */
   .gradient-animated {
-    background: linear-gradient(
-      -45deg,
-      hsl(62 28% 25%),
-      hsl(30 45% 45%),
-      hsl(80 25% 30%),
-      hsl(25 50% 50%),
-      hsl(62 28% 25%)
-    );
-    background-size: 400% 400%;
-    animation: gradient-shift 15s ease infinite;
+    position: relative;
+    background: hsl(62 20% 22%);
+    overflow: hidden;
+  }
+
+  .gradient-animated::before,
+  .gradient-animated::after {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    opacity: 0.8;
+    filter: blur(80px);
+  }
+
+  .gradient-animated::before {
+    background: 
+      radial-gradient(circle at 30% 20%, hsl(30 50% 50%) 0%, transparent 50%),
+      radial-gradient(circle at 70% 60%, hsl(80 25% 35%) 0%, transparent 45%),
+      radial-gradient(circle at 40% 80%, hsl(25 55% 45%) 0%, transparent 40%);
+    animation: smoke-move-1 12s ease-in-out infinite;
+  }
+
+  .gradient-animated::after {
+    background: 
+      radial-gradient(circle at 60% 30%, hsl(62 30% 30%) 0%, transparent 45%),
+      radial-gradient(circle at 20% 70%, hsl(35 45% 48%) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(90 20% 28%) 0%, transparent 40%);
+    animation: smoke-move-2 15s ease-in-out infinite;
+  }
+
+  @keyframes smoke-move-1 {
+    0%, 100% {
+      transform: translate(0%, 0%) rotate(0deg) scale(1);
+    }
+    33% {
+      transform: translate(10%, -10%) rotate(120deg) scale(1.1);
+    }
+    66% {
+      transform: translate(-10%, 10%) rotate(240deg) scale(0.95);
+    }
+  }
+
+  @keyframes smoke-move-2 {
+    0%, 100% {
+      transform: translate(0%, 0%) rotate(0deg) scale(1.05);
+    }
+    33% {
+      transform: translate(-15%, 5%) rotate(-120deg) scale(1);
+    }
+    66% {
+      transform: translate(10%, -5%) rotate(-240deg) scale(1.1);
+    }
   }
 
   @keyframes gradient-shift {

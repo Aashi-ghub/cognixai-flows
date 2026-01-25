@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export const CTASection = () => {
   return (
     <section className="gradient-animated py-24 lg:py-32 rounded-3xl mx-4 lg:mx-8 mb-8">
-      <div className="container mx-auto">
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
