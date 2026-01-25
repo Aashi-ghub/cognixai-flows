@@ -175,9 +175,8 @@
     }
   }
 
-  /* Rounded announcement banner like Sarvam */
+  /* Announcement banner - no rounding, parent handles it */
   .banner-sarvam {
-    @apply rounded-full mx-4 lg:mx-8;
     background: hsl(var(--primary));
   }
 
