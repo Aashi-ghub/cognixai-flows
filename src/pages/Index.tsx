@@ -16,6 +16,7 @@ const Index = () => {
         <HeroSection />
         <div className="section-gradient-separator" />
         <FoundationalSection />
+        <div className="section-gradient-separator-bottom" />
         <ProductSection />
         <BuildSection />
         <IndustriesSection />
