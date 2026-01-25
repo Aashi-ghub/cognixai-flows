@@ -208,12 +208,12 @@
     position: relative;
     background: linear-gradient(
       to bottom,
-      hsl(114 15% 92%) 0%,
-      hsl(114 12% 70%) 5%,
-      #768675 15%,
-      #768675 85%,
-      hsl(114 12% 70%) 95%,
-      hsl(114 15% 92%) 100%
+      hsl(0 0% 85%) 0%,
+      hsl(0 0% 50%) 5%,
+      hsl(0 0% 25%) 15%,
+      hsl(0 0% 25%) 85%,
+      hsl(0 0% 50%) 95%,
+      hsl(0 0% 85%) 100%
     );
   }
 
@@ -225,8 +225,8 @@
     right: 0;
     height: 120px;
     background: 
-      radial-gradient(ellipse 80% 100% at 30% 100%, hsl(114 15% 60% / 0.4) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 80% at 70% 100%, hsl(114 12% 65% / 0.3) 0%, transparent 50%);
+      radial-gradient(ellipse 80% 100% at 30% 100%, hsl(0 0% 35% / 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 70% 100%, hsl(0 0% 40% / 0.3) 0%, transparent 50%);
     filter: blur(40px);
     pointer-events: none;
   }
