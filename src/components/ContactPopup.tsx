@@ -3,11 +3,16 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { User, Mail, Phone, Building2, Sparkles, CheckCircle2 } from "lucide-react";
+import { User, Mail, Phone, Building2, Sparkles, CheckCircle2, Loader2 } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { submitConsultationRequest } from "@/lib/api/consultation";
+import { getCompanies } from "@/lib/api/companies";
+import { toast } from "@/hooks/use-toast";
 
 export const ContactPopup = () => {
   const { isOpen, openPopup, closePopup } = useContactPopup();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [companies, setCompanies] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,6 +21,9 @@ export const ContactPopup = () => {
   });
 
   useEffect(() => {
+    // Load companies for autocomplete
+    getCompanies().then(setCompanies).catch(console.error);
+
     // Check if popup was already dismissed
     const dismissed = localStorage.getItem("contactPopupDismissed");
     if (dismissed) {
@@ -42,19 +50,63 @@ export const ContactPopup = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // You can add API call here
-    closePopup();
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-    });
+    
+    // Validate that at least email or phone is provided
+    if (!formData.email?.trim() && !formData.phone?.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please provide either an email or phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Submit to consultation_requests table
+      const result = await submitConsultationRequest({
+        name: formData.name,
+        email: formData.email || undefined,
+        phone: formData.phone || undefined,
+        contact: formData.email || formData.phone || undefined, // Legacy field
+        company: formData.company || undefined,
+        goal: "Contact form submission from popup",
+      });
+
+      if (result.ok) {
+        toast({
+          title: "Thank you! 🎉",
+          description: "We've received your request and will get back to you soon.",
+        });
+        
+        // Close popup and reset form
+        closePopup();
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+        });
+      } else {
+        toast({
+          title: "Submission failed",
+          description: result.error || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: error?.message || "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,7 +192,6 @@ export const ContactPopup = () => {
                   placeholder="your.email@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                   className="pl-4 h-11 border-2 focus:border-primary transition-colors"
                 />
               </div>
@@ -160,10 +211,12 @@ export const ContactPopup = () => {
                   placeholder="+1 [V] Phone number"
                   value={formData.phone}
                   onChange={handleChange}
-                  required
                   className="pl-4 h-11 border-2 focus:border-primary transition-colors"
                 />
               </div>
+              <p className="text-xs text-muted-foreground">
+                * At least one contact method (email or phone) is required
+              </p>
             </div>
 
             {/* Company Field */}
@@ -180,8 +233,16 @@ export const ContactPopup = () => {
                   placeholder="Search company"
                   value={formData.company}
                   onChange={handleChange}
+                  list="company-list"
                   className="pl-4 h-11 border-2 focus:border-primary transition-colors"
                 />
+                {companies.length > 0 && (
+                  <datalist id="company-list">
+                    {companies.map((company) => (
+                      <option key={company} value={company} />
+                    ))}
+                  </datalist>
+                )}
               </div>
             </div>
 
@@ -193,11 +254,21 @@ export const ContactPopup = () => {
             {/* Submit Button */}
             <Button 
               type="submit" 
+              disabled={isSubmitting}
               className="w-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200" 
               size="lg"
             >
-              <CheckCircle2 className="w-5 h-5 mr-2" />
-              Submit
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <CheckCircle2 className="w-5 h-5 mr-2" />
+                  Submit
+                </>
+              )}
             </Button>
 
             {/* Trust Indicator */}
