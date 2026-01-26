@@ -1,5 +1,5 @@
 const footerLinks = {
-  Product: ["GWM-1", "Voice Agents", "Orchestrator", "Insights"],
+  Product: ["Call Agent", "Hiring Agent", "AutoQuote AI", "Sales Agent", "Orchestrator", "Insights"],
   Initiatives: ["AI Summit 2026", "Studios", "Research Lab"],
   Company: ["Our Research", "Publications", "Blog", "Careers"],
   "Get Started": ["For Enterprises", "For Startups", "Documentation"],
@@ -13,9 +13,12 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-lg font-medium text-white">
-              cognixai
-            </span>
+            <div className="flex items-center gap-2">
+              <img src="/favicon-dark.png" alt="CognixAI Labs" className="h-6 w-auto" />
+              <span className="text-lg font-medium text-white">
+                CognixAI Labs
+              </span>
+            </div>
           </div>
 
           {/* Link Columns */}

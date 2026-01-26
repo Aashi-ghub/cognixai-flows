@@ -2,55 +2,142 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { motion } from "framer-motion";
-import { Phone, Headphones, TrendingUp, Settings, Users, Shield, ArrowRight } from "lucide-react";
+import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { 
+  Workflow, 
+  BarChart3, 
+  MessageSquare, 
+  Lightbulb, 
+  Cpu, 
+  Database, 
+  Layout,
+  CheckCircle2
+} from "lucide-react";
+
+const stats = [
+  { value: "7+", label: "Core Service Lines" },
+  { value: "200+", label: "Automations Shipped" },
+  { value: "40%", label: "Avg. Cost Reduction" },
+  { value: "6–8 wks", label: "Typical Delivery" },
+];
 
 const services = [
   {
-    icon: Phone,
-    title: "Voice AI Deployment",
-    description: "End-to-end deployment of custom voice agents tailored to your business needs. From design to launch, we handle everything.",
-    features: ["Custom Voice Design", "Multi-language Setup", "Integration Support", "Training & Handoff"],
+    icon: Workflow,
+    title: "Workflow Automation",
+    description: "Eliminate repetitive manual tasks across campaigns, sales, and operations. We design automations for data entry, approvals, reporting, and notifications—so your team spends less time on routine work and more on results.",
+    highlight: "Eliminate 90% of Manual Work",
+    features: [
+      "CRM and sales pipeline sync",
+      "Scheduled email/campaign automation",
+      "Real-time data extraction and update bots",
+      "Integration with Zapier, Make, n8n, and custom APIs"
+    ],
+    examples: ["Data entry automation", "Approval workflows", "Report generation"],
+    platforms: ["Gmail / Microsoft 365", "HubSpot / Salesforce", "Slack / Teams"],
+    industries: ["Agencies and B2B Services", "E‑commerce and Retail", "Startups and SMBs"],
   },
   {
-    icon: Headphones,
-    title: "Customer Support Automation",
-    description: "Transform your support operations with AI agents that resolve queries instantly, 24/7, while maintaining the human touch.",
-    features: ["24/7 Availability", "Ticket Resolution", "Escalation Workflows", "Satisfaction Tracking"],
+    icon: BarChart3,
+    title: "AI-Driven Reporting & Analytics",
+    description: "Transform raw data into actionable insights. Our AI-powered pipelines automate report creation, consolidate data across platforms, and deliver smart dashboards—helping you track KPIs and identify opportunities instantly.",
+    highlight: "Turn Data Into Insights Instantly",
+    features: [
+      "Automated cross-platform reports",
+      "Smart alerting and anomaly detection",
+      "Custom interactive dashboards",
+      "Data visualization and export"
+    ],
+    examples: ["KPI dashboards", "Anomaly detection", "Cross-platform analytics"],
+    platforms: ["BigQuery / Snowflake / PostgreSQL", "Looker / Power BI / Metabase", "Segment / GA4"],
+    industries: ["Marketing and Growth", "Product and Operations", "E‑commerce and Retail"],
   },
   {
-    icon: TrendingUp,
-    title: "Sales & Collections",
-    description: "Boost revenue with AI-powered outbound calling. Automate lead qualification, follow-ups, and payment reminders.",
-    features: ["Lead Qualification", "Payment Reminders", "Follow-up Sequences", "Performance Analytics"],
+    icon: MessageSquare,
+    title: "Chatbot Solutions",
+    description: "Increase engagement and automate customer conversations. We build chatbots for websites, CRMs, and messaging apps to qualify leads, answer FAQs, and provide instant support—24/7.",
+    highlight: "Automate Your Lead Conversations",
+    features: [
+      "AI chatbot setup (OpenAI, Dialogflow, Rasa, etc.)",
+      "Lead qualification and scheduling",
+      "Support and onboarding flows",
+      "Custom integration with existing tools"
+    ],
+    examples: ["Lead qualification", "FAQ automation", "Support chatbots"],
+    platforms: ["Web / WhatsApp / Messenger", "HubSpot / Intercom / Zendesk", "Slack / Teams"],
+    industries: ["Agencies", "Customer Support", "SaaS and B2B"],
   },
   {
-    icon: Settings,
-    title: "System Integration",
-    description: "Connect CognixAI with your existing tech stack. Deep integrations with leading ERPs, CRMs, and business tools.",
-    features: ["ERP Integration", "CRM Sync", "API Development", "Data Migration"],
+    icon: Lightbulb,
+    title: "Consulting & Automation Strategy",
+    description: "Not sure where to start? Our experts audit your workflows, uncover automation gaps, and map an ROI-focused plan using industry best practices.",
+    highlight: "Get Your Free Automation Roadmap",
+    features: [
+      "Automation opportunity assessment",
+      "Workflow audits and process mapping",
+      "Implementation roadmaps",
+      "Proof-of-concept demos"
+    ],
+    examples: ["Process audits", "ROI analysis", "Implementation planning"],
+    platforms: ["OpenAI / Anthropic / Azure AI", "LangChain / LlamaIndex", "Vector DBs (Pinecone, pgvector)"],
+    industries: ["SaaS and B2B", "Consumer Apps", "Enterprise IT"],
   },
   {
-    icon: Users,
-    title: "Managed Services",
-    description: "Let our experts manage and optimize your voice AI operations. Focus on your business while we handle the technology.",
-    features: ["Dedicated Support", "Performance Monitoring", "Continuous Optimization", "Monthly Reviews"],
+    icon: Cpu,
+    title: "AI-Powered IoT Solutions",
+    description: "Connect and automate industrial systems with AI-powered IoT solutions, PLC programming, and Energy Management Systems (EMS). We design, program, and deploy intelligent IoT solutions that leverage AI for real-time monitoring, predictive analytics, control, and optimization of manufacturing processes and energy consumption.",
+    highlight: "Optimize Your Systems With AI IoT",
+    features: [
+      "AI-powered IoT solutions and intelligent automation",
+      "PLC programming and integration (Siemens, Allen-Bradley, etc.)",
+      "Energy Management Systems (EMS) design and implementation",
+      "Sensor networks and data acquisition systems",
+      "Real-time monitoring dashboards and SCADA systems",
+      "Predictive maintenance and AI-driven analytics"
+    ],
+    technologies: ["PLCs (Siemens, Allen-Bradley)", "EMS & Smart Meters", "IoT Sensors & Gateways", "SCADA Systems", "MQTT / Modbus / OPC-UA"],
+    industries: ["Manufacturing", "Energy & Utilities", "Smart Buildings", "Agriculture & Smart Farming"],
   },
   {
-    icon: Shield,
-    title: "Enterprise Consulting",
-    description: "Strategic guidance on implementing voice AI at scale. Our experts help you navigate the journey from pilot to production.",
-    features: ["Strategy Planning", "ROI Analysis", "Change Management", "Compliance Advisory"],
+    icon: Database,
+    title: "ERP & CRM Development",
+    description: "Build custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems tailored to your business needs. We develop comprehensive solutions that streamline operations, improve customer relationships, and provide real-time insights across your organization.",
+    highlight: "Build a Custom ERP/CRM for Your Team",
+    features: [
+      "Custom ERP system development and integration",
+      "CRM platform design and implementation",
+      "Multi-module business management systems",
+      "Data migration and system integration",
+      "User training and ongoing support"
+    ],
+    capabilities: ["Inventory Management", "Sales & Order Processing", "Financial Management", "HR & Payroll Systems", "Reporting & Analytics"],
+    industries: ["Manufacturing", "Retail & E-commerce", "Professional Services", "Healthcare"],
   },
-];
-
-const processSteps = [
-  { step: "01", title: "Discovery", description: "We understand your business needs and define success metrics." },
-  { step: "02", title: "Design", description: "Our team designs custom voice flows and integrations." },
-  { step: "03", title: "Deploy", description: "Seamless deployment with thorough testing and validation." },
-  { step: "04", title: "Optimize", description: "Continuous monitoring and improvement based on real data." },
+  {
+    icon: Layout,
+    title: "Landing Pages & Conversion Optimization",
+    description: "Build high-converting landing pages using proven frameworks and conversion optimization techniques. We create fast, mobile-first pages that turn visitors into customers with strategic design, persuasive copywriting, and data-driven optimization.",
+    highlight: "Boost Your Page Conversions",
+    features: [
+      "Conversion-focused landing page design",
+      "A/B testing and conversion rate optimization (CRO)",
+      "SEO-optimized, fast-loading pages",
+      "Analytics integration and performance tracking",
+      "Proven frameworks (Unbounce, Instapage, custom builds)"
+    ],
+    techniques: ["Conversion-Focused Design", "Persuasive Copywriting", "Social Proof & Testimonials", "Mobile-First Approach", "Speed & Performance"],
+    useCases: ["Lead Generation", "Product Launches", "Sales Funnels", "E-commerce", "Event Registration"],
+  },
 ];
 
 const Services = () => {
+  const { openPopup } = useContactPopup();
+
+  const handleConsultationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    openPopup();
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -62,105 +149,239 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto text-center"
+              className="max-w-4xl mx-auto text-center"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
                 Our Services
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                From strategy to implementation, we partner with enterprises to transform their voice operations with AI-powered automation.
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Bespoke AI Automation for Agencies & Businesses
               </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+                CognixAI Labs delivers tailor-made automation solutions to help marketing agencies, startups, and business teams scale faster, reduce manual workload, and unlock new growth. We blend the speed of AI with proven consulting to accelerate your operations.
+              </p>
+              <a
+                href="#"
+                onClick={handleConsultationClick}
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Book Free Consultation
+              </a>
             </motion.div>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 bg-background">
+        {/* Stats Section */}
+        <section className="py-12 bg-card border-y border-border">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
                 <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="foundational-card group hover:border-primary transition-colors"
-                >
-                  <div className="card-dots" />
-                  
-                  <div className="icon-sarvam mb-6">
-                    <service.icon className="w-7 h-7 text-foreground" />
-                  </div>
-
-                  <h3 className="text-xl font-serif text-foreground mb-3">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="section-gradient-separator" />
-        <section className="py-20 foundational-section-bg">
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-                Our Process
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                A proven methodology to ensure successful voice AI implementation
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.step}
+                  key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <span className="text-5xl font-serif text-primary/30 block mb-4">
-                    {step.step}
-                  </span>
-                  <h3 className="text-xl font-serif text-foreground mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {step.description}
-                  </p>
-                  {index < processSteps.length - 1 && (
-                    <ArrowRight className="w-6 h-6 text-muted-foreground/30 mx-auto mt-6 hidden lg:block" />
-                  )}
+                  <div className="text-3xl md:text-4xl font-serif text-primary mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
-        <section className="section-gradient-separator-bottom" />
+
+        {/* Services Detail Section */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="space-y-32">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+                >
+                  {/* Left Column - Content */}
+                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="icon-sarvam">
+                        <service.icon className="w-6 h-6 text-foreground" />
+                      </div>
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.1]">
+                        {service.title}
+                      </h2>
+                    </div>
+                    
+                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {service.highlight && (
+                      <div className="mb-6">
+                        <span className="text-base font-semibold text-primary">
+                          {service.highlight}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Features */}
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3 text-sm text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Right Column - Details */}
+                  <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                    <div className="foundational-card">
+                      <div className="card-dots" />
+                      
+                      {/* Examples, Platforms, Industries */}
+                      {service.examples && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Examples
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {service.examples.map((example) => (
+                              <span
+                                key={example}
+                                className="px-3 py-1.5 text-xs bg-secondary border border-border rounded-full text-foreground"
+                              >
+                                {example}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.platforms && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Platforms
+                          </h4>
+                          <div className="space-y-2">
+                            {service.platforms.map((platform) => (
+                              <div
+                                key={platform}
+                                className="text-sm text-foreground"
+                              >
+                                {platform}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.technologies && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Technologies
+                          </h4>
+                          <div className="space-y-2">
+                            {service.technologies.map((tech) => (
+                              <div
+                                key={tech}
+                                className="text-sm text-foreground"
+                              >
+                                {tech}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.capabilities && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Capabilities
+                          </h4>
+                          <div className="space-y-2">
+                            {service.capabilities.map((capability) => (
+                              <div
+                                key={capability}
+                                className="text-sm text-foreground"
+                              >
+                                {capability}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.techniques && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Techniques
+                          </h4>
+                          <div className="space-y-2">
+                            {service.techniques.map((technique) => (
+                              <div
+                                key={technique}
+                                className="text-sm text-foreground"
+                              >
+                                {technique}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.useCases && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Use Cases
+                          </h4>
+                          <div className="space-y-2">
+                            {service.useCases.map((useCase) => (
+                              <div
+                                key={useCase}
+                                className="text-sm text-foreground"
+                              >
+                                {useCase}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {service.industries && (
+                        <div>
+                          <h4 className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+                            Industries
+                          </h4>
+                          <div className="space-y-2">
+                            {service.industries.map((industry) => (
+                              <div
+                                key={industry}
+                                className="text-sm text-foreground"
+                              >
+                                {industry}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         <CTASection />
       </main>

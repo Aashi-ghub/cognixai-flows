@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useContactPopup } from "@/contexts/ContactPopupContext";
 
 export const BuildSection = () => {
+  const { openPopup } = useContactPopup();
+
+  const handleAuditClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    openPopup();
+  };
+
   return (
     <section className="section-padding bg-background">
       <div className="container mx-auto">
@@ -15,26 +23,27 @@ export const BuildSection = () => {
             className="max-w-lg"
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-              Build with CognixAI
+              Build with CognixAI Labs
             </h2>
 
             <p className="text-lg text-muted-foreground mb-10">
-              Create your own AI-powered voice agents and applications with CognixAI Models
+              Create your own AI-powered voice agents and applications with CognixAI Labs Models
             </p>
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-6">
               <a
                 href="#"
+                onClick={handleAuditClick}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                GET STARTED
+                Get a Free Automation Audit
               </a>
               <a
-                href="#"
+                href="/products"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
               >
-                Read Docs
+                See Real Use Cases
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -56,7 +65,7 @@ export const BuildSection = () => {
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
                   <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                 </div>
-                <span className="text-xs text-muted-foreground ml-2">cognix.js</span>
+                <span className="text-xs text-muted-foreground ml-2">cognixai-labs.js</span>
               </div>
               
               {/* Code Content */}
@@ -65,7 +74,7 @@ export const BuildSection = () => {
                   <span className="text-primary">import</span>{" "}
                   <span className="text-foreground">{"{ CognixAI }"}</span>{" "}
                   <span className="text-primary">from</span>{" "}
-                  <span className="text-amber-600">"cognixai"</span>;
+                  <span className="text-amber-600">"@cognixai-labs/sdk"</span>;
                 </div>
                 <br />
                 <div className="text-muted-foreground">

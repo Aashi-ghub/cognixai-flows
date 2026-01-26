@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
+import { useContactPopup } from "@/contexts/ContactPopupContext";
 
 // AI services marquee items
 const services = ["Voice Agent", "Call Orchestrator", "Workflow Automation", "Smart Analytics", "Intent Recognition", "Speech Synthesis", "Conversation AI", "Process Intelligence"];
 export const HeroSection = () => {
+  const { openPopup } = useContactPopup();
+
+  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    openPopup();
+  };
+
   return <section className="pt-44 pb-16 bg-background relative">
       {/* Decorative asterisks on sides */}
       <div className="absolute left-8 lg:left-16 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-4">
@@ -37,10 +45,10 @@ export const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a href="#" className="btn-primary">Explore ✦
+            <a href="/products" className="btn-primary">Explore ✦
             </a>
-            <a href="#" className="btn-outline">
-              REQUEST A DEMO
+            <a href="#" onClick={handleDemoClick} className="btn-outline">
+              GET A FREE DEMO 
             </a>
           </div>
         </motion.div>

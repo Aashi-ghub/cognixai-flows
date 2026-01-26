@@ -6,8 +6,23 @@ import productInsights from "@/assets/product-insights.png";
 const products = [
   {
     image: productVoiceAgent,
-    name: "Cognix Voice Agent",
-    description: "Handles real inbound and outbound calls for support, collections, and sales.",
+    name: "Call Agent",
+    description: "Automate outbound and inbound calls with human-like voice AI. Handles scheduling, reminders, lead qualification, and feedback collection.",
+  },
+  {
+    image: productOrchestrator,
+    name: "Hiring Agent",
+    description: "AI-driven recruiter that screens, evaluates, and shortlists candidates automatically. Reads resumes, ranks talent, and conducts structured pre-screening interviews.",
+  },
+  {
+    image: productInsights,
+    name: "AutoQuote AI",
+    description: "Automate quote generation from inquiries, instantly and accurately. Extracts customer requirements, applies pricing logic, and generates ready-to-send quotes in seconds.",
+  },
+  {
+    image: productVoiceAgent,
+    name: "Sales Agent",
+    description: "Your AI-powered closer that engages leads, follows up, and books meetings automatically. Personalizes outreach, nurtures prospects, and syncs updates directly into your CRM.",
   },
   {
     image: productOrchestrator,
@@ -34,12 +49,12 @@ export const ProductSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground">
-            CognixAI Product Suite
+            CognixAI Labs Product Suite
           </h2>
         </motion.div>
 
         {/* Product Cards - Full Image Style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product, index) => (
             <motion.div
               key={product.name}
