@@ -3,7 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Building2, ArrowRight, Loader2, X, User } from "lucide-react";
+import { Mail, Phone, Building2, ArrowRight, Loader2, User } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { submitConsultationRequest } from "@/lib/api/consultation";
 import { getCompanies } from "@/lib/api/companies";
@@ -117,43 +117,35 @@ export const ContactPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="w-[95vw] max-w-[900px] p-0 overflow-hidden bg-background border-0 shadow-2xl">
-        <div className="grid md:grid-cols-2 min-h-[500px]">
+      <DialogContent className="w-[95vw] max-w-[900px] p-0 overflow-hidden bg-background border-0 shadow-2xl max-h-[95vh] md:max-h-[90vh]">
+        <div className="grid md:grid-cols-2 max-h-[95vh] md:max-h-[90vh]">
           {/* Left Side - Form */}
-          <div className="p-8 md:p-10 flex flex-col justify-center relative">
-            {/* Close button */}
-            <button 
-              onClick={() => closePopup()}
-              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full hover:bg-muted transition-colors"
-            >
-              <X className="w-5 h-5 text-muted-foreground" />
-            </button>
-
+          <div className="p-5 sm:p-6 md:p-8 flex flex-col justify-start md:justify-center overflow-y-auto">
             {/* Logo/Brand */}
-            <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 bg-foreground rounded flex items-center justify-center">
-                <span className="text-background font-bold text-sm">C</span>
+            <div className="flex items-center gap-2 mb-4 md:mb-6 mt-2">
+              <div className="w-7 h-7 md:w-8 md:h-8 bg-foreground rounded flex items-center justify-center">
+                <span className="text-background font-bold text-xs md:text-sm">C</span>
               </div>
-              <span className="font-serif text-lg font-medium">CognixAI</span>
+              <span className="font-serif text-base md:text-lg font-medium">CognixAI</span>
             </div>
 
             {/* Headline */}
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground leading-tight mb-3">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground leading-tight mb-2">
               GET IN TOUCH<br />WITH US
             </h2>
-            <p className="text-muted-foreground text-sm mb-8">
+            <p className="text-muted-foreground text-xs sm:text-sm mb-4 md:mb-6">
               Let's discuss how we can help automate your business.
             </p>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Name Field */}
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium text-foreground">
+              <div className="space-y-1.5">
+                <Label htmlFor="name" className="text-xs sm:text-sm font-medium text-foreground">
                   Full Name
                 </Label>
                 <div className="relative">
-                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="name"
                     name="name"
@@ -162,18 +154,18 @@ export const ContactPopup = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="pl-11 h-12 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg"
+                    className="pl-10 h-10 sm:h-11 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg text-sm"
                   />
                 </div>
               </div>
 
               {/* Email Field */}
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium text-foreground">
+              <div className="space-y-1.5">
+                <Label htmlFor="email" className="text-xs sm:text-sm font-medium text-foreground">
                   Email Address
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="email"
                     name="email"
@@ -181,18 +173,18 @@ export const ContactPopup = () => {
                     placeholder="Enter your email address"
                     value={formData.email}
                     onChange={handleChange}
-                    className="pl-11 h-12 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg"
+                    className="pl-10 h-10 sm:h-11 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg text-sm"
                   />
                 </div>
               </div>
 
               {/* Phone Field */}
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-sm font-medium text-foreground">
+              <div className="space-y-1.5">
+                <Label htmlFor="phone" className="text-xs sm:text-sm font-medium text-foreground">
                   Phone Number
                 </Label>
                 <div className="relative">
-                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="phone"
                     name="phone"
@@ -200,21 +192,21 @@ export const ContactPopup = () => {
                     placeholder="Enter your phone number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="pl-11 h-12 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg"
+                    className="pl-10 h-10 sm:h-11 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg text-sm"
                   />
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-[10px] sm:text-xs text-muted-foreground">
                   * At least one contact method (email or phone) is required
                 </p>
               </div>
 
               {/* Company Field */}
-              <div className="space-y-2">
-                <Label htmlFor="company" className="text-sm font-medium text-foreground">
+              <div className="space-y-1.5">
+                <Label htmlFor="company" className="text-xs sm:text-sm font-medium text-foreground">
                   Company <span className="text-muted-foreground font-normal">(Optional)</span>
                 </Label>
                 <div className="relative">
-                  <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="company"
                     name="company"
@@ -223,7 +215,7 @@ export const ContactPopup = () => {
                     value={formData.company}
                     onChange={handleChange}
                     list="company-list"
-                    className="pl-11 h-12 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg"
+                    className="pl-10 h-10 sm:h-11 bg-muted/30 border-muted-foreground/20 focus:border-foreground transition-colors rounded-lg text-sm"
                   />
                   {companies.length > 0 && (
                     <datalist id="company-list">
@@ -239,23 +231,23 @@ export const ContactPopup = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-12 text-base font-medium bg-foreground text-background hover:bg-foreground/90 rounded-lg group"
+                className="w-full h-10 sm:h-11 text-sm sm:text-base font-medium bg-foreground text-background hover:bg-foreground/90 rounded-lg group"
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin" />
                     Submitting...
                   </>
                 ) : (
                   <>
                     Submit
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
               </Button>
 
               {/* Terms */}
-              <p className="text-xs text-center text-muted-foreground pt-2">
+              <p className="text-[10px] sm:text-xs text-center text-muted-foreground pt-1">
                 By submitting, you agree to our{" "}
                 <a href="/terms" className="underline hover:text-foreground">Terms of Service</a>
                 {" "}and{" "}
