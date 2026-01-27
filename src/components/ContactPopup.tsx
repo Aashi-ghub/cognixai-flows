@@ -121,17 +121,19 @@ export const ContactPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="w-[95vw] max-w-[480px] sm:max-w-[520px] p-0 overflow-hidden">
+      <DialogContent
+        className="w-[96vw] max-w-[480px] sm:max-w-[520px] p-0 overflow-hidden max-h-[90vh] sm:max-h-[85vh] flex flex-col"
+      >
         {/* Header Section with Gradient */}
-        <div className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 px-5 sm:px-6 pt-6 sm:pt-7 pb-5">
+        <div className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 px-4 sm:px-6 pt-5 sm:pt-7 pb-4 sm:pb-5">
           <div className="absolute top-4 right-4">
             <Sparkles className="w-6 h-6 text-primary-foreground/20" />
           </div>
           <DialogHeader className="relative space-y-1.5">
-            <DialogTitle className="text-2xl sm:text-2xl font-serif text-primary-foreground">
+            <DialogTitle className="text-xl sm:text-2xl font-serif text-primary-foreground">
               Get in Touch 🚀
             </DialogTitle>
-            <DialogDescription className="text-sm sm:text-[15px] text-primary-foreground/90 leading-relaxed">
+            <DialogDescription className="text-xs sm:text-[15px] text-primary-foreground/90 leading-relaxed">
               Let's discuss how we can help automate your business.
             </DialogDescription>
           </DialogHeader>
@@ -156,8 +158,8 @@ export const ContactPopup = () => {
         </div>
 
         {/* Form Section */}
-        <div className="px-4 sm:px-6 pb-5 max-h-[70vh] overflow-y-auto">
-          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-4">
+        <div className="px-4 sm:px-6 pb-4 sm:pb-5 flex-1 overflow-y-auto">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name Field */}
             <div className="space-y-1.5">
               <Label htmlFor="name" className="text-xs sm:text-sm font-semibold flex items-center gap-2">
@@ -252,10 +254,10 @@ export const ContactPopup = () => {
             </div>
 
             {/* Submit Button */}
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isSubmitting}
-              className="w-full h-10 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200" 
+              className="w-full h-10 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
               size="lg"
             >
               {isSubmitting ? (

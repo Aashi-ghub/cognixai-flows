@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useContactPopup } from "@/contexts/ContactPopupContext";
 
 export const CTASection = () => {
+  const { openPopup } = useContactPopup();
+
   return (
     <section className="gradient-animated py-24 lg:py-32 rounded-3xl mx-4 lg:mx-8 mb-8">
       <div className="container mx-auto relative z-10">
@@ -18,16 +21,20 @@ export const CTASection = () => {
           </h2>
 
           <p className="text-lg text-white/80 mb-10">
-            Join our growing team of engineers, researchers,
+            See how CognixAI Voice Agents cut your call volume 
             <br />
-            and AI specialists.
+            by 60–80% immediately.
           </p>
 
           <a 
-            href="#" 
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              openPopup();
+            }}
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-md border border-white/30 hover:bg-white/30 transition-colors"
           >
-            See careers
+            Book Live Demo
           </a>
         </motion.div>
       </div>

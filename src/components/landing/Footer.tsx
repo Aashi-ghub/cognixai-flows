@@ -3,7 +3,7 @@ import { useContactPopup } from "@/contexts/ContactPopupContext";
 const footerLinks = {
   Product: ["Call Agent", "Hiring Agent", "AutoQuote AI", "Sales Agent", "Orchestrator", "Insights"],
   Initiatives: ["AI Summit 2026"],
-  Company: ["Our Research", "Publications", "Blog"],
+  Company: ["Blog"],
   "Get Started": ["For Enterprises", "For Startups"],
   Connect: ["Press", "Partnerships", "Contact"],
 };
@@ -103,9 +103,8 @@ export const Footer = () => {
             © 2026 CognixAI Labs. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-white/40">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Security</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms</a>
           </div>
         </div>
       </div>

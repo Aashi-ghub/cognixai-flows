@@ -23,7 +23,6 @@ const navLinks = [
     hasDropdown: false,
   },
   { label: "BLOG", href: "/blog" },
-  { label: "CAREERS", href: "#careers" },
 ];
 
 export const Navbar = () => {
@@ -85,14 +84,17 @@ export const Navbar = () => {
         {/* Main Navbar - bottom layer */}
         <nav className={`border-t-0 transition-colors duration-300 ${isScrolled ? "bg-transparent" : "bg-background"}`}>
           <div className="px-6">
-            <div className="flex items-center justify-between h-14">
+            <div className="relative flex items-center justify-between h-14">
               {/* Logo - simple text like Sarvam */}
               <a href="/" className="flex items-center gap-2 text-xl font-medium text-foreground tracking-tight">
                 CognixAI Labs
               </a>
 
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center gap-8" ref={dropdownRef}>
+              {/* Desktop Navigation - centered in the viewport */}
+              <div
+                className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2"
+                ref={dropdownRef}
+              >
                 {navLinks.map((link) => (
                   <div 
                     key={link.label} 
@@ -157,7 +159,7 @@ export const Navbar = () => {
               {/* CTA Buttons */}
               <div className="hidden lg:flex items-center gap-3">
                 <a 
-                  href="#" 
+                  href="/products" 
                   className="px-5 py-2 text-xs font-medium tracking-wide border border-border rounded-md hover:bg-secondary transition-colors"
                 >
                   Our Solutions
