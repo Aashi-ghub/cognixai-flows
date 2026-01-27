@@ -183,12 +183,12 @@ export const Navbar = () => {
           {/* Mobile Navigation */}
           <AnimatePresence>
             {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="lg:hidden backdrop-blur-2xl bg-white/70"
-              >
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="lg:hidden backdrop-blur-2xl backdrop-saturate-150 bg-white/20 border-t border-white/40"
+                >
                 <div className="px-6 py-4 space-y-2">
                   {navLinks.map((link) => (
                     <div key={link.label}>
