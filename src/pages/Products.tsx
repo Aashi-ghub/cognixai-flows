@@ -157,43 +157,25 @@ const Products = () => {
         </section>
         
         {/* Detailed Product Sections */}
-        <section className="py-20 bg-card">
+        <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="space-y-24">
-              {products.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  id={product.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="scroll-mt-24"
-                >
-                  <div className="max-w-5xl mx-auto">
-                    {/* Header */}
-                    <div className="text-center mb-12">
-                      <span className="text-xs font-medium tracking-widest text-primary uppercase mb-4 block">
-                        {product.tagline}
-                      </span>
-                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground mb-4">
-                        {product.title}
-                      </h2>
-                      {product.highlight && (
-                        <p className="text-lg font-medium text-primary mb-4">
-                          {product.highlight}
-                        </p>
-                      )}
-                      <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                        {product.description}
-                      </p>
-                    </div>
-
-                    {/* Image and Features Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                      {/* Image */}
-                      <div className="order-2 lg:order-1">
-                        <div className="relative rounded-2xl overflow-hidden border-2 border-foreground aspect-[4/3]">
+            <div className="space-y-32">
+              {products.map((product, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <motion.div
+                    key={product.id}
+                    id={product.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="scroll-mt-24"
+                  >
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+                      {/* Image Side */}
+                      <div className={`${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
+                        <div className="relative rounded-2xl overflow-hidden border border-border aspect-[4/3] shadow-lg">
                           <img
                             src={product.image}
                             alt={product.title}
@@ -202,33 +184,42 @@ const Products = () => {
                         </div>
                       </div>
 
-                      {/* Features */}
-                      <div className="order-1 lg:order-2">
-                        <h3 className="text-xl font-serif text-foreground mb-6">
-                          Key Features
-                        </h3>
-                        <div className="space-y-4">
-                          {product.features.map((feature) => (
-                            <div
-                              key={feature.label}
-                              className="flex items-start gap-4 p-4 rounded-lg bg-background border border-border hover:border-primary transition-colors"
-                            >
-                              <div className="p-2 rounded-lg bg-primary/10">
-                                <feature.icon className="w-5 h-5 text-primary" />
-                              </div>
-                              <div>
-                                <h4 className="font-medium text-foreground mb-1">
-                                  {feature.label}
-                                </h4>
-                              </div>
-                            </div>
+                      {/* Content Side */}
+                      <div className={`${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
+                        {/* Tagline */}
+                        <span className="text-xs font-medium tracking-widest text-primary uppercase mb-4 block">
+                          {product.tagline}
+                        </span>
+                        
+                        {/* Title */}
+                        <h2 
+                          className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight"
+                          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+                        >
+                          {product.title}
+                        </h2>
+                        
+                        {/* Description */}
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                          {product.description}
+                        </p>
+                        
+                        {/* Features - Horizontal with bullets */}
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-foreground">
+                          {product.features.map((feature, featureIndex) => (
+                            <span key={feature.label} className="flex items-center gap-2">
+                              {featureIndex > 0 && (
+                                <span className="text-primary text-lg">·</span>
+                              )}
+                              <span className="font-medium">{feature.label}</span>
+                            </span>
                           ))}
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
