@@ -220,10 +220,7 @@ const Products = () => {
                         {/* Request Demo Button */}
                         <a
                           href="#contact"
-                          className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md text-white transition-all duration-300 hover:opacity-90"
-                          style={{
-                            background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(142 40% 35%) 100%)',
-                          }}
+                          className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90"
                         >
                           Request Demo
                         </a>
