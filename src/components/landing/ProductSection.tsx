@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import productVoiceAgent from "@/assets/product-voice-agent.png";
 import productOrchestrator from "@/assets/product-orchestrator.png";
@@ -37,6 +38,10 @@ const products = [
 ];
 
 export const ProductSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  
+  const visibleProducts = showAll ? products : products.slice(0, 3);
+
   return (
     <section id="products" className="section-padding bg-background">
       <div className="container mx-auto">
@@ -55,7 +60,7 @@ export const ProductSection = () => {
 
         {/* Product Cards - Full Image Style */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, index) => (
+          {visibleProducts.map((product, index) => (
             <motion.div
               key={product.name}
               initial={{ opacity: 0, y: 20 }}
@@ -87,6 +92,24 @@ export const ProductSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* See More / See Less Toggle */}
+        {products.length > 3 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-8"
+          >
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+            >
+              {showAll ? "See Less" : "See More"}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
