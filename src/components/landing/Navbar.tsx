@@ -85,9 +85,9 @@ export const Navbar = () => {
         <nav className={`border-t-0 transition-colors duration-300 ${isScrolled ? "bg-transparent" : "bg-background"}`}>
           <div className="px-6">
             <div className="relative flex items-center justify-between h-14">
-              {/* Logo - simple text like Sarvam */}
-              <a href="/" className="flex items-center gap-2 text-xl font-medium text-foreground tracking-tight">
-                CognixAI Labs
+              {/* Logo - lowercase serif like Sarvam */}
+              <a href="/" className="flex items-center gap-2 text-2xl font-serif font-normal text-foreground tracking-tight lowercase">
+                cognixai
               </a>
 
               {/* Desktop Navigation - centered in the viewport */}
