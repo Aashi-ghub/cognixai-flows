@@ -120,7 +120,7 @@ export const ContactPopup = () => {
       <DialogContent className="w-[95vw] max-w-[900px] p-0 overflow-hidden bg-background border-0 shadow-2xl max-h-[95vh] md:max-h-[90vh]">
         <div className="grid md:grid-cols-2 max-h-[95vh] md:max-h-[90vh]">
           {/* Left Side - Form */}
-          <div className="p-5 sm:p-6 md:p-8 flex flex-col justify-start md:justify-center overflow-y-auto">
+          <div className="p-5 sm:p-6 md:p-8 flex flex-col justify-start md:justify-center overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {/* Logo/Brand */}
             <div className="flex items-center gap-2 mb-4 md:mb-6 mt-2">
               <div className="w-7 h-7 md:w-8 md:h-8 bg-foreground rounded flex items-center justify-center">
