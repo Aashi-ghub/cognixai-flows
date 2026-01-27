@@ -8,7 +8,6 @@ import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { submitConsultationRequest } from "@/lib/api/consultation";
 import { getCompanies } from "@/lib/api/companies";
 import { toast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
 
 export const ContactPopup = () => {
   const { isOpen, openPopup, closePopup } = useContactPopup();
@@ -258,9 +257,9 @@ export const ContactPopup = () => {
               {/* Terms */}
               <p className="text-xs text-center text-muted-foreground pt-2">
                 By submitting, you agree to our{" "}
-                <Link to="/terms" className="underline hover:text-foreground">Terms of Service</Link>
+                <a href="/terms" className="underline hover:text-foreground">Terms of Service</a>
                 {" "}and{" "}
-                <Link to="/privacy" className="underline hover:text-foreground">Privacy Policy</Link>
+                <a href="/privacy" className="underline hover:text-foreground">Privacy Policy</a>
               </p>
             </form>
           </div>
