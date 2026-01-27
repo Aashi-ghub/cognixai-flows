@@ -187,30 +187,9 @@ const Services = () => {
                         </h2>
                         
                         {/* Description */}
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8">
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                           {service.description}
                         </p>
-                        
-                        {/* Features - Horizontal with bullets */}
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-xs md:text-sm text-foreground mb-6 md:mb-8">
-                          {service.features.map((feature, featureIndex) => (
-                            <span key={feature} className="flex items-center gap-1.5 md:gap-2">
-                              {featureIndex > 0 && (
-                                <span className="text-primary text-base md:text-lg">·</span>
-                              )}
-                              <span className="font-medium">{feature}</span>
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* Request Demo Button */}
-                        <a
-                          href="#"
-                          onClick={handleDemoClick}
-                          className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90"
-                        >
-                          Request Demo
-                        </a>
                       </div>
                     </div>
                   </motion.div>
