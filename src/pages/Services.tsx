@@ -7,68 +7,48 @@ import {
   Workflow, 
   BarChart3, 
   MessageSquare, 
-  Lightbulb, 
-  Cpu, 
-  Database, 
-  Layout
+  Cpu
 } from "lucide-react";
 
 const stats = [
-  { value: "7+", label: "Core Service Lines" },
   { value: "200+", label: "Automations Shipped" },
   { value: "40%", label: "Avg. Cost Reduction" },
+  { value: "24/7", label: "Always Running" },
   { value: "6–8 wks", label: "Typical Delivery" },
 ];
 
 const services = [
   {
     icon: Workflow,
-    title: "Workflow Automation",
-    tagline: "Eliminate 90% of Manual Work",
-    description: "Eliminate repetitive manual tasks across campaigns, sales, and operations. We design automations for data entry, approvals, reporting, and notifications—so your team spends less time on routine work and more on results.",
-    features: ["CRM & Pipeline Sync", "Email Automation", "Custom API Integration"],
-  },
-  {
-    icon: BarChart3,
-    title: "AI-Driven Reporting & Analytics",
-    tagline: "Turn Data Into Insights Instantly",
-    description: "Transform raw data into actionable insights. Our AI-powered pipelines automate report creation, consolidate data across platforms, and deliver smart dashboards—helping you track KPIs and identify opportunities instantly.",
-    features: ["Cross-platform Reports", "Anomaly Detection", "Interactive Dashboards"],
+    title: "Kill Manual Work",
+    tagline: "What breaks businesses isn't strategy. It's repetition.",
+    description: "We replace repetitive human tasks with automation systems that run 24/7 — without reminders, follow-ups, or errors.",
+    usedFor: ["CRM updates", "Reporting & approvals", "Lead routing & notifications"],
+    outcome: "Less work. Fewer mistakes. Faster execution.",
   },
   {
     icon: MessageSquare,
-    title: "Chatbot Solutions",
-    tagline: "Automate Your Lead Conversations",
-    description: "Increase engagement and automate customer conversations. We build chatbots for websites, CRMs, and messaging apps to qualify leads, answer FAQs, and provide instant support—24/7.",
-    features: ["Lead Qualification", "FAQ Automation", "Multi-platform Support"],
+    title: "Never Miss a Lead Again",
+    tagline: "Most businesses lose customers because they respond too late. We fix that.",
+    description: "We deploy Voice AI agents and conversational systems that answer, qualify, and book — instantly.",
+    usedFor: ["Sales calls", "Appointments", "Customer support"],
+    outcome: "More conversations. More conversions. Zero missed calls.",
   },
   {
-    icon: Lightbulb,
-    title: "Consulting & Automation Strategy",
-    tagline: "Get Your Free Automation Roadmap",
-    description: "Not sure where to start? Our experts audit your workflows, uncover automation gaps, and map an ROI-focused plan using industry best practices.",
-    features: ["Process Audits", "ROI Analysis", "Implementation Planning"],
+    icon: BarChart3,
+    title: "Make Data Speak",
+    tagline: "You already have the data. You just don't see it in time.",
+    description: "We build AI-driven reporting systems that turn raw numbers into live dashboards, alerts, and decisions.",
+    usedFor: ["KPI tracking", "Performance monitoring", "Opportunity detection"],
+    outcome: "Clarity instead of chaos. Decisions instead of guesses.",
   },
   {
     icon: Cpu,
-    title: "AI-Powered IoT Solutions",
-    tagline: "Optimize Your Systems With AI IoT",
-    description: "Connect and automate industrial systems with AI-powered IoT solutions, PLC programming, and Energy Management Systems (EMS). We design, program, and deploy intelligent IoT solutions that leverage AI for real-time monitoring, predictive analytics, control, and optimization.",
-    features: ["PLC Integration", "Energy Management", "Predictive Analytics"],
-  },
-  {
-    icon: Database,
-    title: "ERP & CRM Development",
-    tagline: "Build a Custom ERP/CRM for Your Team",
-    description: "Build custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems tailored to your business needs. We develop comprehensive solutions that streamline operations, improve customer relationships, and provide real-time insights.",
-    features: ["Custom Development", "Data Migration", "System Integration"],
-  },
-  {
-    icon: Layout,
-    title: "Landing Pages & Conversion Optimization",
-    tagline: "Boost Your Page Conversions",
-    description: "Build high-converting landing pages using proven frameworks and conversion optimization techniques. We create fast, mobile-first pages that turn visitors into customers with strategic design, persuasive copywriting, and data-driven optimization.",
-    features: ["Conversion-Focused Design", "A/B Testing", "SEO Optimization"],
+    title: "Build What Off-The-Shelf Can't",
+    tagline: "Generic tools don't fit real workflows. So we don't force them.",
+    description: "We build custom ERP, CRM, and AI-powered infrastructure designed around how your business actually works.",
+    usedFor: ["Operations & internal systems", "Industrial & IoT automation", "Energy & resource optimization"],
+    outcome: "Systems that adapt to you — not the other way around.",
   },
 ];
 
@@ -102,21 +82,11 @@ const Services = () => {
                 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6"
                 style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
               >
-                Our Services
+                What We Do
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Bespoke AI Automation for Agencies & Businesses
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                We don't sell tools. We build systems that remove friction, eliminate busywork, and let your team focus on what actually moves the needle.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-                CognixAI Labs delivers tailor-made automation solutions to help marketing agencies, startups, and business teams scale faster, reduce manual workload, and unlock new growth. We blend the speed of AI with proven consulting to accelerate your operations.
-              </p>
-              <a
-                href="#"
-                onClick={handleConsultationClick}
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                Book Free Consultation
-              </a>
             </motion.div>
           </div>
         </section>
@@ -173,22 +143,39 @@ const Services = () => {
 
                       {/* Content Side */}
                       <div className={`${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
-                        {/* Tagline */}
-                        <span className="text-xs font-medium tracking-widest text-primary uppercase mb-3 md:mb-4 block">
-                          {service.tagline}
-                        </span>
-                        
                         {/* Title */}
                         <h2 
-                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 md:mb-6 leading-tight"
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 leading-tight"
                           style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
                         >
                           {service.title}
                         </h2>
                         
+                        {/* Tagline */}
+                        <p className="text-lg md:text-xl text-foreground/80 italic mb-4">
+                          {service.tagline}
+                        </p>
+                        
                         {/* Description */}
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
                           {service.description}
+                        </p>
+
+                        {/* Used For */}
+                        <div className="mb-4">
+                          <span className="text-sm font-medium text-foreground">We automate:</span>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            {service.usedFor.map((item) => (
+                              <span key={item} className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Outcome */}
+                        <p className="text-base font-medium text-primary">
+                          {service.outcome}
                         </p>
                       </div>
                     </div>
@@ -199,7 +186,65 @@ const Services = () => {
           </div>
         </section>
 
-        <CTASection />
+        {/* Transition Section */}
+        <section className="py-16 md:py-24 bg-card border-y border-border">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl mx-auto text-center"
+            >
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-6"
+                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+              >
+                Not Sure What You Need?
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Most companies don't need more AI.<br />
+                They need AI in the right place.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                That's why we don't start with tools.<br />
+                We start with your workflows.
+              </p>
+              <a
+                href="#"
+                onClick={handleConsultationClick}
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Get a Free Automation Roadmap
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-2xl mx-auto text-center"
+            >
+              <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
+                If manual work is slowing you down,<br />
+                we'll show you exactly what to automate — and what to ignore.
+              </p>
+              <a
+                href="#"
+                onClick={handleConsultationClick}
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Book a Strategy Call
+              </a>
+            </motion.div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
