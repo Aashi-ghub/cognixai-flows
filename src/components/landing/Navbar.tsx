@@ -121,7 +121,7 @@ export const Navbar = () => {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: -10, scale: 0.95 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-3 min-w-[220px] z-[10002] rounded-xl overflow-hidden backdrop-blur-2xl backdrop-saturate-150 bg-white/95 border border-border/50 shadow-2xl"
+                              className="absolute top-full left-0 mt-3 min-w-[220px] z-[10002] rounded-xl overflow-hidden backdrop-blur-2xl backdrop-saturate-150 bg-white/20 border border-white/40"
                               onMouseEnter={() => setActiveDropdown(link.label)}
                               onMouseLeave={() => setActiveDropdown(null)}
                               style={{ position: 'absolute' }}
