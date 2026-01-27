@@ -157,9 +157,9 @@ const Products = () => {
         </section>
         
         {/* Detailed Product Sections */}
-        <section className="py-20 bg-background">
+        <section className="py-12 md:py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="space-y-32">
+            <div className="space-y-8 md:space-y-12">
               {products.map((product, index) => {
                 const isEven = index % 2 === 0;
                 return (
@@ -170,12 +170,13 @@ const Products = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="scroll-mt-24"
+                    className="scroll-mt-24 rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12"
+                    style={{ backgroundColor: '#d3dad1' }}
                   >
-                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                       {/* Image Side */}
                       <div className={`${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-                        <div className="relative rounded-2xl overflow-hidden border border-border aspect-[4/3] shadow-lg">
+                        <div className="relative rounded-xl md:rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
                           <img
                             src={product.image}
                             alt={product.title}
@@ -187,34 +188,45 @@ const Products = () => {
                       {/* Content Side */}
                       <div className={`${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
                         {/* Tagline */}
-                        <span className="text-xs font-medium tracking-widest text-primary uppercase mb-4 block">
+                        <span className="text-xs font-medium tracking-widest text-primary uppercase mb-3 md:mb-4 block">
                           {product.tagline}
                         </span>
                         
                         {/* Title */}
                         <h2 
-                          className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight"
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 md:mb-6 leading-tight"
                           style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
                         >
                           {product.title}
                         </h2>
                         
                         {/* Description */}
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8">
                           {product.description}
                         </p>
                         
                         {/* Features - Horizontal with bullets */}
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-foreground">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-xs md:text-sm text-foreground mb-6 md:mb-8">
                           {product.features.map((feature, featureIndex) => (
-                            <span key={feature.label} className="flex items-center gap-2">
+                            <span key={feature.label} className="flex items-center gap-1.5 md:gap-2">
                               {featureIndex > 0 && (
-                                <span className="text-primary text-lg">·</span>
+                                <span className="text-primary text-base md:text-lg">·</span>
                               )}
                               <span className="font-medium">{feature.label}</span>
                             </span>
                           ))}
                         </div>
+
+                        {/* Request Demo Button */}
+                        <a
+                          href="#contact"
+                          className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md text-white transition-all duration-300 hover:opacity-90"
+                          style={{
+                            background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(142 40% 35%) 100%)',
+                          }}
+                        >
+                          Request Demo
+                        </a>
                       </div>
                     </div>
                   </motion.div>
