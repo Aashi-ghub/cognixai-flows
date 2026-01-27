@@ -85,8 +85,8 @@ export const Navbar = () => {
         <nav className={`border-t-0 transition-colors duration-300 ${isScrolled ? "bg-transparent" : "bg-background"}`}>
           <div className="px-6">
             <div className="relative flex items-center justify-between h-14">
-              {/* Logo */}
-              <a href="/" className="flex items-center gap-2 text-2xl text-foreground tracking-tight" style={{ fontFamily: "'Comic Sans MS', 'Comic Sans', cursive" }}>
+              {/* Logo - clean serif like Sarvam */}
+              <a href="/" className="flex items-center gap-2 text-2xl text-foreground tracking-tight" style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}>
                 cognixai
               </a>
 
