@@ -95,20 +95,62 @@ const Products = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="pt-44 pb-20 bg-background">
-          <div className="container mx-auto px-4">
+        <section className="relative pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
+          {/* Warm gradient background */}
+          <div 
+            className="absolute inset-0 z-0"
+            style={{
+              background: 'linear-gradient(180deg, hsl(20 60% 92%) 0%, hsl(35 30% 94%) 50%, hsl(var(--background)) 100%)'
+            }}
+          />
+          
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto text-center"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="max-w-5xl mx-auto text-center"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
-                Our Products
+              {/* Small badge */}
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="inline-block text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase mb-8"
+              >
+                ✦ AI-Powered Enterprise Solutions ✦
+              </motion.span>
+              
+              {/* Large serif headline */}
+              <h1 
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground leading-[1.1] mb-8"
+                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+              >
+                Enterprise AI Agents, Built
+                <br />
+                To Work Like Humans
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                A comprehensive suite of AI-powered tools designed to transform how enterprises handle voice communications and workflow automation.
+              
+              {/* Description */}
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-12">
+                Deploy production-grade AI agents that work round the clock,
+                automate every workflow, and integrate seamlessly with your
+                existing enterprise systems.
               </p>
+              
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <a 
+                  href="#call-agent"
+                  className="inline-flex items-center justify-center px-10 py-4 bg-transparent text-foreground text-sm font-medium tracking-wide rounded-lg border-2 border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                >
+                  EXPLORE PRODUCTS
+                </a>
+              </motion.div>
             </motion.div>
           </div>
         </section>
