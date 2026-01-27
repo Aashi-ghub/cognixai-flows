@@ -22,7 +22,7 @@ const navLinks = [
     href: "/services", 
     hasDropdown: false,
   },
-  { label: "BLOG", href: "#blog" },
+  { label: "BLOG", href: "/blog" },
   { label: "CAREERS", href: "#careers" },
 ];
 
@@ -88,7 +88,6 @@ export const Navbar = () => {
             <div className="flex items-center justify-between h-14">
               {/* Logo - simple text like Sarvam */}
               <a href="/" className="flex items-center gap-2 text-xl font-medium text-foreground tracking-tight">
-                <img src="/black-logo.png" alt="CognixAI Labs" className="h-6 w-auto" />
                 CognixAI Labs
               </a>
 

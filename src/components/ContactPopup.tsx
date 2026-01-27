@@ -121,34 +121,34 @@ export const ContactPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden">
+      <DialogContent className="w-[95vw] max-w-[480px] sm:max-w-[520px] p-0 overflow-hidden">
         {/* Header Section with Gradient */}
-        <div className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 px-6 pt-8 pb-6">
+        <div className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 px-5 sm:px-6 pt-6 sm:pt-7 pb-5">
           <div className="absolute top-4 right-4">
             <Sparkles className="w-6 h-6 text-primary-foreground/20" />
           </div>
-          <DialogHeader className="relative">
-            <DialogTitle className="text-3xl font-serif text-primary-foreground mb-2">
+          <DialogHeader className="relative space-y-1.5">
+            <DialogTitle className="text-2xl sm:text-2xl font-serif text-primary-foreground">
               Get in Touch 🚀
             </DialogTitle>
-            <DialogDescription className="text-base text-primary-foreground/90 leading-relaxed">
+            <DialogDescription className="text-sm sm:text-[15px] text-primary-foreground/90 leading-relaxed">
               Let's discuss how we can help automate your business.
             </DialogDescription>
           </DialogHeader>
         </div>
 
         {/* Promo Banner */}
-        <div className="mx-6 mt-6 mb-6 relative">
-          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-2 border-primary/30 rounded-xl p-4 relative overflow-hidden">
+        <div className="mx-4 sm:mx-6 mt-4 sm:mt-5 mb-4 sm:mb-5 relative">
+          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/25 rounded-lg p-3.5 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
-            <div className="relative flex items-start gap-3">
-              <div className="p-2 bg-primary/20 rounded-lg">
-                <Sparkles className="w-5 h-5 text-primary" />
+            <div className="relative flex items-start gap-2.5">
+              <div className="p-1.5 bg-primary/20 rounded-md">
+                <Sparkles className="w-4 h-4 text-primary" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm font-medium text-foreground leading-relaxed">
                   🎉 Join top businesses accelerating with us – get{" "}
-                  <span className="font-bold text-primary text-base">20% off</span> your first project when you sign up
+                  <span className="font-semibold text-primary">20% off</span> your first project when you sign up
                 </p>
               </div>
             </div>
@@ -156,11 +156,11 @@ export const ContactPopup = () => {
         </div>
 
         {/* Form Section */}
-        <div className="px-6 pb-6">
-          <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="px-4 sm:px-6 pb-5 max-h-[70vh] overflow-y-auto">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-4">
             {/* Name Field */}
-            <div className="space-y-2.5">
-              <Label htmlFor="name" className="text-sm font-semibold flex items-center gap-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="name" className="text-xs sm:text-sm font-semibold flex items-center gap-2">
                 <User className="w-4 h-4 text-primary" />
                 Name <span className="text-destructive">*</span>
               </Label>
@@ -173,14 +173,14 @@ export const ContactPopup = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="pl-4 h-11 border-2 focus:border-primary transition-colors"
+                  className="pl-3 h-10 border focus:border-primary transition-colors text-sm"
                 />
               </div>
             </div>
 
             {/* Email Field */}
-            <div className="space-y-2.5">
-              <Label htmlFor="email" className="text-sm font-semibold flex items-center gap-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="email" className="text-xs sm:text-sm font-semibold flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
                 Email <span className="text-destructive">*</span>
               </Label>
@@ -192,14 +192,14 @@ export const ContactPopup = () => {
                   placeholder="your.email@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="pl-4 h-11 border-2 focus:border-primary transition-colors"
+                  className="pl-3 h-10 border focus:border-primary transition-colors text-sm"
                 />
               </div>
             </div>
 
             {/* Phone Field */}
-            <div className="space-y-2.5">
-              <Label htmlFor="phone" className="text-sm font-semibold flex items-center gap-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="phone" className="text-xs sm:text-sm font-semibold flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary" />
                 Phone Number <span className="text-destructive">*</span>
               </Label>
@@ -211,17 +211,17 @@ export const ContactPopup = () => {
                   placeholder="+1 [V] Phone number"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="pl-4 h-11 border-2 focus:border-primary transition-colors"
+                  className="pl-3 h-10 border focus:border-primary transition-colors text-sm"
                 />
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-[11px] text-muted-foreground">
                 * At least one contact method (email or phone) is required
               </p>
             </div>
 
             {/* Company Field */}
-            <div className="space-y-2.5">
-              <Label htmlFor="company" className="text-sm font-semibold flex items-center gap-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="company" className="text-xs sm:text-sm font-semibold flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-muted-foreground" />
                 Company <span className="text-muted-foreground font-normal">(Optional)</span>
               </Label>
@@ -234,7 +234,7 @@ export const ContactPopup = () => {
                   value={formData.company}
                   onChange={handleChange}
                   list="company-list"
-                  className="pl-4 h-11 border-2 focus:border-primary transition-colors"
+                  className="pl-3 h-10 border focus:border-primary transition-colors text-sm"
                 />
                 {companies.length > 0 && (
                   <datalist id="company-list">
@@ -247,7 +247,7 @@ export const ContactPopup = () => {
             </div>
 
             {/* Divider */}
-            <div className="pt-2">
+            <div className="pt-1.5">
               <div className="border-t border-border" />
             </div>
 
@@ -255,24 +255,24 @@ export const ContactPopup = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200" 
+              className="w-full h-10 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200" 
               size="lg"
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                   Submitting...
                 </>
               ) : (
                 <>
-                  <CheckCircle2 className="w-5 h-5 mr-2" />
+                  <CheckCircle2 className="w-4 h-4 mr-2" />
                   Submit
                 </>
               )}
             </Button>
 
             {/* Trust Indicator */}
-            <p className="text-xs text-center text-muted-foreground pt-2">
+            <p className="text-[11px] text-center text-muted-foreground pt-1.5">
               We respect your privacy. Unsubscribe at any time.
             </p>
           </form>
