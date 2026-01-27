@@ -95,15 +95,7 @@ const Products = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
-          {/* Warm gradient background */}
-          <div 
-            className="absolute inset-0 z-0"
-            style={{
-              background: 'linear-gradient(180deg, hsl(20 60% 92%) 0%, hsl(35 30% 94%) 50%, hsl(var(--background)) 100%)'
-            }}
-          />
-          
+        <section className="relative pt-32 pb-32 lg:pt-40 lg:pb-40 bg-background overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -146,7 +138,16 @@ const Products = () => {
               >
                 <a 
                   href="#call-agent"
-                  className="inline-flex items-center justify-center px-10 py-4 bg-transparent text-foreground text-sm font-medium tracking-wide rounded-lg border-2 border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium tracking-wide rounded-md border-2 border-primary text-primary hover:text-white transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, transparent 0%, transparent 100%)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(142 40% 35%) 100%)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, transparent 0%, transparent 100%)';
+                  }}
                 >
                   EXPLORE PRODUCTS
                 </a>
