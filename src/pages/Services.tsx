@@ -221,30 +221,6 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="max-w-2xl mx-auto text-center"
-            >
-              <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-                If manual work is slowing you down,<br />
-                we'll show you exactly what to automate — and what to ignore.
-              </p>
-              <a
-                href="#"
-                onClick={handleConsultationClick}
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                Book a Strategy Call
-              </a>
-            </motion.div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
