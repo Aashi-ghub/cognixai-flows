@@ -87,7 +87,7 @@ export const Navbar = () => {
             <div className="relative flex items-center justify-between h-14">
               {/* Logo - clean serif like Sarvam */}
               <a href="/" className="flex items-center gap-2 text-2xl text-foreground tracking-tight" style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}>
-                cognixai
+                CognixAI
               </a>
 
               {/* Desktop Navigation - centered in the viewport */}
