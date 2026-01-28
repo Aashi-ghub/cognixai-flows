@@ -94,7 +94,7 @@ const StrategyChange = () => {
       {/* Services Grid */}
       <section className="py-16 md:py-24 bg-[#f5f3ee]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -102,18 +102,18 @@ const StrategyChange = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background rounded-xl p-8 border border-border hover:shadow-lg transition-shadow"
+                className="bg-background rounded-2xl p-6 md:p-8 border-2 border-[#4a7c59]/20 hover:border-[#4a7c59]/40 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-[#4a7c59]/10 rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="w-7 h-7 text-[#4a7c59]" />
+                <div className="w-12 h-12 bg-[#4a7c59] rounded-xl flex items-center justify-center mb-5">
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 
-                  className="text-xl mb-3 text-foreground"
+                  className="text-lg md:text-xl mb-3 text-foreground"
                   style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
                 >
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>
