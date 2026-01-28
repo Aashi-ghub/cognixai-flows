@@ -199,13 +199,21 @@ export const Navbar = () => {
                     <div key={link.label}>
                       {link.hasDropdown ? (
                         <>
-                          <button
-                            onClick={() => setMobileDropdown(mobileDropdown === link.label ? null : link.label)}
-                            className="flex items-center justify-between w-full text-sm font-medium text-foreground py-2"
-                          >
-                            <span>{link.label}</span>
-                            <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdown === link.label ? 'rotate-180' : ''}`} />
-                          </button>
+                          <div className="flex items-center justify-between w-full py-2">
+                            <a
+                              href={link.href}
+                              className="text-sm font-medium text-foreground"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {link.label}
+                            </a>
+                            <button
+                              onClick={() => setMobileDropdown(mobileDropdown === link.label ? null : link.label)}
+                              className="p-1"
+                            >
+                              <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdown === link.label ? 'rotate-180' : ''}`} />
+                            </button>
+                          </div>
                           <AnimatePresence>
                             {mobileDropdown === link.label && (
                               <motion.div
