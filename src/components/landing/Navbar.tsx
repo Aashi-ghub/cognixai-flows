@@ -110,14 +110,13 @@ export const Navbar = () => {
                   >
                     {link.hasDropdown ? (
                       <>
-                        <button
-                          type="button"
-                          onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                        <a
+                          href={link.href}
                           className="flex items-center gap-1 text-xs font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors relative z-[10001]"
                         >
                           {link.label}
                           <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
-                        </button>
+                        </a>
                         
                         {/* Glassmorphism Dropdown */}
                         <AnimatePresence>
