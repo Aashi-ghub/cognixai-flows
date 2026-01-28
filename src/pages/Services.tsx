@@ -3,30 +3,16 @@ import { Footer } from "@/components/landing/Footer";
 import { motion } from "framer-motion";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { ServiceCard } from "@/components/services/ServiceCard";
-import { SolutionAccordion } from "@/components/services/SolutionAccordion";
-import { GreenDividerSection } from "@/components/services/GreenDividerSection";
-import { FlagshipServiceCard } from "@/components/services/FlagshipServiceCard";
+import { FeatureCard } from "@/components/services/FeatureCard";
+import { GetStartedCard } from "@/components/services/GetStartedCard";
 import { 
   Workflow, 
   BarChart3, 
   MessageSquare, 
-  Cpu,
-  Users,
-  FileText,
-  Clock,
-  Bell,
-  Database,
-  Shield,
-  Zap,
-  Globe,
-  Headphones,
-  Bot,
-  LineChart,
-  Settings
+  Cpu
 } from "lucide-react";
 
-// 4 Outcome Cards data
-const outcomeCards = [
+const services = [
   {
     icon: Workflow,
     title: "Kill Manual Work",
@@ -53,101 +39,54 @@ const outcomeCards = [
   },
 ];
 
-// 12 Solutions by Function data
-const solutions = [
+const featureCategories = [
   {
-    icon: Users,
-    title: "Lead Management",
-    description: "Automate lead capture and qualification",
-    features: ["Auto-capture from forms, calls, emails", "AI-powered lead scoring", "Instant CRM sync", "Smart routing to sales reps"],
-  },
-  {
-    icon: FileText,
-    title: "Document Processing",
-    description: "Extract data from any document format",
-    features: ["Invoice and receipt parsing", "Contract data extraction", "Multi-language support", "Automated filing and archival"],
-  },
-  {
-    icon: Clock,
-    title: "Scheduling & Booking",
-    description: "Never miss an appointment again",
-    features: ["AI-powered calendar management", "Automated reminders", "Conflict resolution", "Multi-timezone support"],
-  },
-  {
-    icon: Bell,
-    title: "Notifications & Alerts",
-    description: "Keep your team informed in real-time",
-    features: ["Multi-channel delivery", "Smart escalation paths", "Custom trigger rules", "Priority-based routing"],
-  },
-  {
-    icon: Database,
-    title: "Data Sync & Integration",
-    description: "Connect all your business systems",
-    features: ["Real-time bidirectional sync", "100+ app integrations", "Custom API connections", "Error handling & retry logic"],
-  },
-  {
-    icon: Shield,
-    title: "Compliance & Reporting",
-    description: "Stay compliant automatically",
-    features: ["Automated audit trails", "Regulatory report generation", "Data retention policies", "Access control logging"],
-  },
-  {
-    icon: Zap,
     title: "Workflow Automation",
-    description: "Streamline complex business processes",
-    features: ["Visual workflow builder", "Conditional logic branching", "Parallel task execution", "SLA monitoring"],
+    features: [
+      "CRM updates & data sync",
+      "Automated reporting & approvals",
+      "Lead routing & notifications",
+      "Document processing & extraction",
+    ],
   },
   {
-    icon: Globe,
-    title: "Multi-Channel Outreach",
-    description: "Engage customers everywhere",
-    features: ["Email sequences", "SMS campaigns", "WhatsApp integration", "Social media automation"],
+    title: "AI-Powered Communication",
+    features: [
+      "Voice AI for sales calls",
+      "Intelligent appointment booking",
+      "24/7 customer support bots",
+      "Multi-channel engagement",
+    ],
   },
   {
-    icon: Headphones,
-    title: "Customer Support",
-    description: "24/7 intelligent support automation",
-    features: ["AI chatbot deployment", "Ticket auto-classification", "Knowledge base integration", "Escalation management"],
-  },
-  {
-    icon: Bot,
-    title: "Voice AI Agents",
-    description: "Human-like phone conversations",
-    features: ["Outbound calling campaigns", "Inbound call handling", "Appointment scheduling", "Lead qualification calls"],
-  },
-  {
-    icon: LineChart,
-    title: "Analytics & Insights",
-    description: "Turn data into actionable intelligence",
-    features: ["Real-time dashboards", "Predictive analytics", "Custom KPI tracking", "Automated report delivery"],
-  },
-  {
-    icon: Settings,
-    title: "Custom Development",
-    description: "Tailored solutions for unique needs",
-    features: ["Bespoke ERP/CRM systems", "Industry-specific tools", "Legacy system integration", "Scalable architecture"],
+    title: "Custom Infrastructure",
+    features: [
+      "Tailored ERP & CRM systems",
+      "Industrial & IoT automation",
+      "Energy & resource optimization",
+      "Real-time analytics dashboards",
+    ],
   },
 ];
 
-// 3 Flagship Services data
-const flagshipServices = [
+const getStartedOptions = [
   {
-    icon: Bot,
-    title: "Enterprise Voice AI Platform",
-    description: "Deploy human-like voice agents that handle thousands of calls simultaneously. From lead qualification to appointment booking, our Voice AI platform transforms how businesses communicate at scale.",
-    gradientClass: "bg-gradient-to-br from-emerald-200 via-teal-100 to-cyan-100",
+    title: "Partner with us on your AI strategy",
+    features: [
+      "Work with AI advisors to solve complex challenges",
+      "Get hands-on deployment guidance",
+      "Receive a custom automation roadmap",
+    ],
+    buttonText: "Get a Free Consultation",
   },
   {
-    icon: Workflow,
-    title: "Intelligent Process Orchestration",
-    description: "Connect your entire tech stack with smart automation that thinks ahead. Our orchestration engine handles complex multi-step workflows, reducing manual intervention by up to 90%.",
-    gradientClass: "bg-gradient-to-br from-amber-100 via-orange-100 to-rose-100",
-  },
-  {
-    icon: LineChart,
-    title: "Predictive Business Intelligence",
-    description: "Move from reactive to proactive decision-making. Our AI-powered analytics platform surfaces insights before problems occur, helping you stay ahead of the competition.",
-    gradientClass: "bg-gradient-to-br from-violet-200 via-purple-100 to-pink-100",
+    title: "Start with a focused pilot",
+    features: [
+      "Pick one workflow to automate first",
+      "See results in 6-8 weeks",
+      "Scale based on proven ROI",
+    ],
+    buttonText: "Book a Strategy Call",
   },
 ];
 
@@ -194,98 +133,84 @@ const Services = () => {
           </div>
         </section>
 
-        {/* 4 Outcome Cards */}
+        {/* Services Grid Section */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {outcomeCards.map((card, index) => (
+              {services.map((service, index) => (
                 <ServiceCard
-                  key={card.title}
-                  icon={card.icon}
-                  title={card.title}
-                  description={card.description}
-                  gradientClass={card.gradientClass}
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Divider */}
-        <div className="container mx-auto px-4">
-          <div className="h-px bg-border" />
-        </div>
-
-        {/* Solutions by Function - 12 Accordion Cards */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12 md:mb-16"
-            >
-              <h2 
-                className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
-                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
-              >
-                Solutions by Function
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore our capabilities across every business function
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {solutions.map((solution, index) => (
-                <SolutionAccordion
-                  key={solution.title}
-                  icon={solution.icon}
-                  title={solution.title}
-                  description={solution.description}
-                  features={solution.features}
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Green Divider Section */}
-        <GreenDividerSection />
-
-        {/* Flagship Services - 3 Horizontal Cards */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12 md:mb-16"
-            >
-              <h2 
-                className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
-                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
-              >
-                Flagship Services
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Our most impactful solutions for enterprise transformation
-              </p>
-            </motion.div>
-
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {flagshipServices.map((service, index) => (
-                <FlagshipServiceCard
                   key={service.title}
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
                   gradientClass={service.gradientClass}
-                  onLearnMore={openPopup}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-16 md:py-24 bg-card/30 border-y border-border">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12 md:mb-16"
+            >
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+              >
+                Enterprise-grade capabilities
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Everything you need to automate at scale
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featureCategories.map((category, index) => (
+                <FeatureCard
+                  key={category.title}
+                  title={category.title}
+                  features={category.features}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Get Started Section */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12 md:mb-16"
+            >
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl text-foreground"
+                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+              >
+                Get started
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {getStartedOptions.map((option, index) => (
+                <GetStartedCard
+                  key={option.title}
+                  title={option.title}
+                  features={option.features}
+                  buttonText={option.buttonText}
+                  onButtonClick={openPopup}
                   index={index}
                 />
               ))}
