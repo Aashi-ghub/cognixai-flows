@@ -148,21 +148,33 @@ const Services = () => {
                 />
               ))}
             </div>
-            
-            {/* Zigzag Divider */}
-            <div className="mt-16 md:mt-24 w-full overflow-hidden">
-              <svg 
-                className="w-full h-6 md:h-8" 
-                viewBox="0 0 1200 32" 
-                preserveAspectRatio="none"
-                fill="none"
-              >
+          </div>
+        </section>
+
+        {/* Green Zigzag Divider Section */}
+        <section className="w-full bg-[hsl(62_20%_22%)] py-8 md:py-12 overflow-hidden">
+          <div className="w-full flex justify-center">
+            <svg 
+              className="w-full max-w-none h-8 md:h-12" 
+              viewBox="0 0 1440 48" 
+              preserveAspectRatio="xMidYMid meet"
+              fill="none"
+            >
+              {/* Repeating zigzag/diamond pattern */}
+              <pattern id="zigzag" x="0" y="0" width="40" height="48" patternUnits="userSpaceOnUse">
                 <path 
-                  d="M0 16 L20 0 L40 16 L60 0 L80 16 L100 0 L120 16 L140 0 L160 16 L180 0 L200 16 L220 0 L240 16 L260 0 L280 16 L300 0 L320 16 L340 0 L360 16 L380 0 L400 16 L420 0 L440 16 L460 0 L480 16 L500 0 L520 16 L540 0 L560 16 L580 0 L600 16 L620 0 L640 16 L660 0 L680 16 L700 0 L720 16 L740 0 L760 16 L780 0 L800 16 L820 0 L840 16 L860 0 L880 16 L900 0 L920 16 L940 0 L960 16 L980 0 L1000 16 L1020 0 L1040 16 L1060 0 L1080 16 L1100 0 L1120 16 L1140 0 L1160 16 L1180 0 L1200 16 L1200 32 L1180 16 L1160 32 L1140 16 L1120 32 L1100 16 L1080 32 L1060 16 L1040 32 L1020 16 L1000 32 L980 16 L960 32 L940 16 L920 32 L900 16 L880 32 L860 16 L840 32 L820 16 L800 32 L780 16 L760 32 L740 16 L720 32 L700 16 L680 32 L660 16 L640 32 L620 16 L600 32 L580 16 L560 32 L540 16 L520 32 L500 16 L480 32 L460 16 L440 32 L420 16 L400 32 L380 16 L360 32 L340 16 L320 32 L300 16 L280 32 L260 16 L240 32 L220 16 L200 32 L180 16 L160 32 L140 16 L120 32 L100 16 L80 32 L60 16 L40 32 L20 16 L0 32 Z" 
-                  className="fill-border"
+                  d="M0 24 L10 12 L20 24 L10 36 Z M20 24 L30 12 L40 24 L30 36 Z" 
+                  fill="hsl(50 35% 45%)"
+                  opacity="0.7"
                 />
-              </svg>
-            </div>
+                <path 
+                  d="M10 12 L20 0 L30 12 L20 24 Z M10 36 L20 24 L30 36 L20 48 Z" 
+                  fill="hsl(50 35% 45%)"
+                  opacity="0.5"
+                />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#zigzag)" />
+            </svg>
           </div>
         </section>
 
