@@ -152,18 +152,50 @@ const Services = () => {
         </section>
 
         {/* Green Banner Section */}
-        <section className="py-16 md:py-20 bg-[#4a7c59]">
-          <div className="container mx-auto px-4">
+        <section className="relative bg-[#5c6650] overflow-hidden">
+          <div className="container mx-auto px-4 py-24 md:py-32 flex flex-col items-center justify-center">
+            {/* Decorative Icon */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <div className="w-24 h-24 md:w-32 md:h-32 bg-[#a4a86c] rounded-lg flex items-center justify-center shadow-lg">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-[#5c6650]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M9 9L15 15M15 9L9 15" />
+                </svg>
+              </div>
+            </motion.div>
+            
+            {/* Main Text */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl text-white text-center"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl md:text-4xl lg:text-5xl text-white text-center max-w-3xl"
               style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
             >
               Harness the power of intelligent systems
             </motion.h2>
+          </div>
+          
+          {/* Zigzag Bottom Pattern */}
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg 
+              className="w-full h-4 md:h-6" 
+              viewBox="0 0 1200 24" 
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <path 
+                d="M0 12 L15 0 L30 12 L45 0 L60 12 L75 0 L90 12 L105 0 L120 12 L135 0 L150 12 L165 0 L180 12 L195 0 L210 12 L225 0 L240 12 L255 0 L270 12 L285 0 L300 12 L315 0 L330 12 L345 0 L360 12 L375 0 L390 12 L405 0 L420 12 L435 0 L450 12 L465 0 L480 12 L495 0 L510 12 L525 0 L540 12 L555 0 L570 12 L585 0 L600 12 L615 0 L630 12 L645 0 L660 12 L675 0 L690 12 L705 0 L720 12 L735 0 L750 12 L765 0 L780 12 L795 0 L810 12 L825 0 L840 12 L855 0 L870 12 L885 0 L900 12 L915 0 L930 12 L945 0 L960 12 L975 0 L990 12 L1005 0 L1020 12 L1035 0 L1050 12 L1065 0 L1080 12 L1095 0 L1110 12 L1125 0 L1140 12 L1155 0 L1170 12 L1185 0 L1200 12 L1200 24 L0 24 Z" 
+                className="fill-[#a4a86c]/40"
+              />
+            </svg>
           </div>
         </section>
 
