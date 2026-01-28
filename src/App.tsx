@@ -22,37 +22,43 @@ import Terms from "./pages/Terms";
 
 const queryClient = new QueryClient();
 
-const App = () => {
+const AppContent = () => {
   useSmoothScroll();
   
   return (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <ContactPopupProvider>
-        <Toaster />
-        <Sonner />
-        <ContactPopup />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/financial-operations" element={<FinancialOperations />} />
-            <Route path="/services/process-orchestration" element={<ProcessOrchestration />} />
-            <Route path="/services/enterprise-governance" element={<EnterpriseGovernance />} />
-            <Route path="/services/strategy-change" element={<StrategyChange />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </ContactPopupProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/services/financial-operations" element={<FinancialOperations />} />
+      <Route path="/services/process-orchestration" element={<ProcessOrchestration />} />
+      <Route path="/services/enterprise-governance" element={<EnterpriseGovernance />} />
+      <Route path="/services/strategy-change" element={<StrategyChange />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <ContactPopupProvider>
+          <Toaster />
+          <Sonner />
+          <ContactPopup />
+          <BrowserRouter>
+            <AppContent />
+          </BrowserRouter>
+        </ContactPopupProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 
