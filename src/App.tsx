@@ -9,6 +9,10 @@ import { ContactPopup } from "./components/ContactPopup";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
+import FinancialOperations from "./pages/services/FinancialOperations";
+import ProcessOrchestration from "./pages/services/ProcessOrchestration";
+import EnterpriseGovernance from "./pages/services/EnterpriseGovernance";
+import StrategyChange from "./pages/services/StrategyChange";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
@@ -33,6 +37,10 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/financial-operations" element={<FinancialOperations />} />
+            <Route path="/services/process-orchestration" element={<ProcessOrchestration />} />
+            <Route path="/services/enterprise-governance" element={<EnterpriseGovernance />} />
+            <Route path="/services/strategy-change" element={<StrategyChange />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
