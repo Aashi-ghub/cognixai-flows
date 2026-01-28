@@ -5,28 +5,31 @@ interface ServiceCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
+  gradientClass: string;
   index: number;
 }
 
-export const ServiceCard = ({ icon: Icon, title, description, index }: ServiceCardProps) => {
+export const ServiceCard = ({ icon: Icon, title, description, gradientClass, index }: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex flex-col rounded-2xl overflow-hidden border border-border bg-[#d3dad1] hover:shadow-lg transition-shadow duration-300"
+      className="group flex flex-col"
     >
-      {/* Icon Area */}
-      <div className="relative h-40 sm:h-48 flex items-center justify-center bg-[#c5cfc2]">
-        <div className="w-16 h-16 bg-background rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
-          <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
+      {/* Gradient Image Area */}
+      <div className={`relative h-48 sm:h-56 rounded-xl overflow-hidden ${gradientClass}`}>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg">
+            <Icon className="w-7 h-7 text-foreground" strokeWidth={1.5} />
+          </div>
         </div>
       </div>
       
       {/* Content */}
-      <div className="p-5 sm:p-6">
-        <h3 className="text-lg sm:text-xl font-medium text-foreground mb-2">{title}</h3>
+      <div className="pt-5 pb-2">
+        <h3 className="text-xl font-medium text-foreground mb-2">{title}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
       </div>
     </motion.div>
