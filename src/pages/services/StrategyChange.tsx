@@ -76,18 +76,22 @@ const StrategyChange = () => {
       </section>
 
       {/* Green Banner */}
-      <section className="relative bg-[#5c6650] overflow-hidden">
-        <div className="container mx-auto px-4 py-16 md:py-20 flex flex-col items-center justify-center">
-          <motion.h2
+      <section className="py-8 md:py-12">
+        <div className="container mx-auto px-4">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-3xl lg:text-4xl text-white text-center max-w-3xl"
-            style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+            className="bg-[#5c6650] rounded-2xl py-10 md:py-14 px-6 flex flex-col items-center justify-center"
           >
-            Included Services
-          </motion.h2>
+            <h2
+              className="text-2xl md:text-3xl lg:text-4xl text-white text-center max-w-3xl"
+              style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+            >
+              Included Services
+            </h2>
+          </motion.div>
         </div>
       </section>
 
