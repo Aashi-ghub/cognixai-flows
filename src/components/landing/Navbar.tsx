@@ -20,7 +20,13 @@ const navLinks = [
   { 
     label: "SERVICES", 
     href: "/services", 
-    hasDropdown: false,
+    hasDropdown: true,
+    dropdownItems: [
+      { label: "Financial Operations & Audit", href: "/services/financial-operations" },
+      { label: "Intelligent Process Orchestration", href: "/services/process-orchestration" },
+      { label: "Enterprise Governance", href: "/services/enterprise-governance" },
+      { label: "Strategy & Change Enablement", href: "/services/strategy-change" },
+    ]
   },
   { label: "BLOG", href: "/blog" },
 ];
