@@ -167,6 +167,103 @@ const Services = () => {
           </div>
         </section>
 
+        {/* Service Highlight Cards Section */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="space-y-6">
+              {/* Card 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col md:flex-row rounded-xl overflow-hidden border border-border"
+              >
+                <div className="flex-1 bg-[#f5f3ee] p-8 md:p-10 flex flex-col justify-center">
+                  <span className="text-sm text-muted-foreground mb-3">Workflow Automation</span>
+                  <h3 
+                    className="text-2xl md:text-3xl text-foreground mb-4"
+                    style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+                  >
+                    End-to-end process automation that eliminates manual bottlenecks
+                  </h3>
+                  <button 
+                    onClick={openPopup}
+                    className="inline-flex items-center justify-center w-fit px-5 py-2.5 text-sm font-medium border border-foreground rounded-md hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    Learn More
+                  </button>
+                </div>
+                <div className="w-full md:w-64 h-48 md:h-auto bg-[#c25a3c] flex items-center justify-center">
+                  <svg className="w-16 h-16 text-[#a34830]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L12 22M2 12L22 12M4.93 4.93L19.07 19.07M19.07 4.93L4.93 19.07" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="flex flex-col md:flex-row rounded-xl overflow-hidden border border-border"
+              >
+                <div className="flex-1 bg-[#f5f3ee] p-8 md:p-10 flex flex-col justify-center">
+                  <span className="text-sm text-muted-foreground mb-3">AI Communication</span>
+                  <h3 
+                    className="text-2xl md:text-3xl text-foreground mb-4"
+                    style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+                  >
+                    Voice AI agents that handle calls, qualify leads, and book meetings
+                  </h3>
+                  <button 
+                    onClick={openPopup}
+                    className="inline-flex items-center justify-center w-fit px-5 py-2.5 text-sm font-medium border border-foreground rounded-md hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    Learn More
+                  </button>
+                </div>
+                <div className="w-full md:w-64 h-48 md:h-auto bg-[#4a7c59] flex items-center justify-center">
+                  <svg className="w-16 h-16 text-[#3a6347]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L12 22M2 12L22 12M4.93 4.93L19.07 19.07M19.07 4.93L4.93 19.07" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-col md:flex-row rounded-xl overflow-hidden border border-border"
+              >
+                <div className="flex-1 bg-[#f5f3ee] p-8 md:p-10 flex flex-col justify-center">
+                  <span className="text-sm text-muted-foreground mb-3">Custom Infrastructure</span>
+                  <h3 
+                    className="text-2xl md:text-3xl text-foreground mb-4"
+                    style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+                  >
+                    Tailored ERP, CRM, and AI systems built for how you actually work
+                  </h3>
+                  <button 
+                    onClick={openPopup}
+                    className="inline-flex items-center justify-center w-fit px-5 py-2.5 text-sm font-medium border border-foreground rounded-md hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    Learn More
+                  </button>
+                </div>
+                <div className="w-full md:w-64 h-48 md:h-auto bg-[#c25a3c] flex items-center justify-center">
+                  <svg className="w-16 h-16 text-[#a34830]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L12 22M2 12L22 12M4.93 4.93L19.07 19.07M19.07 4.93L4.93 19.07" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-16 md:py-24 bg-card/30 border-y border-border">
           <div className="container mx-auto px-4">
