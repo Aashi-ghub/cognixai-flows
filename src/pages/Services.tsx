@@ -17,25 +17,25 @@ const services = [
     icon: Workflow,
     title: "Kill Manual Work",
     description: "We replace repetitive human tasks with automation systems that run 24/7 — without reminders, follow-ups, or errors.",
-    gradientClass: "bg-gradient-to-br from-blue-200 via-blue-100 to-amber-100",
+    gradientClass: "bg-gradient-to-br from-[#5c6650] via-[#7a8a6e] to-[#e8c4a8]",
   },
   {
     icon: MessageSquare,
     title: "Never Miss a Lead Again",
     description: "We deploy Voice AI agents and conversational systems that answer, qualify, and book — instantly.",
-    gradientClass: "bg-gradient-to-br from-teal-200 via-cyan-100 to-blue-100",
+    gradientClass: "bg-gradient-to-br from-[#4a5840] via-[#6b7d5c] to-[#d4a574]",
   },
   {
     icon: BarChart3,
     title: "Make Data Speak",
     description: "We build AI-driven reporting systems that turn raw numbers into live dashboards, alerts, and decisions.",
-    gradientClass: "bg-gradient-to-br from-orange-100 via-yellow-100 to-green-100",
+    gradientClass: "bg-gradient-to-br from-[#d4a574] via-[#c8956a] to-[#5c6650]",
   },
   {
     icon: Cpu,
     title: "Build What Off-The-Shelf Can't",
     description: "We build custom ERP, CRM, and AI-powered infrastructure designed around how your business actually works.",
-    gradientClass: "bg-gradient-to-br from-purple-100 via-pink-100 to-rose-100",
+    gradientClass: "bg-gradient-to-br from-[#6b7d5c] via-[#8a9a7e] to-[#e8c4a8]",
   },
 ];
 
