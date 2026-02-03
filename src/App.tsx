@@ -16,9 +16,12 @@ import StrategyChange from "./pages/services/StrategyChange";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
-import Blog from "./pages/Blog";
+import BlogList from "./pages/blogs/BlogList";
+import BlogPost from "./pages/blogs/BlogPost";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import About from "./pages/About";
+import WhyIStarted from "./pages/WhyIStarted";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +37,10 @@ const AppContent = () => {
       <Route path="/services/process-orchestration" element={<ProcessOrchestration />} />
       <Route path="/services/enterprise-governance" element={<EnterpriseGovernance />} />
       <Route path="/services/strategy-change" element={<StrategyChange />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/blogs" element={<BlogList />} />
+      <Route path="/blogs/:slug" element={<BlogPost />} />
+      <Route path="/blog/why-i-started-cognixai-labs" element={<WhyIStarted />} />
+      <Route path="/about" element={<About />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/admin/login" element={<AdminLogin />} />

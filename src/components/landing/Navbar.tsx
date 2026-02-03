@@ -28,7 +28,7 @@ const navLinks = [
       { label: "Strategy & Change Enablement", href: "/services/strategy-change" },
     ]
   },
-  { label: "BLOG", href: "/blog" },
+  { label: "BLOG", href: "/blogs" },
 ];
 
 export const Navbar = () => {

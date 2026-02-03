@@ -3,7 +3,7 @@ import { useContactPopup } from "@/contexts/ContactPopupContext";
 const footerLinks = {
   Product: ["Call Agent", "Hiring Agent", "AutoQuote AI", "Sales Agent", "Orchestrator", "Insights"],
   Initiatives: ["AI Summit 2026"],
-  Company: ["Blog"],
+  Company: ["About", "Blog"],
   "Get Started": ["For Enterprises", "For Startups"],
   Connect: ["Press", "Partnerships", "Contact"],
 };
@@ -25,8 +25,10 @@ const getFooterHref = (link: string) => {
       return "/products#insights";
 
     // Company
+    case "About":
+      return "/about";
     case "Blog":
-      return "/blog";
+      return "/blogs";
 
     // Get Started
     case "For Enterprises":

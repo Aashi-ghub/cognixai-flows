@@ -3,6 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, Shield, Server, Database } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { ServiceSchema } from "@/components/SeoSchemas";
 
 const services = [
   {
@@ -27,6 +28,10 @@ const EnterpriseGovernance = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ServiceSchema
+        name="Enterprise AI Governance"
+        description="Comprehensive governance framework to deploy, monitor, and control AI models safely with private LLM deployment and vector database architecture."
+      />
       <Navbar />
       
       {/* Hero Section */}

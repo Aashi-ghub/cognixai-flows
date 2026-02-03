@@ -22,11 +22,14 @@ export const BuildSection = () => {
             transition={{ duration: 0.5 }}
             className="max-w-lg"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-              Build with CognixAI Labs
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-4">
+              Who is CognixAI Labs a good fit for?
             </h2>
 
-            <p className="text-lg text-muted-foreground mb-10">
+            <p className="text-lg text-muted-foreground mb-6">
+              We work with founders and COOs of growing SMBs and mid-market companies, heads of Operations and Customer Experience (CX), and Sales and RevOps leaders running large lead or ticket volumes. If you're spending hours on repetitive tasks that could be automated, we should talk.
+            </p>
+            <p className="text-base text-muted-foreground mb-10">
               Create your own AI-powered voice agents and applications with CognixAI Labs Models
             </p>
 

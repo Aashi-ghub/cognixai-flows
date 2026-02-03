@@ -53,9 +53,12 @@ export const ProductSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground">
-            CognixAI Labs Product Suite
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+            Which workflows can CognixAI Labs automate?
           </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            We focus on repetitive, rules-driven workflows where your team spends hours every week: lead capture and qualification, outbound follow-ups, support intake and routing, FAQ-level resolutions, data syncing between tools, and scheduled reporting.
+          </p>
         </motion.div>
 
         {/* Product Cards - Full Image Style */}

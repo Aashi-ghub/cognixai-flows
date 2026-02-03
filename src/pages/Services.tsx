@@ -5,6 +5,9 @@ import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { FeatureCard } from "@/components/services/FeatureCard";
 import { GetStartedCard } from "@/components/services/GetStartedCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { SeoFaqSchema } from "@/components/SeoFaqSchema";
+import { ServiceSchema, FaqSchema } from "@/components/SeoSchemas";
 import { 
   Workflow, 
   BarChart3, 
@@ -93,8 +96,33 @@ const getStartedOptions = [
 const Services = () => {
   const { openPopup } = useContactPopup();
 
+  const serviceFaqs = [
+    {
+      question: "What does it cost to deploy AI agents?",
+      answer: "Pricing depends on the complexity and scope of automation. We typically start with a focused pilot project, then scale based on proven ROI. Most clients see positive returns within 2–3 months as automation reduces manual work and operational costs.",
+    },
+    {
+      question: "What tools and systems do your AI agents integrate with?",
+      answer: "Our agents integrate with popular CRM systems (Salesforce, HubSpot, Pipedrive), helpdesk platforms (Zendesk, Freshdesk, Intercom), telephony systems (Twilio, RingCentral), and internal tools via APIs. We can also build custom integrations for proprietary systems.",
+    },
+    {
+      question: "How do you maintain and improve AI agents over time?",
+      answer: "We provide ongoing monitoring, maintenance, and optimization. Our agents learn from interactions and improve over time. We also offer regular reviews to identify new automation opportunities and ensure your agents adapt to evolving business needs.",
+    },
+    {
+      question: "What's the typical timeline from start to production?",
+      answer: "Most clients see their first agent in production within 4–6 weeks. We start with a focused pilot on one workflow, demonstrate results, and then expand to other areas. For comprehensive automation strategies, we work with you to create a custom roadmap.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <ServiceSchema
+        name="AI Agent Development & Automation"
+        description="CognixAI Labs builds custom AI agents that automate 80–90% of repetitive business operations including sales ops, customer support, and back-office workflows."
+      />
+      <FaqSchema items={serviceFaqs} />
+      <SeoFaqSchema items={serviceFaqs} />
       <Navbar />
       <main>
         {/* Hero Section - Kept intact */}
@@ -110,10 +138,10 @@ const Services = () => {
                 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6"
                 style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
               >
-                What We Do
+                AI Agents & Automation Services
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
-                We don't sell tools. We build systems that remove friction, eliminate busywork, and let your team focus on what actually moves the needle.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
+                AI agents from CognixAI Labs typically automate 60–90% of repetitive operational tasks such as lead routing, follow-ups, ticket triage, data entry, and recurring reporting within 4–8 weeks, without forcing you to replace your existing CRM, helpdesk, or telephony systems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -130,6 +158,51 @@ const Services = () => {
                 </button>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Q&A Section */}
+        <section className="py-16 md:py-24 bg-background border-y border-border">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+                  What can CognixAI Labs' AI agents automate in my business?
+                </h2>
+                <p className="text-base md:text-lg text-muted-foreground mb-4">
+                  We focus on repetitive, rules-driven workflows where your team spends hours every week: lead capture and qualification, outbound follow-ups, support intake and routing, FAQ-level resolutions, data syncing between tools, and scheduled reporting.
+                </p>
+                <ul className="mt-4 space-y-2 list-disc list-inside text-muted-foreground">
+                  <li>Sales ops: lead enrichment, routing, follow-ups.</li>
+                  <li>Support: ticket triage, FAQ responses, status updates.</li>
+                  <li>Back-office: data entry, reconciliations, notifications.</li>
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+                  How does an AI agent project with CognixAI Labs work end-to-end?
+                </h2>
+                <p className="text-base md:text-lg text-muted-foreground mb-4">
+                  We start with a 1–2 week discovery to map your workflows, then build and test a pilot agent on a narrow slice of work, and finally expand automation coverage once we hit agreed-upon quality and safety thresholds.
+                </p>
+                <ol className="mt-4 space-y-2 list-decimal list-inside text-muted-foreground">
+                  <li>Discovery and process mapping (week 1–2).</li>
+                  <li>Pilot agent build + sandbox testing (week 3–4).</li>
+                  <li>Production rollout + tuning (week 5–8).</li>
+                </ol>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -360,6 +433,56 @@ const Services = () => {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Services FAQ Section */}
+        <section className="py-16 md:py-24 bg-background border-t border-border">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal mb-12 text-foreground text-center" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+                Frequently asked questions
+              </h2>
+              <Accordion type="single" collapsible className="w-full space-y-2">
+                <AccordionItem value="cost" className="border border-border rounded-lg px-6 bg-card/30 hover:bg-card/50 transition-colors">
+                  <AccordionTrigger className="text-left text-base md:text-lg font-medium text-foreground hover:no-underline py-4">
+                    What does it cost to deploy AI agents?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    Pricing depends on the complexity and scope of automation. We typically start with a focused pilot project, then scale based on proven ROI. Most clients see positive returns within 2–3 months as automation reduces manual work and operational costs.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="integrations" className="border border-border rounded-lg px-6 bg-card/30 hover:bg-card/50 transition-colors">
+                  <AccordionTrigger className="text-left text-base md:text-lg font-medium text-foreground hover:no-underline py-4">
+                    What tools and systems do your AI agents integrate with?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    Our agents integrate with popular CRM systems (Salesforce, HubSpot, Pipedrive), helpdesk platforms (Zendesk, Freshdesk, Intercom), telephony systems (Twilio, RingCentral), and internal tools via APIs. We can also build custom integrations for proprietary systems.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="maintenance" className="border border-border rounded-lg px-6 bg-card/30 hover:bg-card/50 transition-colors">
+                  <AccordionTrigger className="text-left text-base md:text-lg font-medium text-foreground hover:no-underline py-4">
+                    How do you maintain and improve AI agents over time?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    We provide ongoing monitoring, maintenance, and optimization. Our agents learn from interactions and improve over time. We also offer regular reviews to identify new automation opportunities and ensure your agents adapt to evolving business needs.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="timeline" className="border border-border rounded-lg px-6 bg-card/30 hover:bg-card/50 transition-colors">
+                  <AccordionTrigger className="text-left text-base md:text-lg font-medium text-foreground hover:no-underline py-4">
+                    What's the typical timeline from start to production?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    Most clients see their first agent in production within 4–6 weeks. We start with a focused pilot on one workflow, demonstrate results, and then expand to other areas. For comprehensive automation strategies, we work with you to create a custom roadmap.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
           </div>
         </section>
       </main>

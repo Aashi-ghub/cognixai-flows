@@ -3,6 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, DollarSign, RefreshCcw, TrendingUp } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { ServiceSchema } from "@/components/SeoSchemas";
 
 const services = [
   {
@@ -27,6 +28,10 @@ const FinancialOperations = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ServiceSchema
+        name="AI Agents for Financial Operations"
+        description="Automate 70–85% of financial ops workflows including reconciliation, reporting, invoice processing, and compliance checks with AI agents."
+      />
       <Navbar />
       
       {/* Hero Section */}

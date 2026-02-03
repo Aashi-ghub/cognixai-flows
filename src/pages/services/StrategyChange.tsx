@@ -3,6 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, ClipboardCheck, Users, Building2 } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { ServiceSchema } from "@/components/SeoSchemas";
 
 const services = [
   {
@@ -27,6 +28,10 @@ const StrategyChange = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ServiceSchema
+        name="Strategy & Change Enablement"
+        description="AI readiness assessment, workforce reskilling programs, and Center of Excellence design to prepare organizations for AI adoption and transformation."
+      />
       <Navbar />
       
       {/* Hero Section */}

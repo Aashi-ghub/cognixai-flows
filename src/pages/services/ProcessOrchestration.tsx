@@ -3,6 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, Workflow, Headphones, AlertTriangle } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { ServiceSchema } from "@/components/SeoSchemas";
 
 const services = [
   {
@@ -27,6 +28,10 @@ const ProcessOrchestration = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ServiceSchema
+        name="Intelligent Process Orchestration"
+        description="Connect disparate systems and processes into unified, intelligent workflows with AI agents that automate end-to-end business processes."
+      />
       <Navbar />
       
       {/* Hero Section */}

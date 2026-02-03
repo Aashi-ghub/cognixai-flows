@@ -35,13 +35,16 @@ export const HeroSection = () => {
       }} className="max-w-4xl mx-auto text-center">
           {/* Main Headline - Serif font like Sarvam */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
-            Building the foundation for
-            <br />
-            AI-driven business automation
+          Build Custom AI Agents That Automate Your 
+          <br/>
+          Sales, Support & Operations Workflows
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">A unified platform for voice automation, workflow intelligence, and system integration, designed for enterprises. Enabling companies to scale revenue, reduce costs, and operate autonomously.</p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">CognixAI Labs builds custom AI agents that plug into your CRM, helpdesk, and telephony to automate 80–90% of repetitive operations work—lead qualification, follow-ups, ticket triage, reporting—so your team closes more deals and resolves issues faster without adding headcount.</p>
+
+          {/* Optional tagline */}
+          <p className="text-sm text-muted-foreground/70 mb-10 max-w-2xl mx-auto">India-first, global-ready AI automation studio.</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
