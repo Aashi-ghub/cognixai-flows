@@ -36,28 +36,28 @@ const AICallingAgent = () => {
                 AI CALLING AGENT · VOICE-FIRST AUTOMATION
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-                Turn every phone call
+                Never miss a revenue
                 <br />
-                into a qualified opportunity.
+                call again.
               </h1>
               <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-6">
-                A 24/7 AI voice agent that sounds natural, follows your playbooks, and plugs
-                into your CRM and telephony stack. It dials, qualifies, routes, and books
-                meetings—so your team only talks to people who are ready.
+                A 24/7 AI voice agent that qualifies leads, books meetings, and updates your CRM
+                while your team sleeps—so every call turns into a tracked, follow‑up‑ready
+                opportunity instead of a missed chance.
               </p>
               <div className="flex flex-wrap items-center gap-4 mb-6">
                 <button
                   onClick={handleDemoClick}
                   className="btn-primary"
                 >
-                  Book a live call demo ✦
+                  Try AI Agent Free →
                 </button>
-                <a
-                  href="#how-it-works"
+                <button
+                  onClick={handleDemoClick}
                   className="btn-outline"
                 >
-                  See how it works
-                </a>
+                  Hear It Live (30s)
+                </button>
               </div>
               <p className="text-xs text-muted-foreground/80">
                 Typically live in 4–6 weeks · Works with your existing telephony & CRM · No
@@ -101,11 +101,52 @@ const AICallingAgent = () => {
                   </p>
                 </div>
               </div>
-              <div className="space-y-3 text-xs text-muted-foreground">
+              <div className="space-y-3 text-xs text-muted-foreground mb-4">
                 <p>Designed for high-volume sales, collections, service, and support teams.</p>
                 <p>We plug into your dialer, IVR, CRM, and helpdesk—no rip-and-replace needed.</p>
               </div>
+              <button
+                onClick={handleDemoClick}
+                className="btn-outline w-full md:w-auto text-xs font-medium"
+              >
+                Calculate Your ROI →
+              </button>
             </motion.aside>
+          </div>
+        </section>
+
+        {/* Research-backed call stats */}
+        <section className="container mx-auto px-4 lg:px-8 mt-12">
+          <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-7">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">21x</p>
+                <p className="text-xs text-muted-foreground">
+                  more qualified leads when teams respond to new calls within ~5 minutes instead of 30.
+                </p>
+                <p className="mt-1 text-[10px] text-muted-foreground/70">
+                  Based on widely cited speed‑to‑lead benchmarks.
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">7x</p>
+                <p className="text-xs text-muted-foreground">
+                  higher chance of qualifying a prospect when follow‑up happens within an hour.
+                </p>
+                <p className="mt-1 text-[10px] text-muted-foreground/70">
+                  Reflects research on contact timing vs. conversion.
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">35–50%</p>
+                <p className="text-xs text-muted-foreground">
+                  of deals typically go to the first responder when multiple vendors compete.
+                </p>
+                <p className="mt-1 text-[10px] text-muted-foreground/70">
+                  Aggregated from industry sales and RFQ studies.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -266,7 +307,7 @@ const AICallingAgent = () => {
                 onClick={handleDemoClick}
                 className="mt-6 btn-primary w-full md:w-auto"
               >
-                Talk through your stack
+                Get 3x More Qualified Calls →
               </button>
             </div>
           </div>

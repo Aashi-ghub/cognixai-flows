@@ -170,8 +170,7 @@ export const Navbar = () => {
                   Our Solutions
                 </a>
                 <a href="#" onClick={handleDemoClick} className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-medium tracking-wide bg-foreground text-background hover:bg-foreground/90 transition-colors">
-                  GET A FREE DEMO
-                  <span>✦</span>
+                  Try AI Agent Free →
                 </a>
               </div>
 
@@ -256,7 +255,7 @@ export const Navbar = () => {
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-xs font-medium bg-foreground text-background hover:bg-foreground/90 transition-colors"
                       onClick={handleDemoClick}
                     >
-                      REQUEST A DEMO ✦
+                      Try AI Agent Free →
                     </a>
                   </div>
                 </div>

@@ -36,29 +36,28 @@ const AutoQuoteAI = () => {
                 AUTOQUOTE AI · REVENUE OPERATIONS
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-                Generate complex quotes
+                Send 3x more quotes
                 <br />
-                in seconds, not days.
+                without hiring.
               </h1>
               <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-6">
-                AutoQuote AI sits between your inbound inquiries and your pricing engine.
-                It captures requirements from emails, forms, or chats, applies your pricing
-                rules, and produces consistent, ready-to-send quotes—so your team focuses on
-                closing, not formatting spreadsheets.
+                Your AI RevOps analyst that turns inbound inquiries into ready-to-send quotes
+                in under 60 seconds—so your team spends time closing deals, not formatting
+                spreadsheets.
               </p>
               <div className="flex flex-wrap items-center gap-4 mb-6">
                 <button
                   onClick={handleDemoClick}
                   className="btn-primary"
                 >
-                  See AutoQuote AI in action ✦
+                  Try AutoQuote AI Free →
                 </button>
-                <a
-                  href="#how-it-works"
+                <button
+                  onClick={handleDemoClick}
                   className="btn-outline"
                 >
-                  How it works
-                </a>
+                  See 60‑Second Demo
+                </button>
               </div>
               <p className="text-xs text-muted-foreground/80">
                 Typical response time &lt; 60 seconds · Fully auditable quotes · Fits into your
@@ -66,7 +65,7 @@ const AutoQuoteAI = () => {
               </p>
             </motion.div>
 
-            {/* Right rail stats card */}
+            {/* Research-backed stats card */}
             <motion.aside
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -74,39 +73,80 @@ const AutoQuoteAI = () => {
               className="rounded-2xl border border-border bg-card/60 backdrop-blur-xl p-6 lg:p-7 shadow-[0_18px_60px_rgba(15,23,42,0.35)]"
             >
               <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground mb-3">
-                IMPACT REVOPS TEAMS TARGET
+                WHY SPEED‑TO‑QUOTE WINS
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                 <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">3–5x</p>
+                  <p className="text-3xl font-semibold text-foreground mb-1">21x</p>
                   <p className="text-xs text-muted-foreground">
-                    more quotes sent per rep without adding headcount.
+                    more qualified leads with 5‑minute responses.
                   </p>
                 </div>
                 <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">&lt;60s</p>
+                  <p className="text-3xl font-semibold text-foreground mb-1">7x</p>
                   <p className="text-xs text-muted-foreground">
-                    average time from inquiry to first draft quote.
+                    higher chance of qualifying leads with 1‑hour responses.
                   </p>
                 </div>
                 <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">0</p>
+                  <p className="text-3xl font-semibold text-foreground mb-1">35–50%</p>
                   <p className="text-xs text-muted-foreground">
-                    manual copy-paste between emails, sheets, and CRM.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">98%</p>
-                  <p className="text-xs text-muted-foreground">
-                    consistency on pricing logic and discount rules.
+                    more deals won with same‑day RFQ responses.
                   </p>
                 </div>
               </div>
-              <div className="space-y-3 text-xs text-muted-foreground">
-                <p>Ideal for SaaS, services, insurance, manufacturing, and B2B marketplaces.</p>
-                <p>We plug into your CRM, CPQ, and billing tools—no rip-and-replace required.</p>
-              </div>
+              <p className="text-[11px] text-muted-foreground/80 mb-1">
+                Based on aggregated industry research on speed‑to‑lead and RFQ turnaround.
+              </p>
+              <p className="text-xs text-muted-foreground mb-4">
+                AutoQuote AI gives you this speed advantage on every single inquiry—without
+                adding headcount.
+              </p>
+              <button
+                onClick={handleDemoClick}
+                className="btn-outline w-full sm:w-auto"
+              >
+                Calculate Your ROI →
+              </button>
             </motion.aside>
+          </div>
+        </section>
+
+        {/* Why fast quotes win */}
+        <section className="container mx-auto px-4 lg:px-8 mt-16">
+          <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-8">
+            <div className="grid gap-8 lg:grid-cols-[1.6fr,1.1fr] items-start">
+              <div>
+                <h2 className="text-2xl md:text-3xl text-foreground mb-3">
+                  Why 5‑minute quotes win more deals.
+                </h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Studies across B2B funnels show that the fastest credible response usually wins.
+                  Responding in minutes instead of hours or days multiplies both qualification and
+                  close rates.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 5‑minute responses can deliver many‑times more qualified opportunities than 30‑minute waits.</li>
+                  <li>• Contacting prospects within an hour materially increases the chance of converting them.</li>
+                  <li>• Same‑day RFQ turnaround consistently outperforms 24–72 hour quote cycles.</li>
+                </ul>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <p className="font-medium text-foreground mb-2">
+                  Your opportunity with AutoQuote AI
+                </p>
+                <p className="mb-3">
+                  Most teams still send quotes in days, not minutes. AutoQuote AI generates
+                  compliant, on‑brand quotes in under 60 seconds—so your reps can follow up
+                  while intent is highest instead of waiting on operations.
+                </p>
+                <p className="text-xs text-muted-foreground/80">
+                  Inspired by widely published speed‑to‑lead and RFQ turnaround studies. AutoQuote
+                  AI brings those advantages to your own RevOps motion, without changing your core
+                  pricing logic.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -266,7 +306,7 @@ const AutoQuoteAI = () => {
                 onClick={handleDemoClick}
                 className="mt-6 btn-primary w-full md:w-auto"
               >
-                Walk through your quote flow
+                Get Your Custom Blueprint →
               </button>
             </div>
           </div>
@@ -316,7 +356,7 @@ const AutoQuoteAI = () => {
                   onClick={handleDemoClick}
                   className="btn-primary w-full"
                 >
-                  Schedule a 30‑minute discovery
+                  Start Sending 3x More Quotes →
                 </button>
                 <p className="mt-3 text-[11px] text-muted-foreground/80">
                   No obligation. If we don&apos;t see at least a 2–3x throughput improvement on

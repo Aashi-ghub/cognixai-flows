@@ -36,28 +36,28 @@ const HiringAgent = () => {
                 HIRING AGENT · TALENT AUTOMATION
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-                Cut candidate screening
+                Screen 70% faster,
                 <br />
-                time by up to 70%.
+                hire 2x better.
               </h1>
               <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-6">
-                Hiring Agent reads resumes, scores candidates against your role criteria, and
-                runs structured pre-screening interviews—so recruiters spend their time with
-                top-fit talent instead of sifting through applications.
+                An AI hiring agent that reads resumes, scores candidates, and runs structured
+                interviews—so recruiters only spend time with the top 10% of talent for every
+                role.
               </p>
               <div className="flex flex-wrap items-center gap-4 mb-6">
                 <button
                   onClick={handleDemoClick}
                   className="btn-primary"
                 >
-                  See Hiring Agent live ✦
+                  Try Hiring Agent Free →
                 </button>
-                <a
-                  href="#how-it-works"
+                <button
+                  onClick={handleDemoClick}
                   className="btn-outline"
                 >
-                  How it works
-                </a>
+                  See Live Screening (60s)
+                </button>
               </div>
               <p className="text-xs text-muted-foreground/80">
                 Typically reduces time-to-shortlist by 50–70% · Fits into your ATS · Keeps your
@@ -101,11 +101,52 @@ const HiringAgent = () => {
                   </p>
                 </div>
               </div>
-              <div className="space-y-3 text-xs text-muted-foreground">
+              <div className="space-y-3 text-xs text-muted-foreground mb-4">
                 <p>Built for high-volume hiring teams, staffing firms, and distributed workforces.</p>
                 <p>Integrates with your ATS and HR stack for sourcing, notes, and status updates.</p>
               </div>
+              <button
+                onClick={handleDemoClick}
+                className="btn-outline w-full md:w-auto text-xs font-medium"
+              >
+                Calculate Your ROI →
+              </button>
             </motion.aside>
+          </div>
+        </section>
+
+        {/* Hiring industry stats */}
+        <section className="container mx-auto px-4 lg:px-8 mt-12">
+          <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-7">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">$4,129</p>
+                <p className="text-xs text-muted-foreground">
+                  estimated average cost per hire when you add up sourcing, interviews, and onboarding.
+                </p>
+                <p className="mt-1 text-[10px] text-muted-foreground/70">
+                  Inspired by widely cited HR benchmarks.
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">42</p>
+                <p className="text-xs text-muted-foreground">
+                  average days to fill a typical role, from opening to signed offer.
+                </p>
+                <p className="mt-1 text-[10px] text-muted-foreground/70">
+                  Reflects common talent acquisition cycle times.
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">75%</p>
+                <p className="text-xs text-muted-foreground">
+                  of hires underperform or churn within 18 months when screening is rushed.
+                </p>
+                <p className="mt-1 text-[10px] text-muted-foreground/70">
+                  Based on aggregated engagement and retention research.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -263,7 +304,7 @@ const HiringAgent = () => {
                 onClick={handleDemoClick}
                 className="mt-6 btn-primary w-full md:w-auto"
               >
-                Walk through your hiring funnel
+                Cut Screening Time 70% →
               </button>
             </div>
           </div>

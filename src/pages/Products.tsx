@@ -217,13 +217,29 @@ const Products = () => {
                           ))}
                         </div>
 
-                        {/* Request Demo Button */}
-                        <a
-                          href="#contact"
-                          className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90"
-                        >
-                          Request Demo
-                        </a>
+                        {/* CTAs */}
+                        <div className="flex flex-wrap items-center gap-3">
+                          <a
+                            href="#contact"
+                            className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90"
+                          >
+                            Request Demo
+                          </a>
+                          {(product.id === "call-agent" || product.id === "hiring-agent" || product.id === "autoquote-ai") && (
+                            <a
+                              href={
+                                product.id === "call-agent"
+                                  ? "/products/ai-calling-agent"
+                                  : product.id === "hiring-agent"
+                                  ? "/products/hiring-agent"
+                                  : "/products/autoquote-ai"
+                              }
+                              className="inline-flex items-center justify-center px-4 md:px-5 py-2.5 md:py-3 text-sm font-medium tracking-wide rounded-md border border-foreground/30 text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                            >
+                              View Full Product Page →
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
