@@ -8,6 +8,9 @@ import { ContactPopupProvider } from "./contexts/ContactPopupContext";
 import { ContactPopup } from "./components/ContactPopup";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
+import AICallingAgent from "./pages/AICallingAgent";
+import AutoQuoteAI from "./pages/AutoQuoteAI";
+import HiringAgent from "./pages/HiringAgent";
 import Services from "./pages/Services";
 import FinancialOperations from "./pages/services/FinancialOperations";
 import ProcessOrchestration from "./pages/services/ProcessOrchestration";
@@ -32,6 +35,9 @@ const AppContent = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/ai-calling-agent" element={<AICallingAgent />} />
+      <Route path="/products/autoquote-ai" element={<AutoQuoteAI />} />
+      <Route path="/products/hiring-agent" element={<HiringAgent />} />
       <Route path="/services" element={<Services />} />
       <Route path="/services/financial-operations" element={<FinancialOperations />} />
       <Route path="/services/process-orchestration" element={<ProcessOrchestration />} />

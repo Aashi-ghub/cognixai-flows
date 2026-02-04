@@ -9,9 +9,9 @@ const navLinks = [
     href: "/products", 
     hasDropdown: true,
     dropdownItems: [
-      { label: "Call Agent", href: "/products#call-agent" },
-      { label: "Hiring Agent", href: "/products#hiring-agent" },
-      { label: "AutoQuote AI", href: "/products#autoquote-ai" },
+      { label: "Call Agent", href: "/products/ai-calling-agent" },
+      { label: "Hiring Agent", href: "/products/hiring-agent" },
+      { label: "AutoQuote AI", href: "/products/autoquote-ai" },
       { label: "Sales Agent", href: "/products#sales-agent" },
       { label: "Orchestrator", href: "/products#orchestrator" },
       { label: "Insights", href: "/products#insights" },
