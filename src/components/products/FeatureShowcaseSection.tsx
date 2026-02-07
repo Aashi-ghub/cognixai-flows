@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Zap, LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+import featureShowcaseBg from "@/assets/feature-showcase-bg.png";
 
 interface FeatureItem {
   icon: LucideIcon;
@@ -28,16 +29,16 @@ export const FeatureShowcaseSection = ({
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        {/* Full-width dark card with image-like gradient background */}
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#2a2f26] via-[#1f2419] to-[#161a12] min-h-[320px] md:min-h-[380px]">
-          {/* Overlay gradient for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          
-          {/* Subtle texture overlay */}
-          <div className="absolute inset-0 opacity-20" style={{
-            backgroundImage: `radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%)`
-          }} />
+        {/* Full-width card with image background */}
+        <div className="relative rounded-2xl overflow-hidden min-h-[320px] md:min-h-[380px]">
+          {/* Background image */}
+          <img 
+            src={featureShowcaseBg} 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
           {/* Badge */}
           <div className="absolute top-6 left-6">
