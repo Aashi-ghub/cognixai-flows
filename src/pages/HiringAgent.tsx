@@ -26,93 +26,27 @@ const HiringAgent = () => {
       <main className="pt-32 lg:pt-40 pb-20">
         {/* Hero */}
         <section className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.6fr,1fr] items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center text-center max-w-3xl mx-auto"
+          >
+            <p className="text-xs font-medium tracking-[0.2em] text-primary mb-4">
+              HIRING AGENT · TALENT AUTOMATION
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-8">
+              Screen 70% faster,
+              <br />
+              hire 2x better.
+            </h1>
+            <button
+              onClick={handleDemoClick}
+              className="btn-primary"
             >
-              <p className="text-xs font-medium tracking-[0.2em] text-primary mb-4">
-                HIRING AGENT · TALENT AUTOMATION
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-                Screen 70% faster,
-                <br />
-                hire 2x better.
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-6">
-                An AI hiring agent that reads resumes, scores candidates, and runs structured
-                interviews—so recruiters only spend time with the top 10% of talent for every
-                role.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 mb-6">
-                <button
-                  onClick={handleDemoClick}
-                  className="btn-primary"
-                >
-                  Try Hiring Agent Free →
-                </button>
-                <button
-                  onClick={handleDemoClick}
-                  className="btn-outline"
-                >
-                  See Live Screening (60s)
-                </button>
-              </div>
-              <p className="text-xs text-muted-foreground/80">
-                Typically reduces time-to-shortlist by 50–70% · Fits into your ATS · Keeps your
-                existing hiring process, just runs it faster.
-              </p>
-            </motion.div>
-
-            {/* Right rail stats card */}
-            <motion.aside
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card/60 backdrop-blur-xl p-6 lg:p-7 shadow-[0_18px_60px_rgba(15,23,42,0.35)]"
-            >
-              <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground mb-3">
-                IMPACT PEOPLE TEAMS TARGET
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">70%</p>
-                  <p className="text-xs text-muted-foreground">
-                    reduction in manual screening time per role.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">2–3x</p>
-                  <p className="text-xs text-muted-foreground">
-                    more qualified candidates surfaced for every opening.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">24/7</p>
-                  <p className="text-xs text-muted-foreground">
-                    automated pre-screening across time zones and schedules.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">0</p>
-                  <p className="text-xs text-muted-foreground">
-                    time wasted on obviously unqualified applications.
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-3 text-xs text-muted-foreground mb-4">
-                <p>Built for high-volume hiring teams, staffing firms, and distributed workforces.</p>
-                <p>Integrates with your ATS and HR stack for sourcing, notes, and status updates.</p>
-              </div>
-              <button
-                onClick={handleDemoClick}
-                className="btn-outline w-full md:w-auto text-xs font-medium"
-              >
-                Calculate Your ROI →
-              </button>
-            </motion.aside>
-          </div>
+              Try Hiring Agent Free →
+            </button>
+          </motion.div>
         </section>
 
         {/* Hiring industry stats */}
