@@ -26,90 +26,27 @@ const AutoQuoteAI = () => {
       <main className="pt-32 lg:pt-40 pb-20">
         {/* Hero */}
         <section className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.6fr,1fr] items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center text-center max-w-3xl mx-auto"
+          >
+            <p className="text-xs font-medium tracking-[0.2em] text-primary mb-4">
+              AUTOQUOTE AI · REVENUE OPERATIONS
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-8">
+              Send 3x more quotes
+              <br />
+              without hiring.
+            </h1>
+            <button
+              onClick={handleDemoClick}
+              className="btn-primary"
             >
-              <p className="text-xs font-medium tracking-[0.2em] text-primary mb-4">
-                AUTOQUOTE AI · REVENUE OPERATIONS
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-                Send 3x more quotes
-                <br />
-                without hiring.
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-6">
-                Your AI RevOps analyst that turns inbound inquiries into ready-to-send quotes
-                in under 60 seconds—so your team spends time closing deals, not formatting
-                spreadsheets.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 mb-6">
-                <button
-                  onClick={handleDemoClick}
-                  className="btn-primary"
-                >
-                  Try AutoQuote AI Free →
-                </button>
-                <button
-                  onClick={handleDemoClick}
-                  className="btn-outline"
-                >
-                  See 60‑Second Demo
-                </button>
-              </div>
-              <p className="text-xs text-muted-foreground/80">
-                Typical response time &lt; 60 seconds · Fully auditable quotes · Fits into your
-                existing CRM and pricing stack.
-              </p>
-            </motion.div>
-
-            {/* Research-backed stats card */}
-            <motion.aside
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card/60 backdrop-blur-xl p-6 lg:p-7 shadow-[0_18px_60px_rgba(15,23,42,0.35)]"
-            >
-              <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground mb-3">
-                WHY SPEED‑TO‑QUOTE WINS
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">21x</p>
-                  <p className="text-xs text-muted-foreground">
-                    more qualified leads with 5‑minute responses.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">7x</p>
-                  <p className="text-xs text-muted-foreground">
-                    higher chance of qualifying leads with 1‑hour responses.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">35–50%</p>
-                  <p className="text-xs text-muted-foreground">
-                    more deals won with same‑day RFQ responses.
-                  </p>
-                </div>
-              </div>
-              <p className="text-[11px] text-muted-foreground/80 mb-1">
-                Based on aggregated industry research on speed‑to‑lead and RFQ turnaround.
-              </p>
-              <p className="text-xs text-muted-foreground mb-4">
-                AutoQuote AI gives you this speed advantage on every single inquiry—without
-                adding headcount.
-              </p>
-              <button
-                onClick={handleDemoClick}
-                className="btn-outline w-full sm:w-auto"
-              >
-                Calculate Your ROI →
-              </button>
-            </motion.aside>
-          </div>
+              Try AutoQuote AI Free →
+            </button>
+          </motion.div>
         </section>
 
         {/* Why fast quotes win */}

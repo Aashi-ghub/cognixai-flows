@@ -26,93 +26,27 @@ const AICallingAgent = () => {
       <main className="pt-32 lg:pt-40 pb-20">
         {/* Hero */}
         <section className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.6fr,1fr] items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center text-center max-w-3xl mx-auto"
+          >
+            <p className="text-xs font-medium tracking-[0.2em] text-primary mb-4">
+              AI CALLING AGENT · VOICE-FIRST AUTOMATION
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-8">
+              Never miss a revenue
+              <br />
+              call again.
+            </h1>
+            <button
+              onClick={handleDemoClick}
+              className="btn-primary"
             >
-              <p className="text-xs font-medium tracking-[0.2em] text-primary mb-4">
-                AI CALLING AGENT · VOICE-FIRST AUTOMATION
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-                Never miss a revenue
-                <br />
-                call again.
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-6">
-                A 24/7 AI voice agent that qualifies leads, books meetings, and updates your CRM
-                while your team sleeps—so every call turns into a tracked, follow‑up‑ready
-                opportunity instead of a missed chance.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 mb-6">
-                <button
-                  onClick={handleDemoClick}
-                  className="btn-primary"
-                >
-                  Try AI Agent Free →
-                </button>
-                <button
-                  onClick={handleDemoClick}
-                  className="btn-outline"
-                >
-                  Hear It Live (30s)
-                </button>
-              </div>
-              <p className="text-xs text-muted-foreground/80">
-                Typically live in 4–6 weeks · Works with your existing telephony & CRM · No
-                extra headcount.
-              </p>
-            </motion.div>
-
-            {/* Right rail stats card */}
-            <motion.aside
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card/60 backdrop-blur-xl p-6 lg:p-7 shadow-[0_18px_60px_rgba(15,23,42,0.35)]"
-            >
-              <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground mb-3">
-                RESULTS OUR CLIENTS TARGET
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">60–80%</p>
-                  <p className="text-xs text-muted-foreground">
-                    reduction in manual outbound calling workload.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">3–5x</p>
-                  <p className="text-xs text-muted-foreground">
-                    more conversations with qualified, ready-to-buy prospects.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">&lt;30s</p>
-                  <p className="text-xs text-muted-foreground">
-                    avg. time to first response for inbound calls.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-foreground mb-1">24/7</p>
-                  <p className="text-xs text-muted-foreground">
-                    coverage across time zones and campaigns.
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-3 text-xs text-muted-foreground mb-4">
-                <p>Designed for high-volume sales, collections, service, and support teams.</p>
-                <p>We plug into your dialer, IVR, CRM, and helpdesk—no rip-and-replace needed.</p>
-              </div>
-              <button
-                onClick={handleDemoClick}
-                className="btn-outline w-full md:w-auto text-xs font-medium"
-              >
-                Calculate Your ROI →
-              </button>
-            </motion.aside>
-          </div>
+              Try AI Agent Free →
+            </button>
+          </motion.div>
         </section>
 
         {/* Research-backed call stats */}
