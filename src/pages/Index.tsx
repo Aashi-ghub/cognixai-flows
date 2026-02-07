@@ -4,6 +4,7 @@ import { FoundationalSection } from "@/components/landing/FoundationalSection";
 import { ProductSection } from "@/components/landing/ProductSection";
 import { BuildSection } from "@/components/landing/BuildSection";
 import { IndustriesSection } from "@/components/landing/IndustriesSection";
+import { AIBenefitsSection } from "@/components/landing/AIBenefitsSection";
 import { InsightsSection } from "@/components/landing/InsightsSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { FAQSection } from "@/components/landing/FAQSection";
@@ -49,6 +50,7 @@ const Index = () => {
         <ProductSection />
         <BuildSection />
         <IndustriesSection />
+        <AIBenefitsSection />
         <InsightsSection />
         <CTASection />
         <FAQSection />
