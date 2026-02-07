@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { WorkflowsSection } from "@/components/products/WorkflowsSection";
 import { FileText, Users, CheckCircle } from "lucide-react";
 import {
   Accordion,
@@ -168,6 +169,29 @@ const HiringAgent = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Workflows Section */}
+        <WorkflowsSection
+          headline="Making Hiring Work for You"
+          description="This AI agent screens candidates end-to-end—reading resumes, ranking talent, and running structured pre-screens with minimal manual intervention."
+          items={[
+            {
+              title: "Self-Learning Agents",
+              description: "The agent improves with every hire, adapting to outcomes, applying feedback, and self-correcting using Constitutional AI.",
+              previewText: "Extract candidate details, match against scorecard criteria, and rank applicants automatically."
+            },
+            {
+              title: "Up to 98% Accuracy",
+              description: "As a result of constant feedback loops, our hiring agents refine their approach with every cycle, leading to 98% accuracy across screenings.",
+              previewText: "Route candidate using the most optimal evaluation model based on role complexity and seniority."
+            },
+            {
+              title: "Smart Model Switching",
+              description: "Dynamically switches between AI models based on role complexity and screening requirements for optimal candidate evaluation.",
+              previewText: "Switch to high-context model for senior roles requiring nuanced experience assessment."
+            }
+          ]}
+        />
 
         {/* Why choose section */}
         <section className="container mx-auto px-4 lg:px-8 mt-20">

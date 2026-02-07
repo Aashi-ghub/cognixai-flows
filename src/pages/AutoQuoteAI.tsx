@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { WorkflowsSection } from "@/components/products/WorkflowsSection";
 import { FileSearch, Calculator, Send } from "lucide-react";
 import {
   Accordion,
@@ -169,6 +170,29 @@ const AutoQuoteAI = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Workflows Section */}
+        <WorkflowsSection
+          headline="Making Quotes Work for You"
+          description="This AI agent generates quotes end-to-end—extracting requirements, applying pricing logic, and producing compliant quotes with minimal manual intervention."
+          items={[
+            {
+              title: "Self-Learning Agents",
+              description: "The agent improves with every quote, adapting to outcomes, applying feedback, and self-correcting using Constitutional AI.",
+              previewText: "Extract customer details, request category, and missing information from submitted forms."
+            },
+            {
+              title: "Up to 98% Accuracy",
+              description: "As a result of constant feedback loops, our quote agents refine their approach with every cycle, leading to 98% accuracy across flows.",
+              previewText: "Route request using the most optimal model based on task complexity and data confidence."
+            },
+            {
+              title: "Smart Model Switching",
+              description: "Dynamically switches between AI models based on quote complexity and required precision for optimal pricing accuracy.",
+              previewText: "Switch to high-context model for complex multi-product quotes requiring custom discounts."
+            }
+          ]}
+        />
 
         {/* Why choose section */}
         <section className="container mx-auto px-4 lg:px-8 mt-20">

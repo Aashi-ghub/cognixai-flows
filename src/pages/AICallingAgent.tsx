@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { WorkflowsSection } from "@/components/products/WorkflowsSection";
 import { FileText, Link, TrendingUp } from "lucide-react";
 import {
   Accordion,
@@ -187,6 +188,29 @@ const AICallingAgent = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Workflows Section */}
+        <WorkflowsSection
+          headline="Making Every Call Count"
+          description="This AI agent handles calls end-to-end—qualifying leads, booking meetings, and logging outcomes to your CRM with minimal manual intervention."
+          items={[
+            {
+              title: "Self-Learning Agents",
+              description: "The agent improves with every call, adapting to objections, applying feedback, and self-correcting using Constitutional AI.",
+              previewText: "Qualify inbound lead, extract budget and timeline, and schedule follow-up meeting automatically."
+            },
+            {
+              title: "Up to 98% Accuracy",
+              description: "As a result of constant feedback loops, our voice agents refine their approach with every cycle, leading to 98% accuracy across call flows.",
+              previewText: "Route call using the most optimal script based on lead score and conversation context."
+            },
+            {
+              title: "Smart Model Switching",
+              description: "Dynamically switches between AI models based on call complexity and required response time for optimal performance.",
+              previewText: "Switch to high-context model for complex objection handling and negotiation scenarios."
+            }
+          ]}
+        />
 
 
         {/* Proof / why now */}
