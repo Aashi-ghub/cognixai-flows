@@ -5,7 +5,10 @@ import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { WorkflowsSection } from "@/components/products/WorkflowsSection";
-import { FileSearch, Calculator, Send } from "lucide-react";
+import { UseCasesSection } from "@/components/products/UseCasesSection";
+import { FeatureShowcaseSection } from "@/components/products/FeatureShowcaseSection";
+import { StartTodaySection } from "@/components/products/StartTodaySection";
+import { FileSearch, Calculator, Send, Sparkles, TrendingUp, Zap } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -192,6 +195,45 @@ const AutoQuoteAI = () => {
               previewText: "Switch to high-context model for complex multi-product quotes requiring custom discounts."
             }
           ]}
+        />
+
+        {/* Use Cases Section */}
+        <UseCasesSection
+          badge="Use Cases"
+          headline="What Can Your New AI Quote Team Accomplish?"
+          description="Primed for excellence in routine quoting tasks, your new team of AI Agents can execute entire quote workflows without a fault."
+          ctaText="See all use cases"
+        />
+
+        {/* Feature Showcase Section */}
+        <FeatureShowcaseSection
+          badge="REVENUE OPERATIONS"
+          headline="Inquiry-to-Quote Automation with AI Agents"
+          description="Speed up your quote cycle. Our agents process requests, apply pricing, and generate quotes so nothing slips through the cracks."
+          features={[
+            {
+              icon: Sparkles,
+              title: "Improved Customer Satisfaction",
+              description: "Faster processing and accurate quoting improve the customer experience and retention."
+            },
+            {
+              icon: TrendingUp,
+              title: "Better Revenue Flow",
+              description: "Streamlining the quote cycle reduces delays and improves cash flow."
+            },
+            {
+              icon: Zap,
+              title: "Scalability",
+              description: "AI handles increased quote volumes seamlessly without extra cost."
+            }
+          ]}
+        />
+
+        {/* Start Today Section */}
+        <StartTodaySection
+          headline="Start Building Custom AI Agents to Automate Quotes"
+          description="Join our platform and start building AI agents for various types of quote automations."
+          ctaText="Request access"
         />
 
         {/* Why choose section */}
