@@ -4,6 +4,13 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { FileText, Users, CheckCircle } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const HiringAgent = () => {
   const { openPopup } = useContactPopup();
@@ -49,35 +56,26 @@ const HiringAgent = () => {
           </motion.div>
         </section>
 
-        {/* Hiring industry stats */}
+        {/* Stats section */}
         <section className="container mx-auto px-4 lg:px-8 mt-12">
           <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-7">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div>
                 <p className="text-3xl font-semibold text-foreground mb-1">$4,129</p>
                 <p className="text-xs text-muted-foreground">
-                  estimated average cost per hire when you add up sourcing, interviews, and onboarding.
-                </p>
-                <p className="mt-1 text-[10px] text-muted-foreground/70">
-                  Inspired by widely cited HR benchmarks.
+                  average cost per hire
                 </p>
               </div>
               <div>
-                <p className="text-3xl font-semibold text-foreground mb-1">42</p>
+                <p className="text-3xl font-semibold text-foreground mb-1">42 days</p>
                 <p className="text-xs text-muted-foreground">
-                  average days to fill a typical role, from opening to signed offer.
-                </p>
-                <p className="mt-1 text-[10px] text-muted-foreground/70">
-                  Reflects common talent acquisition cycle times.
+                  average time to fill a role
                 </p>
               </div>
               <div>
                 <p className="text-3xl font-semibold text-foreground mb-1">75%</p>
                 <p className="text-xs text-muted-foreground">
-                  of hires underperform or churn within 18 months when screening is rushed.
-                </p>
-                <p className="mt-1 text-[10px] text-muted-foreground/70">
-                  Based on aggregated engagement and retention research.
+                  hires underperform when rushed
                 </p>
               </div>
             </div>
@@ -91,7 +89,7 @@ const HiringAgent = () => {
         >
           <div className="max-w-3xl mb-10">
             <h2 className="text-2xl md:text-3xl text-foreground mb-3">
-              How Hiring Agent fits into your funnel.
+              How the Hiring Agent works.
             </h2>
             <p className="text-muted-foreground">
               We turn your existing job descriptions, scorecards, and interview scripts into an
@@ -99,179 +97,92 @@ const HiringAgent = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-3 justify-items-center">
+            {/* Step 01 - Parse */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="relative"
             >
-              <p className="text-xs font-semibold text-primary mb-2">01 · PARSE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Read resumes & profiles automatically.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Ingest resumes, LinkedIn profiles, and application forms, structuring skills,
-                experience, education, and signals into a consistent candidate profile.
-              </p>
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#8fa882] via-[#7a9a6e] to-[#6b8a5e] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                <FileText className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Read resumes & profiles
+                </p>
+                <h3 className="text-white text-lg font-semibold">Step 01</h3>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#7a9a6e]/60" />
+                ))}
+              </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 0.05 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
-            >
-              <p className="text-xs font-semibold text-primary mb-2">02 · SCORE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Rank candidates against your scorecard.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Compare candidates to your must-haves and nice-to-haves, producing transparent
-                scores and reasons you can share with hiring managers.
-              </p>
-            </motion.div>
-
+            {/* Step 02 - Score */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="relative"
             >
-              <p className="text-xs font-semibold text-primary mb-2">03 · PRE-SCREEN</p>
-              <h3 className="text-base font-semibold mb-2">
-                Run structured pre-screening interviews.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Conduct async or live pre-screens with standardized questions, summarizing
-                answers and red flags so humans can make faster, fairer decisions.
-              </p>
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#7a9a6e] via-[#6b8a5e] to-[#5c7a50] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                <Users className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Rank against scorecard
+                </p>
+                <h3 className="text-white text-lg font-semibold">Step 02</h3>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#6b8a5e]/60" />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Step 03 - Pre-screen */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#5c6650] via-[#4a5840] to-[#3d4a35] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                <CheckCircle className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Run structured interviews
+                </p>
+                <h3 className="text-white text-lg font-semibold">Step 03</h3>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#4a5840]/60" />
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Use cases */}
-        <section className="container mx-auto px-4 lg:px-8 mt-20">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr,1.1fr] items-start">
-            <div>
-              <h2 className="text-2xl md:text-3xl text-foreground mb-4">
-                Where Hiring Agent creates leverage.
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Any role with repeatable criteria and high applicant volume is a candidate for
-                automation—without sacrificing candidate experience.
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    VOLUME HIRING
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Support, sales, and operations roles
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Handle thousands of applicants per month while maintaining consistent
-                    screening quality and SLAs.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    CAMPUS & EARLY CAREERS
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Fair, structured evaluation at scale
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Standardize how you compare freshers and interns using rubrics instead of
-                    rushed, subjective screens.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    SPECIALIST ROLES
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Skills-first shortlisting
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Pull out specific skills, projects, and domain exposure that matter to your
-                    hiring managers.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    STAFFING & RPO
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Multi-client, multi-role pipelines
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Keep client pipelines full of high-fit candidates while your team focuses on
-                    relationship-building.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Compliance / fairness */}
-            <div className="rounded-2xl border border-border bg-muted/40 p-6 lg:p-7">
-              <p className="text-xs font-semibold tracking-[0.18em] text-muted-foreground mb-3">
-                DESIGNED FOR FAIR, GOVERNED HIRING
-              </p>
-              <h3 className="text-lg font-semibold mb-3">
-                Keep humans in control, automate the busywork.
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Hiring Agent doesn&apos;t replace recruiters—it gives them superpowers. Every
-                recommendation is explainable, auditable, and aligned with your policies.
-              </p>
-              <ul className="space-y-2 text-xs text-muted-foreground">
-                <li>• Transparent scoring criteria you can review and adjust.</li>
-                <li>• Configurable guardrails to respect legal and DEI requirements.</li>
-                <li>• Logs of every decision for compliance and calibration.</li>
-                <li>• Easy opt-out to send any candidate directly to a human.</li>
-              </ul>
-              <button
-                onClick={handleDemoClick}
-                className="mt-6 btn-primary w-full md:w-auto"
-              >
-                Cut Screening Time 70% →
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Next step */}
+        {/* Why choose section */}
         <section className="container mx-auto px-4 lg:px-8 mt-20">
           <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-8">
             <div className="grid gap-8 lg:grid-cols-[1.6fr,1.1fr] items-start">
               <div>
                 <h2 className="text-2xl md:text-3xl text-foreground mb-4">
-                  From resume piles to a structured hiring engine.
+                  Why teams choose CognixAI for hiring automation.
                 </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Most teams already know what a great hire looks like—they just can&apos;t
-                  screen every applicant with that level of attention. We help you codify that
-                  know-how into a scalable, AI-supported process.
+                <p className="text-sm text-muted-foreground mb-2">
+                  Custom AI hiring agents built around your exact scorecards and workflows.
                 </p>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>
-                    <span className="font-medium text-foreground">Start with one priority role.</span>{" "}
-                    We pilot on a single, high-volume role to validate impact quickly.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Co-design with talent leaders.</span>{" "}
-                    Scorecards, question banks, and workflows are built together with your TA
-                    and HR leadership.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Scale across locations and teams.</span>{" "}
-                    Once tuned, we replicate the model to other roles and geographies.
-                  </li>
-                </ul>
+                <p className="text-sm text-muted-foreground">
+                  Fair, explainable screening that qualifies candidates and runs pre-screens automatically.
+                </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-background/80 p-5">
@@ -300,6 +211,62 @@ const HiringAgent = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="container mx-auto px-4 lg:px-8 mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl md:text-3xl text-foreground mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <Accordion type="single" collapsible className="max-w-3xl mx-auto">
+              <AccordionItem value="item-1" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  What is a Hiring Agent?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  An AI-powered recruiter that screens, evaluates, and shortlists candidates automatically.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Is the screening fair and unbiased?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. We use transparent scoring criteria and configurable guardrails for DEI compliance.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Can it run pre-screening interviews?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. It conducts async or live pre-screens with standardized questions and summarizes answers.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Does it integrate with ATS systems?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. Greenhouse, Lever, Workday, and others.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5" className="border border-border rounded-xl px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Are decisions auditable?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. Full logs of every decision for compliance and calibration.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
+        </section>
+
         {/* Global CTA reused */}
         <div className="mt-20">
           <CTASection />
@@ -312,4 +279,3 @@ const HiringAgent = () => {
 };
 
 export default HiringAgent;
-
