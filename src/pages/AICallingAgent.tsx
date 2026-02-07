@@ -100,23 +100,23 @@ const AICallingAgent = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-5 lg:grid-cols-3">
             {/* Design Card */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
-              className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
+              className="rounded-xl border border-border/60 bg-card overflow-hidden flex flex-col"
             >
               {/* Top content area */}
-              <div className="p-6 flex-1">
-                <div className="flex items-start justify-between mb-6">
-                  <h3 className="text-xl font-medium text-foreground">
+              <div className="p-6 pb-8 flex-1">
+                <div className="flex items-start justify-between mb-8">
+                  <h3 className="text-lg font-normal text-foreground">
                     Design
                   </h3>
-                  <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center">
-                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-7 h-7 rounded-md border border-border/80 flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </div>
@@ -126,8 +126,8 @@ const AICallingAgent = () => {
                 </p>
               </div>
               {/* Gradient bottom area */}
-              <div className="h-40 bg-gradient-to-br from-[#e8c4a8] via-[#d4a574] to-[#c5956a] flex items-end p-6">
-                <span className="text-white/90 text-lg font-medium tracking-wide">DESIGN</span>
+              <div className="mx-3 mb-3 h-44 rounded-lg bg-gradient-to-br from-[#7a8a6e] via-[#6b7d5c] to-[#5c6650] flex items-end p-5">
+                <span className="text-white text-base font-medium tracking-wider uppercase">Design</span>
               </div>
             </motion.div>
 
@@ -137,16 +137,16 @@ const AICallingAgent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.05 }}
-              className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
+              className="rounded-xl border border-border/60 bg-card overflow-hidden flex flex-col"
             >
               {/* Top content area */}
-              <div className="p-6 flex-1">
-                <div className="flex items-start justify-between mb-6">
-                  <h3 className="text-xl font-medium text-foreground">
+              <div className="p-6 pb-8 flex-1">
+                <div className="flex items-start justify-between mb-8">
+                  <h3 className="text-lg font-normal text-foreground">
                     Integrate
                   </h3>
-                  <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center">
-                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-7 h-7 rounded-md border border-border/80 flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </div>
@@ -156,8 +156,8 @@ const AICallingAgent = () => {
                 </p>
               </div>
               {/* Gradient bottom area */}
-              <div className="h-40 bg-gradient-to-br from-[#d4a574] via-[#c5956a] to-[#b8865c] flex items-end p-6">
-                <span className="text-white/90 text-lg font-medium tracking-wide">INTEGRATE</span>
+              <div className="mx-3 mb-3 h-44 rounded-lg bg-gradient-to-br from-[#6b7d5c] via-[#5c6650] to-[#4a5840] flex items-end p-5">
+                <span className="text-white text-base font-medium tracking-wider uppercase">Integrate</span>
               </div>
             </motion.div>
 
@@ -167,16 +167,16 @@ const AICallingAgent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
+              className="rounded-xl border border-border/60 bg-card overflow-hidden flex flex-col"
             >
               {/* Top content area */}
-              <div className="p-6 flex-1">
-                <div className="flex items-start justify-between mb-6">
-                  <h3 className="text-xl font-medium text-foreground">
+              <div className="p-6 pb-8 flex-1">
+                <div className="flex items-start justify-between mb-8">
+                  <h3 className="text-lg font-normal text-foreground">
                     Optimize
                   </h3>
-                  <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center">
-                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-7 h-7 rounded-md border border-border/80 flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </div>
@@ -186,8 +186,8 @@ const AICallingAgent = () => {
                 </p>
               </div>
               {/* Gradient bottom area */}
-              <div className="h-40 bg-gradient-to-br from-[#c5956a] via-[#b8865c] to-[#a8764c] flex items-end p-6">
-                <span className="text-white/90 text-lg font-medium tracking-wide">OPTIMIZE</span>
+              <div className="mx-3 mb-3 h-44 rounded-lg bg-gradient-to-br from-[#5c6650] via-[#4a5840] to-[#3d4a35] flex items-end p-5">
+                <span className="text-white text-base font-medium tracking-wider uppercase">Optimize</span>
               </div>
             </motion.div>
           </div>
