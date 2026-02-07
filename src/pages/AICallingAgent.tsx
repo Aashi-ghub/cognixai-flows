@@ -54,30 +54,21 @@ const AICallingAgent = () => {
           <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-7">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div>
-                <p className="text-3xl font-semibold text-foreground mb-1">21x</p>
+                <p className="text-3xl font-semibold text-foreground mb-1">21×</p>
                 <p className="text-xs text-muted-foreground">
-                  more qualified leads when teams respond to new calls within ~5 minutes instead of 30.
-                </p>
-                <p className="mt-1 text-[10px] text-muted-foreground/70">
-                  Based on widely cited speed‑to‑lead benchmarks.
+                  faster response
                 </p>
               </div>
               <div>
-                <p className="text-3xl font-semibold text-foreground mb-1">7x</p>
+                <p className="text-3xl font-semibold text-foreground mb-1">7×</p>
                 <p className="text-xs text-muted-foreground">
-                  higher chance of qualifying a prospect when follow‑up happens within an hour.
-                </p>
-                <p className="mt-1 text-[10px] text-muted-foreground/70">
-                  Reflects research on contact timing vs. conversion.
+                  higher qualification
                 </p>
               </div>
               <div>
                 <p className="text-3xl font-semibold text-foreground mb-1">35–50%</p>
                 <p className="text-xs text-muted-foreground">
-                  of deals typically go to the first responder when multiple vendors compete.
-                </p>
-                <p className="mt-1 text-[10px] text-muted-foreground/70">
-                  Aggregated from industry sales and RFQ studies.
+                  deals go to first responder
                 </p>
               </div>
             </div>
