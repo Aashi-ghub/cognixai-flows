@@ -5,7 +5,10 @@ import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { WorkflowsSection } from "@/components/products/WorkflowsSection";
-import { FileText, Users, CheckCircle } from "lucide-react";
+import { UseCasesSection } from "@/components/products/UseCasesSection";
+import { FeatureShowcaseSection } from "@/components/products/FeatureShowcaseSection";
+import { StartTodaySection } from "@/components/products/StartTodaySection";
+import { FileText, Users, CheckCircle, Sparkles, TrendingUp, Zap } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -191,6 +194,45 @@ const HiringAgent = () => {
               previewText: "Switch to high-context model for senior roles requiring nuanced experience assessment."
             }
           ]}
+        />
+
+        {/* Use Cases Section */}
+        <UseCasesSection
+          badge="Use Cases"
+          headline="What Can Your New AI Recruiting Team Accomplish?"
+          description="Primed for excellence in routine hiring tasks, your new team of AI Agents can execute entire screening workflows without a fault."
+          ctaText="See all use cases"
+        />
+
+        {/* Feature Showcase Section */}
+        <FeatureShowcaseSection
+          badge="TALENT ACQUISITION"
+          headline="Resume-to-Interview Automation with AI Agents"
+          description="Speed up your hiring pipeline. Our agents screen resumes, rank candidates, and conduct pre-screens so nothing slips through the cracks."
+          features={[
+            {
+              icon: Sparkles,
+              title: "Improved Candidate Experience",
+              description: "Faster response times and consistent screening improve the candidate experience and employer brand."
+            },
+            {
+              icon: TrendingUp,
+              title: "Better Quality of Hire",
+              description: "Standardized evaluation reduces bias and improves hiring decisions."
+            },
+            {
+              icon: Zap,
+              title: "Scalability",
+              description: "AI handles increased application volumes seamlessly without extra cost."
+            }
+          ]}
+        />
+
+        {/* Start Today Section */}
+        <StartTodaySection
+          headline="Start Building Custom AI Agents to Automate Hiring"
+          description="Join our platform and start building AI agents for various types of recruitment automations."
+          ctaText="Request access"
         />
 
         {/* Why choose section */}
