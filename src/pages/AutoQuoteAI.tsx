@@ -4,6 +4,13 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { FileSearch, Calculator, Send } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const AutoQuoteAI = () => {
   const { openPopup } = useContactPopup();
@@ -49,38 +56,26 @@ const AutoQuoteAI = () => {
           </motion.div>
         </section>
 
-        {/* Why fast quotes win */}
-        <section className="container mx-auto px-4 lg:px-8 mt-16">
-          <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-8">
-            <div className="grid gap-8 lg:grid-cols-[1.6fr,1.1fr] items-start">
+        {/* Stats section */}
+        <section className="container mx-auto px-4 lg:px-8 mt-12">
+          <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-7">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div>
-                <h2 className="text-2xl md:text-3xl text-foreground mb-3">
-                  Why 5‑minute quotes win more deals.
-                </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Studies across B2B funnels show that the fastest credible response usually wins.
-                  Responding in minutes instead of hours or days multiplies both qualification and
-                  close rates.
+                <p className="text-3xl font-semibold text-foreground mb-1">5 min</p>
+                <p className="text-xs text-muted-foreground">
+                  response wins more deals
                 </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• 5‑minute responses can deliver many‑times more qualified opportunities than 30‑minute waits.</li>
-                  <li>• Contacting prospects within an hour materially increases the chance of converting them.</li>
-                  <li>• Same‑day RFQ turnaround consistently outperforms 24–72 hour quote cycles.</li>
-                </ul>
               </div>
-              <div className="text-sm text-muted-foreground">
-                <p className="font-medium text-foreground mb-2">
-                  Your opportunity with AutoQuote AI
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">60 sec</p>
+                <p className="text-xs text-muted-foreground">
+                  to generate compliant quotes
                 </p>
-                <p className="mb-3">
-                  Most teams still send quotes in days, not minutes. AutoQuote AI generates
-                  compliant, on‑brand quotes in under 60 seconds—so your reps can follow up
-                  while intent is highest instead of waiting on operations.
-                </p>
-                <p className="text-xs text-muted-foreground/80">
-                  Inspired by widely published speed‑to‑lead and RFQ turnaround studies. AutoQuote
-                  AI brings those advantages to your own RevOps motion, without changing your core
-                  pricing logic.
+              </div>
+              <div>
+                <p className="text-3xl font-semibold text-foreground mb-1">3×</p>
+                <p className="text-xs text-muted-foreground">
+                  throughput without new hires
                 </p>
               </div>
             </div>
@@ -94,7 +89,7 @@ const AutoQuoteAI = () => {
         >
           <div className="max-w-3xl mb-10">
             <h2 className="text-2xl md:text-3xl text-foreground mb-3">
-              How AutoQuote AI fits into your quote flow.
+              How AutoQuote AI works.
             </h2>
             <p className="text-muted-foreground">
               We turn your existing pricing spreadsheet, CPQ rules, and approval paths into an
@@ -103,179 +98,92 @@ const AutoQuoteAI = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-3 justify-items-center">
+            {/* Step 01 - Capture */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="relative"
             >
-              <p className="text-xs font-semibold text-primary mb-2">01 · CAPTURE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Ingest inquiries from every channel.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Parse emails, web forms, chats, and CRM tasks to extract customer requirements,
-                SKUs, quantities, and constraints into a structured brief.
-              </p>
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#8fa882] via-[#7a9a6e] to-[#6b8a5e] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                <FileSearch className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Ingest inquiries & extract
+                </p>
+                <h3 className="text-white text-lg font-semibold">Step 01</h3>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#7a9a6e]/60" />
+                ))}
+              </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 0.05 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
-            >
-              <p className="text-xs font-semibold text-primary mb-2">02 · CALCULATE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Apply your pricing & discount logic.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Map requirements to your product catalog, tiers, and rules, computing prices,
-                discounts, taxes, and terms exactly the way your team does today.
-              </p>
-            </motion.div>
-
+            {/* Step 02 - Calculate */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="relative"
             >
-              <p className="text-xs font-semibold text-primary mb-2">03 · GENERATE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Produce ready-to-send quotes.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Generate quote PDFs or email drafts with full line items, terms, and
-                justifications, ready for a quick human review or fully automated send.
-              </p>
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#7a9a6e] via-[#6b8a5e] to-[#5c7a50] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                <Calculator className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Apply pricing & discounts
+                </p>
+                <h3 className="text-white text-lg font-semibold">Step 02</h3>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#6b8a5e]/60" />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Step 03 - Generate */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#5c6650] via-[#4a5840] to-[#3d4a35] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                <Send className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Generate ready-to-send quotes
+                </p>
+                <h3 className="text-white text-lg font-semibold">Step 03</h3>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#4a5840]/60" />
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Use cases */}
-        <section className="container mx-auto px-4 lg:px-8 mt-20">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr,1.1fr] items-start">
-            <div>
-              <h2 className="text-2xl md:text-3xl text-foreground mb-4">
-                Where AutoQuote AI delivers the most value.
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Any team drowning in inbound RFQs, RFPs, or custom pricing requests can turn
-                quote generation into a fast, reliable, and measurable process.
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    B2B SAAS
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Multi-tier subscriptions & add-ons
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Turn complex subscription structures, usage tiers, and add-ons into
-                    consistent quotes aligned with your pricing policy.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    SERVICES & AGENCIES
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Proposal-ready cost breakdowns
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Generate scoped estimates with effort, rate cards, and milestones pulled
-                    from your existing templates.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    MANUFACTURING & DISTRIBUTION
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    SKU-based & volume pricing
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Automate catalog lookups, MoQ rules, and volume discounts across thousands
-                    of SKUs.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-card/70 p-4">
-                  <p className="text-xs font-semibold text-primary mb-1">
-                    INSURANCE & FINANCIAL PRODUCTS
-                  </p>
-                  <p className="text-sm font-medium mb-1">
-                    Policy & premium calculations
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Capture risk parameters, run premium logic, and generate compliant quote
-                    documents for review.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Integration / governance */}
-            <div className="rounded-2xl border border-border bg-muted/40 p-6 lg:p-7">
-              <p className="text-xs font-semibold tracking-[0.18em] text-muted-foreground mb-3">
-                CONTROLLED, GOVERNED, AUDITABLE
-              </p>
-              <h3 className="text-lg font-semibold mb-3">
-                Your rules, your approvals—just executed faster.
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                AutoQuote AI doesn&apos;t replace your governance; it codifies it. Every quote
-                can be logged, versioned, and run through approval paths before it reaches the
-                customer.
-              </p>
-              <ul className="space-y-2 text-xs text-muted-foreground">
-                <li>• Role-based guardrails around discounts and exceptions.</li>
-                <li>• Full audit trail of inputs, calculations, and outputs.</li>
-                <li>• Integration hooks for approvals in CRM or chat tools.</li>
-                <li>• Sandbox mode for testing new pricing experiments safely.</li>
-              </ul>
-              <button
-                onClick={handleDemoClick}
-                className="mt-6 btn-primary w-full md:w-auto"
-              >
-                Get Your Custom Blueprint →
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Next step */}
+        {/* Why choose section */}
         <section className="container mx-auto px-4 lg:px-8 mt-20">
           <div className="rounded-2xl border border-border bg-card/70 p-6 lg:p-8">
             <div className="grid gap-8 lg:grid-cols-[1.6fr,1.1fr] items-start">
               <div>
                 <h2 className="text-2xl md:text-3xl text-foreground mb-4">
-                  From spreadsheet pricing to an always-on quoting engine.
+                  Why teams choose CognixAI for quote automation.
                 </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Most teams already have pricing encoded in sheets, playbooks, and tribal
-                  knowledge. We turn that into a robust, AI-powered quoting layer that your
-                  sales and operations teams can trust.
+                <p className="text-sm text-muted-foreground mb-2">
+                  Custom AI quote agents built around your exact pricing logic and CPQ rules.
                 </p>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>
-                    <span className="font-medium text-foreground">Start with one high-volume segment.</span>{" "}
-                    We focus on your most repeatable quote type first to prove value fast.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Iterate with your revenue leaders.</span>{" "}
-                    We co-design prompts, guardrails, and approvals with your RevOps / Finance.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Expand to new products and regions.</span>{" "}
-                    Once trust is built, we roll out to additional lines of business and geos.
-                  </li>
-                </ul>
+                <p className="text-sm text-muted-foreground">
+                  Governed, auditable quotes generated in seconds—not hours.
+                </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-background/80 p-5">
@@ -293,7 +201,7 @@ const AutoQuoteAI = () => {
                   onClick={handleDemoClick}
                   className="btn-primary w-full"
                 >
-                  Start Sending 3x More Quotes →
+                  Schedule a 30‑minute discovery
                 </button>
                 <p className="mt-3 text-[11px] text-muted-foreground/80">
                   No obligation. If we don&apos;t see at least a 2–3x throughput improvement on
@@ -302,6 +210,62 @@ const AutoQuoteAI = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="container mx-auto px-4 lg:px-8 mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl md:text-3xl text-foreground mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <Accordion type="single" collapsible className="max-w-3xl mx-auto">
+              <AccordionItem value="item-1" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  What is AutoQuote AI?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  An AI-powered quote engine that generates ready-to-send quotes from inbound inquiries in seconds.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Does it use my existing pricing rules?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. We codify your pricing spreadsheets, CPQ logic, and discount tiers.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Can I review quotes before sending?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. Quotes can route through approval paths or go fully automated.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Does it integrate with CRM?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. HubSpot, Salesforce, Zoho, and custom systems.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5" className="border border-border rounded-xl px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Is there an audit trail?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. Full logs of inputs, calculations, and outputs for compliance.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </section>
 
         {/* Global CTA reused */}
@@ -316,4 +280,3 @@ const AutoQuoteAI = () => {
 };
 
 export default AutoQuoteAI;
-
