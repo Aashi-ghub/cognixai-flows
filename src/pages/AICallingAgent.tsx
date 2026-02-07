@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { FileText, Link, TrendingUp } from "lucide-react";
 
 const AICallingAgent = () => {
   const { openPopup } = useContactPopup();
@@ -91,94 +92,91 @@ const AICallingAgent = () => {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-3">
-            {/* Design Card */}
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-3 justify-items-center">
+            {/* Step 01 - Design */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
-              className="rounded-xl border border-border/60 bg-card overflow-hidden flex flex-col"
+              className="relative"
             >
-              {/* Top content area */}
-              <div className="p-6 pb-8 flex-1">
-                <div className="flex items-start justify-between mb-8">
-                  <h3 className="text-lg font-normal text-foreground">
-                    Design
-                  </h3>
-                  <div className="w-7 h-7 rounded-md border border-border/80 flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  We map your scripts, qualification questions, objection handling, and hand-off rules into a structured agent design—aligned with your ICP, quotas, and SLAs.
+              {/* Offset border circle */}
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              {/* Main gradient circle */}
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#8fa882] via-[#7a9a6e] to-[#6b8a5e] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                {/* Icon */}
+                <FileText className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                {/* Description */}
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Map your scripts & rules
                 </p>
+                {/* Step title */}
+                <h3 className="text-white text-lg font-semibold">Step 01</h3>
               </div>
-              {/* Gradient bottom area */}
-              <div className="mx-3 mb-3 h-44 rounded-lg bg-gradient-to-br from-[#7a8a6e] via-[#6b7d5c] to-[#5c6650] flex items-end p-5">
-                <span className="text-white text-base font-medium tracking-wider uppercase">Design</span>
+              {/* Dotted decoration */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#7a9a6e]/60" />
+                ))}
               </div>
             </motion.div>
 
-            {/* Integrate Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 0.05 }}
-              className="rounded-xl border border-border/60 bg-card overflow-hidden flex flex-col"
-            >
-              {/* Top content area */}
-              <div className="p-6 pb-8 flex-1">
-                <div className="flex items-start justify-between mb-8">
-                  <h3 className="text-lg font-normal text-foreground">
-                    Integrate
-                  </h3>
-                  <div className="w-7 h-7 rounded-md border border-border/80 flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  We connect the agent to your dialer, IVR, CRM, and ticketing so it can place calls, update records, trigger workflows, and escalate to humans in real time.
-                </p>
-              </div>
-              {/* Gradient bottom area */}
-              <div className="mx-3 mb-3 h-44 rounded-lg bg-gradient-to-br from-[#6b7d5c] via-[#5c6650] to-[#4a5840] flex items-end p-5">
-                <span className="text-white text-base font-medium tracking-wider uppercase">Integrate</span>
-              </div>
-            </motion.div>
-
-            {/* Optimize Card */}
+            {/* Step 02 - Integrate */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.1 }}
-              className="rounded-xl border border-border/60 bg-card overflow-hidden flex flex-col"
+              className="relative"
             >
-              {/* Top content area */}
-              <div className="p-6 pb-8 flex-1">
-                <div className="flex items-start justify-between mb-8">
-                  <h3 className="text-lg font-normal text-foreground">
-                    Optimize
-                  </h3>
-                  <div className="w-7 h-7 rounded-md border border-border/80 flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  We review transcripts, tweak prompts and routing rules, and A/B test call flows to steadily increase connect rates, qualification accuracy, and bookings.
+              {/* Offset border circle */}
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              {/* Main gradient circle */}
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#7a9a6e] via-[#6b8a5e] to-[#5c7a50] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                {/* Icon */}
+                <Link className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                {/* Description */}
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Connect telephony + CRM
                 </p>
+                {/* Step title */}
+                <h3 className="text-white text-lg font-semibold">Step 02</h3>
               </div>
-              {/* Gradient bottom area */}
-              <div className="mx-3 mb-3 h-44 rounded-lg bg-gradient-to-br from-[#5c6650] via-[#4a5840] to-[#3d4a35] flex items-end p-5">
-                <span className="text-white text-base font-medium tracking-wider uppercase">Optimize</span>
+              {/* Dotted decoration */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#6b8a5e]/60" />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Step 03 - Optimize */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.2 }}
+              className="relative"
+            >
+              {/* Offset border circle */}
+              <div className="absolute top-0 right-0 w-52 h-52 md:w-56 md:h-56 rounded-full border-2 border-foreground/80" />
+              {/* Main gradient circle */}
+              <div className="relative w-52 h-52 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#5c6650] via-[#4a5840] to-[#3d4a35] flex flex-col items-center justify-center text-center p-6 -translate-x-2 translate-y-2">
+                {/* Icon */}
+                <TrendingUp className="w-8 h-8 text-white/90 mb-3" strokeWidth={1.5} />
+                {/* Description */}
+                <p className="text-white/80 text-xs leading-relaxed mb-3">
+                  Improve with every call
+                </p>
+                {/* Step title */}
+                <h3 className="text-white text-lg font-semibold">Step 03</h3>
+              </div>
+              {/* Dotted decoration */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 flex flex-col gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#4a5840]/60" />
+                ))}
               </div>
             </motion.div>
           </div>
