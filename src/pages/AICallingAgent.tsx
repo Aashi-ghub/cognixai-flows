@@ -5,6 +5,12 @@ import { CTASection } from "@/components/landing/CTASection";
 import { OrganizationSchema, ServiceSchema } from "@/components/SeoSchemas";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { FileText, Link, TrendingUp } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const AICallingAgent = () => {
   const { openPopup } = useContactPopup();
@@ -253,28 +259,48 @@ const AICallingAgent = () => {
             <h2 className="text-2xl md:text-3xl text-foreground mb-8 text-center">
               Frequently Asked Questions
             </h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <div className="rounded-xl border border-border bg-card/70 p-5">
-                <h3 className="text-base font-medium text-foreground mb-2">What is an AI calling agent?</h3>
-                <p className="text-sm text-muted-foreground">An automated voice assistant that makes and handles phone calls like a human rep.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-card/70 p-5">
-                <h3 className="text-base font-medium text-foreground mb-2">Does it sound natural?</h3>
-                <p className="text-sm text-muted-foreground">Yes. Uses neural voice synthesis and LLM reasoning.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-card/70 p-5">
-                <h3 className="text-base font-medium text-foreground mb-2">Can it book meetings?</h3>
-                <p className="text-sm text-muted-foreground">Yes. It qualifies leads and schedules directly to your calendar.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-card/70 p-5">
-                <h3 className="text-base font-medium text-foreground mb-2">Does it integrate with CRM?</h3>
-                <p className="text-sm text-muted-foreground">Yes. HubSpot, Zoho, Salesforce and others.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-card/70 p-5">
-                <h3 className="text-base font-medium text-foreground mb-2">Is it compliant?</h3>
-                <p className="text-sm text-muted-foreground">Yes. Guardrails for scripts, consent, and logging.</p>
-              </div>
-            </div>
+            <Accordion type="single" collapsible className="max-w-3xl mx-auto">
+              <AccordionItem value="item-1" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  What is an AI calling agent?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  An automated voice assistant that makes and handles phone calls like a human rep.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Does it sound natural?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. Uses neural voice synthesis and LLM reasoning.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Can it book meetings?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. It qualifies leads and schedules directly to your calendar.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border border-border rounded-xl mb-3 px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Does it integrate with CRM?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. HubSpot, Zoho, Salesforce and others.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5" className="border border-border rounded-xl px-5 bg-card/70">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline">
+                  Is it compliant?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  Yes. Guardrails for scripts, consent, and logging.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </motion.div>
         </section>
 
