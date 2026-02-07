@@ -197,29 +197,12 @@ const AICallingAgent = () => {
                 <h2 className="text-2xl md:text-3xl text-foreground mb-4">
                   Why teams choose CognixAI for voice agents.
                 </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Generic “AI dialers” promise a lot but rarely match your processes. We
-                  build custom AI calling agents that are tightly aligned with your
-                  operations—so they sound on-brand, respect your constraints, and actually
-                  move pipeline.
+                <p className="text-sm text-muted-foreground mb-2">
+                  Custom AI calling agents built around your exact workflows and CRM.
                 </p>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>
-                    <span className="font-medium text-foreground">Agentic workflows, not static scripts.</span>{" "}
-                    We use modern agent frameworks so calls stay contextual and adaptive
-                    instead of reading from a rigid, brittle script.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Deep operational focus.</span>{" "}
-                    We specialise in sales, service, and operations use cases—not generic
-                    chatbots—so we know where AI creates real leverage.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Founders and ops leaders as partners.</span>{" "}
-                    You work directly with builders who understand both LLMs and B2B
-                    operations, not a rotating bench of implementers.
-                  </li>
-                </ul>
+                <p className="text-sm text-muted-foreground">
+                  Context-aware voice automation that qualifies leads and books meetings automatically.
+                </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-background/80 p-5">
@@ -316,4 +299,3 @@ const AICallingAgent = () => {
 };
 
 export default AICallingAgent;
-
