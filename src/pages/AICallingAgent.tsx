@@ -242,6 +242,42 @@ const AICallingAgent = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="container mx-auto px-4 lg:px-8 mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl md:text-3xl text-foreground mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="max-w-3xl mx-auto space-y-4">
+              <div className="rounded-xl border border-border bg-card/70 p-5">
+                <h3 className="text-base font-medium text-foreground mb-2">What is an AI calling agent?</h3>
+                <p className="text-sm text-muted-foreground">An automated voice assistant that makes and handles phone calls like a human rep.</p>
+              </div>
+              <div className="rounded-xl border border-border bg-card/70 p-5">
+                <h3 className="text-base font-medium text-foreground mb-2">Does it sound natural?</h3>
+                <p className="text-sm text-muted-foreground">Yes. Uses neural voice synthesis and LLM reasoning.</p>
+              </div>
+              <div className="rounded-xl border border-border bg-card/70 p-5">
+                <h3 className="text-base font-medium text-foreground mb-2">Can it book meetings?</h3>
+                <p className="text-sm text-muted-foreground">Yes. It qualifies leads and schedules directly to your calendar.</p>
+              </div>
+              <div className="rounded-xl border border-border bg-card/70 p-5">
+                <h3 className="text-base font-medium text-foreground mb-2">Does it integrate with CRM?</h3>
+                <p className="text-sm text-muted-foreground">Yes. HubSpot, Zoho, Salesforce and others.</p>
+              </div>
+              <div className="rounded-xl border border-border bg-card/70 p-5">
+                <h3 className="text-base font-medium text-foreground mb-2">Is it compliant?</h3>
+                <p className="text-sm text-muted-foreground">Yes. Guardrails for scripts, consent, and logging.</p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* Global CTA reused */}
         <div className="mt-20">
           <CTASection />
