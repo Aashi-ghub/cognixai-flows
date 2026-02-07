@@ -101,55 +101,94 @@ const AICallingAgent = () => {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
+            {/* Design Card */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
             >
-              <p className="text-xs font-semibold text-primary mb-2">01 · DESIGN</p>
-              <h3 className="text-base font-semibold mb-2">
-                Capture your ideal call playbook.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                We map your scripts, qualification questions, objection handling, and hand-off
-                rules into a structured agent design—aligned with your ICP, quotas, and SLAs.
-              </p>
+              {/* Top content area */}
+              <div className="p-6 flex-1">
+                <div className="flex items-start justify-between mb-6">
+                  <h3 className="text-xl font-medium text-foreground">
+                    Design
+                  </h3>
+                  <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center">
+                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We map your scripts, qualification questions, objection handling, and hand-off rules into a structured agent design—aligned with your ICP, quotas, and SLAs.
+                </p>
+              </div>
+              {/* Gradient bottom area */}
+              <div className="h-40 bg-gradient-to-br from-[#e8c4a8] via-[#d4a574] to-[#c5956a] flex items-end p-6">
+                <span className="text-white/90 text-lg font-medium tracking-wide">DESIGN</span>
+              </div>
             </motion.div>
 
+            {/* Integrate Card */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.05 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
             >
-              <p className="text-xs font-semibold text-primary mb-2">02 · INTEGRATE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Plug into your telephony & CRM.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                We connect the agent to your dialer, IVR, CRM, and ticketing so it can place
-                calls, update records, trigger workflows, and escalate to humans in real time.
-              </p>
+              {/* Top content area */}
+              <div className="p-6 flex-1">
+                <div className="flex items-start justify-between mb-6">
+                  <h3 className="text-xl font-medium text-foreground">
+                    Integrate
+                  </h3>
+                  <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center">
+                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We connect the agent to your dialer, IVR, CRM, and ticketing so it can place calls, update records, trigger workflows, and escalate to humans in real time.
+                </p>
+              </div>
+              {/* Gradient bottom area */}
+              <div className="h-40 bg-gradient-to-br from-[#d4a574] via-[#c5956a] to-[#b8865c] flex items-end p-6">
+                <span className="text-white/90 text-lg font-medium tracking-wide">INTEGRATE</span>
+              </div>
             </motion.div>
 
+            {/* Optimize Card */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-card/70 p-6"
+              className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
             >
-              <p className="text-xs font-semibold text-primary mb-2">03 · OPTIMIZE</p>
-              <h3 className="text-base font-semibold mb-2">
-                Improve with every conversation.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                We review transcripts, tweak prompts and routing rules, and A/B test call
-                flows to steadily increase connect rates, qualification accuracy, and bookings.
-              </p>
+              {/* Top content area */}
+              <div className="p-6 flex-1">
+                <div className="flex items-start justify-between mb-6">
+                  <h3 className="text-xl font-medium text-foreground">
+                    Optimize
+                  </h3>
+                  <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center">
+                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We review transcripts, tweak prompts and routing rules, and A/B test call flows to steadily increase connect rates, qualification accuracy, and bookings.
+                </p>
+              </div>
+              {/* Gradient bottom area */}
+              <div className="h-40 bg-gradient-to-br from-[#c5956a] via-[#b8865c] to-[#a8764c] flex items-end p-6">
+                <span className="text-white/90 text-lg font-medium tracking-wide">OPTIMIZE</span>
+              </div>
             </motion.div>
           </div>
         </section>
