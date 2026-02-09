@@ -30,11 +30,8 @@ export const FoundationalSection = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-              How can AI agents reduce my manual operations?
+              AI agents that automate entire workflows
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Our agents take over well-defined, repetitive workflows—like lead routing, follow-ups, ticket triage, data entry, and routine reporting—so 60–90% of the manual steps are handled automatically while humans supervise edge cases.
-            </p>
           </motion.div>
 
           {/* Features Grid - 2 cards */}
