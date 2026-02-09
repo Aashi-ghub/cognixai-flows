@@ -368,7 +368,7 @@ const WhyIStarted = () => {
                       Founders of CognixAI Labs
                     </p>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                      Gaurav Singh and Aashi Raghuwanshi founded CognixAI Labs in 2025 to build custom AI agents that automate 80–90% of repetitive business operations. Based in India with a global focus, CognixAI Labs helps SMBs and mid-market companies scale without adding headcount.
+                    Aashi Raghuwanshi and Gaurav Singh founded CognixAI Labs in 2025 to build custom AI agents that automate 80–90% of repetitive business operations. Based in India with a global focus, CognixAI Labs helps SMBs and mid-market companies scale without adding headcount.
                     </p>
                     <div className="flex items-center gap-4">
                       <a
