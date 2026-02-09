@@ -1,0 +1,20 @@
+{
+  "//": "Ensure client-side React Router routes work on Vercel by always serving index.html and letting the SPA handle routing.",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+
