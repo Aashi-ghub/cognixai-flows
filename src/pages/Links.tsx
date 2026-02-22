@@ -216,7 +216,7 @@ export default function LinksPage() {
           </div>
 
           {/* Footer - Minimal */}
-          <div className="mt-10 text-center">
+          <div className="mt-16 mb-8 text-center">
             <p className="text-gray-400 text-xs">
               © {new Date().getFullYear()} CognixAI Labs
             </p>
