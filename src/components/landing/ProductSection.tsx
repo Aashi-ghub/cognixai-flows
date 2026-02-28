@@ -21,17 +21,17 @@ const products = [
     description: "Automate quote generation from inquiries, instantly and accurately. Extracts customer requirements, applies pricing logic, and generates ready-to-send quotes in seconds.",
   },
   {
-    image: productVoiceAgent,
+    image: "/SalesAI.avif",
     name: "Sales Agent",
     description: "Your AI-powered closer that engages leads, follows up, and books meetings automatically. Personalizes outreach, nurtures prospects, and syncs updates directly into your CRM.",
   },
   {
-    image: productOrchestrator,
+    image: "/AI orchaestrator.avif",
     name: "Cognix Orchestrator",
     description: "Connects your voice agent to CRM, ERP, ticketing, and payment systems.",
   },
   {
-    image: productInsights,
+    image: "/CognixInsights.avif",
     name: "Cognix Insights",
     description: "Searchable transcripts, QA scoring, and call analytics at your fingertips.",
   },
