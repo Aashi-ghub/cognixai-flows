@@ -43,13 +43,7 @@ export const HeroSection = () => {
           
           {/* Optional tagline */}
           <p className="text-sm text-muted-foreground/70 mb-3 max-w-2xl mx-auto">India-first, global-ready AI automation studio.</p>
-          <p className="text-sm text-muted-foreground/70 mb-10 max-w-2xl mx-auto">
-            Founded by{" "}
-            <a href="/about#founders" className="underline hover:text-primary">
-              Gaurav Singh and Aashi Raghuwanshi
-            </a>
-            , building custom AI agents for B2B operations.
-          </p>
+
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
