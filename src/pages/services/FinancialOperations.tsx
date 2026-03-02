@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, DollarSign, RefreshCcw, TrendingUp } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { ServiceSchema } from "@/components/SeoSchemas";
+import { PageSeo } from "@/components/PageSeo";
 
 const services = [
   {
@@ -28,6 +29,11 @@ const FinancialOperations = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="AI Agents for Financial Operations & Audit | CognixAI Labs"
+        description="Automate 70–85% of financial operations workflows with AI agents for reconciliation, reporting, invoice processing, and compliance checks across your finance stack."
+        canonical="https://www.cognixailabs.com/services/financial-operations"
+      />
       <ServiceSchema
         name="AI Agents for Financial Operations"
         description="Automate 70–85% of financial ops workflows including reconciliation, reporting, invoice processing, and compliance checks with AI agents."

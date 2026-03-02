@@ -9,12 +9,15 @@ import { UseCasesSection } from "@/components/products/UseCasesSection";
 import { FeatureShowcaseSection } from "@/components/products/FeatureShowcaseSection";
 import { StartTodaySection } from "@/components/products/StartTodaySection";
 import { FileText, Link, TrendingUp, Sparkles, Zap } from "lucide-react";
+import { PageSeo } from "@/components/PageSeo";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ProductSchema } from "@/components/ProductSchema";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const AICallingAgent = () => {
   const { openPopup } = useContactPopup();
@@ -26,10 +29,27 @@ const AICallingAgent = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <PageSeo
+        title="AI Calling Agent for Sales & Support | CognixAI Labs"
+        description="Launch an AI calling agent that handles outbound and inbound calls, qualifies leads, books meetings, and resolves routine support queries while syncing everything to your CRM."
+        canonical="https://www.cognixailabs.com/products/ai-calling-agent"
+      />
       <OrganizationSchema />
       <ServiceSchema
         name="AI Calling Agent"
         description="CognixAI Labs builds AI calling agents that handle outbound and inbound calls end-to-end—qualifying leads, booking meetings, and resolving routine support queries so your humans focus on high-value conversations."
+      />
+      <ProductSchema
+        name="AI Calling Agent"
+        description="Automate inbound and outbound calls with human-like voice AI. Handle appointment booking, lead qualification, and customer support 24/7."
+        url="https://www.cognixailabs.com/products/ai-calling-agent"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://www.cognixailabs.com/" },
+          { name: "Products", url: "https://www.cognixailabs.com/products" },
+          { name: "AI Calling Agent", url: "https://www.cognixailabs.com/products/ai-calling-agent" },
+        ]}
       />
 
       <Navbar />
@@ -267,7 +287,11 @@ const AICallingAgent = () => {
                   Custom AI calling agents built around your exact workflows and CRM.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Context-aware voice automation that qualifies leads and books meetings automatically.
+                  Context-aware voice automation that qualifies leads and books meetings automatically. Need custom implementation? Check our{" "}
+                  <a href="/services/process-orchestration" className="underline hover:text-primary">
+                    Process Orchestration services
+                  </a>
+                  .
                 </p>
               </div>
 

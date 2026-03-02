@@ -15,6 +15,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { PageSeo } from "@/components/PageSeo";
+import { ProductSchema } from "@/components/ProductSchema";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const HiringAgent = () => {
   const { openPopup } = useContactPopup();
@@ -26,10 +29,27 @@ const HiringAgent = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <PageSeo
+        title="Hiring Agent – AI Recruiter for Screening & Shortlisting | CognixAI Labs"
+        description="Deploy an AI hiring agent that reads resumes, ranks candidates, and runs structured pre-screening interviews so your talent team can focus on final decision-making."
+        canonical="https://www.cognixailabs.com/products/hiring-agent"
+      />
       <OrganizationSchema />
       <ServiceSchema
         name="Hiring Agent"
         description="Hiring Agent is an AI-driven recruiter that screens, evaluates, and shortlists candidates automatically—reading resumes, ranking talent, and running structured pre-screening interviews."
+      />
+      <ProductSchema
+        name="AI Hiring Agent"
+        description="AI-driven recruiter that screens, evaluates, and shortlists candidates automatically. Reduce hiring time by 80%."
+        url="https://www.cognixailabs.com/products/hiring-agent"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://www.cognixailabs.com/" },
+          { name: "Products", url: "https://www.cognixailabs.com/products" },
+          { name: "AI Hiring Agent", url: "https://www.cognixailabs.com/products/hiring-agent" },
+        ]}
       />
 
       <Navbar />
@@ -247,7 +267,11 @@ const HiringAgent = () => {
                   Custom AI hiring agents built around your exact scorecards and workflows.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Fair, explainable screening that qualifies candidates and runs pre-screens automatically.
+                  Fair, explainable screening that qualifies candidates and runs pre-screens automatically. Need custom implementation? Check our{" "}
+                  <a href="/services/process-orchestration" className="underline hover:text-primary">
+                    Process Orchestration services
+                  </a>
+                  .
                 </p>
               </div>
 

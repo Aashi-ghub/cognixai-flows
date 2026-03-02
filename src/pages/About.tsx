@@ -4,106 +4,11 @@ import { motion } from "framer-motion";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Linkedin, ArrowRight, MapPin, Sparkles } from "lucide-react";
-import { useEffect } from "react";
-import { OrganizationSchema } from "@/components/SeoSchemas";
+import { OrganizationSchema, FounderSchema } from "@/components/SeoSchemas";
+import { PageSeo } from "@/components/PageSeo";
 
 const About = () => {
   const { openPopup } = useContactPopup();
-
-  // Add JSON-LD structured data
-  useEffect(() => {
-    // Organization schema
-    const organizationSchema = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CognixAI Labs",
-      "alternateName": "CognixAI Labs automation studio",
-      "url": "https://www.cognixai.com",
-      "logo": "https://www.cognixai.com/favicon-dark.png",
-      "description": "CognixAI Labs builds custom AI agents that automate 80–90% of repetitive business operations so teams close more deals, resolve tickets faster, and run on autopilot.",
-      "foundingDate": "2025",
-      "founder": [
-        {
-          "@type": "Person",
-          "name": "Gaurav Singh",
-          "sameAs": "https://www.linkedin.com/in/gaurav-singh-5392a7272/"
-        },
-        {
-          "@type": "Person",
-          "name": "Aashi Raghuwanshi",
-          "sameAs": "https://www.linkedin.com/in/aashi-raghuwanshi/"
-        }
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/company/cognixai-labs"
-      ]
-    };
-
-    // Person schemas for founders
-    const gauravSchema = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Gaurav Singh",
-      "jobTitle": "Founder",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "CognixAI Labs"
-      },
-      "sameAs": "https://www.linkedin.com/in/gaurav-singh-5392a7272/"
-    };
-
-    const aashiSchema = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Aashi Raghuwanshi",
-      "jobTitle": "Founder",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "CognixAI Labs"
-      },
-      "sameAs": "https://www.linkedin.com/in/aashi-raghuwanshi/"
-    };
-
-    // Create and inject script tags
-    const orgScript = document.createElement("script");
-    orgScript.type = "application/ld+json";
-    orgScript.text = JSON.stringify(organizationSchema);
-    orgScript.id = "organization-schema";
-
-    const gauravScript = document.createElement("script");
-    gauravScript.type = "application/ld+json";
-    gauravScript.text = JSON.stringify(gauravSchema);
-    gauravScript.id = "gaurav-schema";
-
-    const aashiScript = document.createElement("script");
-    aashiScript.type = "application/ld+json";
-    aashiScript.text = JSON.stringify(aashiSchema);
-    aashiScript.id = "aashi-schema";
-
-    // Remove existing scripts if they exist
-    const existingOrg = document.getElementById("organization-schema");
-    const existingGaurav = document.getElementById("gaurav-schema");
-    const existingAashi = document.getElementById("aashi-schema");
-    
-    if (existingOrg) existingOrg.remove();
-    if (existingGaurav) existingGaurav.remove();
-    if (existingAashi) existingAashi.remove();
-
-    // Append to head
-    document.head.appendChild(orgScript);
-    document.head.appendChild(gauravScript);
-    document.head.appendChild(aashiScript);
-
-    // Cleanup
-    return () => {
-      const org = document.getElementById("organization-schema");
-      const gaurav = document.getElementById("gaurav-schema");
-      const aashi = document.getElementById("aashi-schema");
-      if (org) org.remove();
-      if (gaurav) gaurav.remove();
-      if (aashi) aashi.remove();
-    };
-  }, []);
 
   const faqs = [
     {
@@ -159,7 +64,20 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="About CognixAI Labs – Founders & Story"
+        description="Learn about CognixAI Labs, founded by Gaurav Singh and Aashi Raghuwanshi in 2025 in India, and how we build custom AI agents that automate 80–90% of repetitive business operations for B2B companies."
+        canonical="https://www.cognixailabs.com/about"
+      />
       <OrganizationSchema />
+      <FounderSchema
+        name="Gaurav Singh"
+        linkedinUrl="https://www.linkedin.com/in/gaurav-singh-5392a7272/"
+      />
+      <FounderSchema
+        name="Aashi Raghuwanshi"
+        linkedinUrl="https://www.linkedin.com/in/aashi-raghuwanshi/"
+      />
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -304,7 +222,8 @@ const About = () => {
                           <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-border group-hover:border-primary/50 transition-colors duration-300 shadow-lg group-hover:shadow-xl">
                             <img 
                               src={founder.image} 
-                              alt={founder.name}
+                              alt={`${founder.name} - Founder of CognixAI Labs, expert in AI automation and business operations`}
+                              loading="lazy"
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                           </div>

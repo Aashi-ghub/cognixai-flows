@@ -15,6 +15,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { PageSeo } from "@/components/PageSeo";
+import { ProductSchema } from "@/components/ProductSchema";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const AutoQuoteAI = () => {
   const { openPopup } = useContactPopup();
@@ -26,10 +29,27 @@ const AutoQuoteAI = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <PageSeo
+        title="AutoQuote AI – Automated Quote Generation | CognixAI Labs"
+        description="Use AutoQuote AI to automate quote generation from inbound inquiries by extracting requirements, applying your pricing logic, and producing compliant, ready-to-send quotes in seconds."
+        canonical="https://www.cognixailabs.com/products/autoquote-ai"
+      />
       <OrganizationSchema />
       <ServiceSchema
         name="AutoQuote AI"
         description="AutoQuote AI automates quote generation from inbound inquiries—extracting requirements, applying your pricing logic, and generating ready-to-send quotes in seconds."
+      />
+      <ProductSchema
+        name="AutoQuote AI"
+        description="Generate accurate quotes instantly with AI. Automate pricing, proposals, and quote delivery for B2B companies."
+        url="https://www.cognixailabs.com/products/autoquote-ai"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://www.cognixailabs.com/" },
+          { name: "Products", url: "https://www.cognixailabs.com/products" },
+          { name: "AutoQuote AI", url: "https://www.cognixailabs.com/products/autoquote-ai" },
+        ]}
       />
 
       <Navbar />
@@ -248,7 +268,11 @@ const AutoQuoteAI = () => {
                   Custom AI quote agents built around your exact pricing logic and CPQ rules.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Governed, auditable quotes generated in seconds—not hours.
+                  Governed, auditable quotes generated in seconds—not hours. Need custom implementation? Check our{" "}
+                  <a href="/services/process-orchestration" className="underline hover:text-primary">
+                    Process Orchestration services
+                  </a>
+                  .
                 </p>
               </div>
 

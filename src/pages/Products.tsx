@@ -3,6 +3,7 @@ import { Footer } from "@/components/landing/Footer";
 import { CTASection } from "@/components/landing/CTASection";
 import { motion } from "framer-motion";
 import { Phone, Workflow, BarChart3, Zap, Shield, Globe, Calendar, Users, FileText, TrendingUp, MessageSquare, CheckCircle } from "lucide-react";
+import { PageSeo } from "@/components/PageSeo";
 
 import productVoiceAgent from "@/assets/product-voice-agent.png";
 import productOrchestrator from "@/assets/product-orchestrator.png";
@@ -92,6 +93,11 @@ const products = [
 const Products = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="AI Automation Products & Voice Agents | CognixAI Labs"
+        description="Explore CognixAI Labs' AI calling, hiring, quoting, sales, and orchestration products that automate 60–90% of repetitive operations so B2B teams can scale without adding headcount."
+        canonical="https://www.cognixailabs.com/products"
+      />
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -179,7 +185,8 @@ const Products = () => {
                         <div className="relative rounded-xl md:rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
                           <img
                             src={product.image}
-                            alt={product.title}
+                            alt={`${product.title} – CognixAI Labs AI product`}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </div>

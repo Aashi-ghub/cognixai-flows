@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core marketing pages -->
+  <url>
+    <loc>https://www.cognixailabs.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/about</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/products</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/services</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/links</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/privacy</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/terms</loc>
+  </url>
+
+  <!-- Product detail pages -->
+  <url>
+    <loc>https://www.cognixailabs.com/products/ai-calling-agent</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/products/autoquote-ai</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/products/hiring-agent</loc>
+  </url>
+
+  <!-- Service cluster pages -->
+  <url>
+    <loc>https://www.cognixailabs.com/services/financial-operations</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/services/process-orchestration</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/services/enterprise-governance</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/services/strategy-change</loc>
+  </url>
+
+  <!-- Blog landing and key posts -->
+  <url>
+    <loc>https://www.cognixailabs.com/blogs</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blog/why-i-started-cognixai-labs</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/ai-agents-operations-automation</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/can-ai-agents-really-automate-80-percent</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/ai-agents-sales-operations</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/ai-customer-support-ticket-handling</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/ai-agents-cost-roi-smbs</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/ai-automation-implementation-roadmap</loc>
+  </url>
+  <url>
+    <loc>https://www.cognixailabs.com/blogs/ai-agents-vs-rpa</loc>
+  </url>
+</urlset>
+

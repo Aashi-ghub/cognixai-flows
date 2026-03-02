@@ -8,9 +8,9 @@ import { AIBenefitsSection } from "@/components/landing/AIBenefitsSection";
 import { InsightsSection } from "@/components/landing/InsightsSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { FAQSection } from "@/components/landing/FAQSection";
-import { SeoFaqSchema } from "@/components/SeoFaqSchema";
 import { OrganizationSchema, FaqSchema } from "@/components/SeoSchemas";
 import { Footer } from "@/components/landing/Footer";
+import { PageSeo } from "@/components/PageSeo";
 
 const Index = () => {
   const faqItems = [
@@ -38,9 +38,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="AI Voice & Automation Agents for B2B Teams | CognixAI Labs"
+        description="CognixAI Labs builds custom AI call, hiring, quoting, and sales agents that automate 80–90% of repetitive business operations so B2B teams can scale without adding headcount."
+        canonical="https://www.cognixailabs.com/"
+      />
       <OrganizationSchema />
       <FaqSchema items={faqItems} />
-      <SeoFaqSchema items={faqItems} />
       <Navbar />
       <main>
         <HeroSection />

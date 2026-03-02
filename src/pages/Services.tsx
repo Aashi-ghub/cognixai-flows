@@ -6,8 +6,8 @@ import { ServiceCard } from "@/components/services/ServiceCard";
 import { FeatureCard } from "@/components/services/FeatureCard";
 import { GetStartedCard } from "@/components/services/GetStartedCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SeoFaqSchema } from "@/components/SeoFaqSchema";
 import { ServiceSchema, FaqSchema } from "@/components/SeoSchemas";
+import { PageSeo } from "@/components/PageSeo";
 import { 
   Workflow, 
   BarChart3, 
@@ -117,12 +117,16 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="AI Agents & Automation Services | CognixAI Labs"
+        description="CognixAI Labs designs and deploys custom AI agents and automation services that handle sales ops, support, and back-office workflows so your team can focus on high-value work."
+        canonical="https://www.cognixailabs.com/services"
+      />
       <ServiceSchema
         name="AI Agent Development & Automation"
         description="CognixAI Labs builds custom AI agents that automate 80–90% of repetitive business operations including sales ops, customer support, and back-office workflows."
       />
       <FaqSchema items={serviceFaqs} />
-      <SeoFaqSchema items={serviceFaqs} />
       <Navbar />
       <main>
         {/* Hero Section - Kept intact */}

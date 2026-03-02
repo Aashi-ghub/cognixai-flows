@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, ClipboardCheck, Users, Building2 } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { ServiceSchema } from "@/components/SeoSchemas";
+import { PageSeo } from "@/components/PageSeo";
 
 const services = [
   {
@@ -28,6 +29,11 @@ const StrategyChange = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="AI Strategy & Change Enablement Services | CognixAI Labs"
+        description="Prepare your organization for AI adoption with strategy and change enablement services including AI readiness assessments, workforce reskilling, and CoE design."
+        canonical="https://www.cognixailabs.com/services/strategy-change"
+      />
       <ServiceSchema
         name="Strategy & Change Enablement"
         description="AI readiness assessment, workforce reskilling programs, and Center of Excellence design to prepare organizations for AI adoption and transformation."

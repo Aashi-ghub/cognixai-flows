@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, Shield, Server, Database } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { ServiceSchema } from "@/components/SeoSchemas";
+import { PageSeo } from "@/components/PageSeo";
 
 const services = [
   {
@@ -28,6 +29,11 @@ const EnterpriseGovernance = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="Enterprise AI Governance & Infrastructure | CognixAI Labs"
+        description="Build an enterprise AI governance and infrastructure layer with private LLM deployment, vector databases, and a control tower for safe, compliant AI operations."
+        canonical="https://www.cognixailabs.com/services/enterprise-governance"
+      />
       <ServiceSchema
         name="Enterprise AI Governance"
         description="Comprehensive governance framework to deploy, monitor, and control AI models safely with private LLM deployment and vector database architecture."

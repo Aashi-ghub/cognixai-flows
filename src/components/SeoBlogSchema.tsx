@@ -7,7 +7,7 @@ interface SeoBlogSchemaProps {
 
 export const SeoBlogSchema = ({ post }: SeoBlogSchemaProps) => {
   useEffect(() => {
-    const baseUrl = "https://www.cognixai.com";
+    const baseUrl = "https://www.cognixailabs.com";
     
     const blogPostSchema = {
       "@context": "https://schema.org",

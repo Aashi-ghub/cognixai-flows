@@ -9,8 +9,8 @@ export function OrganizationSchema() {
           "@type": "Organization",
           name: "CognixAI Labs",
           description: "CognixAI Labs builds custom AI agents that automate 80–90% of repetitive business operations for B2B companies.",
-          url: "https://www.cognixai.com",
-          logo: "https://www.cognixai.com/black-logo.png",
+          url: "https://www.cognixailabs.com",
+          logo: "https://www.cognixailabs.com/black-logo.png",
           areaServed: ["IN", "US", "Global"],
           knowsAbout: ["AI agents", "business automation", "operations workflows", "agentic AI"],
           founder: [
@@ -71,7 +71,7 @@ export function ServiceSchema({ name, description }: { name: string; description
           provider: {
             "@type": "Organization",
             name: "CognixAI Labs",
-            url: "https://www.cognixai.com",
+            url: "https://www.cognixailabs.com",
           },
           description,
           areaServed: ["IN", "US", "Global"],
@@ -93,7 +93,7 @@ export function FounderSchema({ name, linkedinUrl }: { name: string; linkedinUrl
           worksFor: {
             "@type": "Organization",
             name: "CognixAI Labs",
-            url: "https://www.cognixai.com",
+            url: "https://www.cognixailabs.com",
           },
           sameAs: [linkedinUrl],
           description: `Founder of CognixAI Labs building AI agents that automate 80–90% of business operations.`,

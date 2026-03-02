@@ -10,5 +10,17 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Explicitly allow popular AI/answer-engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 User-agent: *
 Allow: /
+
+Sitemap: https://www.cognixailabs.com/sitemap.xml

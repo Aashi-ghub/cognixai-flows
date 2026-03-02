@@ -4,6 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, Workflow, Headphones, AlertTriangle } from "lucide-react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import { ServiceSchema } from "@/components/SeoSchemas";
+import { PageSeo } from "@/components/PageSeo";
 
 const services = [
   {
@@ -28,6 +29,11 @@ const ProcessOrchestration = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="Intelligent Process Orchestration Services | CognixAI Labs"
+        description="Connect siloed tools and teams with intelligent process orchestration services that use AI agents to automate and coordinate end-to-end business workflows."
+        canonical="https://www.cognixailabs.com/services/process-orchestration"
+      />
       <ServiceSchema
         name="Intelligent Process Orchestration"
         description="Connect disparate systems and processes into unified, intelligent workflows with AI agents that automate end-to-end business processes."
