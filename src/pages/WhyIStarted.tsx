@@ -31,7 +31,7 @@ const WhyIStarted = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://www.cognixai.com/blog/why-i-started-cognixai-labs');
+    canonical.setAttribute('href', 'https://www.cognixailabs.com/blog/why-i-started-cognixai-labs');
 
     // Update Open Graph tags
     const updateOGTag = (property: string, content: string) => {
@@ -47,7 +47,7 @@ const WhyIStarted = () => {
     updateOGTag('og:title', 'Why I Started CognixAI Labs: Automating 80–90% of Operations with AI Agents');
     updateOGTag('og:description', 'Gaurav Singh and Aashi Raghuwanshi, founders of CognixAI Labs, share the story behind building custom AI agents that automate 80–90% of repetitive business operations.');
     updateOGTag('og:type', 'article');
-    updateOGTag('og:url', 'https://www.cognixai.com/blog/why-i-started-cognixai-labs');
+    updateOGTag('og:url', 'https://www.cognixailabs.com/blog/why-i-started-cognixai-labs');
 
     // Article schema with Person and Organization
     const articleSchema = {
@@ -82,14 +82,14 @@ const WhyIStarted = () => {
         "name": "CognixAI Labs",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.cognixai.com/favicon-dark.png"
+          "url": "https://www.cognixailabs.com/favicon-dark.png"
         }
       },
       "datePublished": "2025-01-01",
       "dateModified": "2025-01-01",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.cognixai.com/blog/why-i-started-cognixai-labs"
+        "@id": "https://www.cognixailabs.com/blog/why-i-started-cognixai-labs"
       }
     };
 
@@ -99,8 +99,8 @@ const WhyIStarted = () => {
       "@type": "Organization",
       "name": "CognixAI Labs",
       "alternateName": "CognixAI Labs automation studio",
-      "url": "https://www.cognixai.com",
-      "logo": "https://www.cognixai.com/favicon-dark.png",
+      "url": "https://www.cognixailabs.com",
+      "logo": "https://www.cognixailabs.com/favicon-dark.png",
       "description": "CognixAI Labs builds custom AI agents that automate 80–90% of repetitive business operations so teams close more deals, resolve tickets faster, and run on autopilot.",
       "foundingDate": "2025",
       "founder": [
