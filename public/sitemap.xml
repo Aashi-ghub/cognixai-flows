@@ -1,80 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <!-- Core marketing pages -->
   <url>
     <loc>https://www.cognixailabs.com/</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/about</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/products</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/services</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/links</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/privacy</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/terms</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <!-- Product detail pages -->
   <url>
     <loc>https://www.cognixailabs.com/products/ai-calling-agent</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/products/autoquote-ai</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/products/hiring-agent</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Service cluster pages -->
   <url>
     <loc>https://www.cognixailabs.com/services/financial-operations</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/services/process-orchestration</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/services/enterprise-governance</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/services/strategy-change</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Blog landing and key posts -->
   <url>
     <loc>https://www.cognixailabs.com/blogs</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blog/why-i-started-cognixai-labs</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/ai-agents-operations-automation</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/can-ai-agents-really-automate-80-percent</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/ai-agents-sales-operations</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/ai-customer-support-ticket-handling</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/ai-agents-cost-roi-smbs</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/ai-automation-implementation-roadmap</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://www.cognixailabs.com/blogs/ai-agents-vs-rpa</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
 </urlset>
-
