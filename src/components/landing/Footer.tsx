@@ -24,6 +24,9 @@ const getFooterHref = (link: string) => {
     case "Insights":
       return "/products#insights";
 
+    case "AI Summit 2026":
+      return "https://ecellcgc.in/"
+
     // Company
     case "About":
       return "/about";
